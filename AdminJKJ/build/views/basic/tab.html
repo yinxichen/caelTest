@@ -1,0 +1,156 @@
+{% extends "../shared/layout.html" %} {% block title %}示例展示{% endblock %} {% block css %}
+{% endblock %} {% block content %}
+<!--代码开始-->
+<div class="page-title">tab切换</div>
+<div class="page-containers">
+	<div class="tabbable">
+		<ul class="nav nav-tabs">
+			<li class="active">
+				<a data-toggle="tab" href="#ot_divTab1">主订单跟踪记录</a>
+			</li>
+			<li class="">
+				<a data-toggle="tab" href="#ot_divTab2">基础订单跟踪记录</a>
+			</li>
+			<li class="">
+				<a data-toggle="tab" href="#ot_divTab3">物流子订单跟踪记录</a>
+			</li>
+			<li class="">
+				<a data-toggle="tab" href="#ot_divTab4">金融子订单跟踪记录</a>
+			</li>
+			<li class="">
+				<a data-toggle="tab" href="#ot_divTab5">单据复核记录</a>
+			</li>
+		</ul>
+		<div class="tab-content">
+			<div id="ot_divTab1" class="tab-pane active">
+				<table class="table table-bordered">
+					<thead class="bordered-themeprimary">
+						<tr>
+							<th>时间</th>
+							<th>操作</th>
+							<th>操作人</th>
+						</tr>
+					</thead>
+					<tbody>
+
+						<tr>
+							<td>2017年08月05日 09:49</td>
+							<td title="主订单进入执行中">主订单进入执行中</td>
+							<td>13714880886</td>
+						</tr>
+
+						<tr>
+							<td>2017年08月05日 09:49</td>
+							<td title="订单提交成功">订单提交成功</td>
+							<td>13714880886</td>
+						</tr>
+
+						<tr>
+							<td>2017年08月05日 09:47</td>
+							<td title="订单草稿创建成功">订单草稿创建成功</td>
+							<td>13714880886</td>
+						</tr>
+
+					</tbody>
+				</table>
+				<div class="clearfix"></div>
+			</div>
+			<div id="ot_divTab2" class="tab-pane">
+				Tab2
+				<div class="clearfix"></div>
+			</div>
+			<div id="ot_divTab3" class="tab-pane">
+				Tab3
+				<div class="clearfix"></div>
+			</div>
+			<div id="ot_divTab4" class="tab-pane">
+				Tab4
+				<div class="clearfix"></div>
+			</div>
+			<div id="ot_divTab5" class="tab-pane">
+				Tab5
+				<div class="clearfix"></div>
+			</div>
+		</div>
+	</div>
+	<pre>
+		<code class="language-html">{% set tabCode %}
+			<div class="tabbable">
+				<ul class="nav nav-tabs">
+					<li class="active">
+						<a data-toggle="tab" href="#ot_divTab1">主订单跟踪记录</a>
+					</li>
+					<li>
+						<a data-toggle="tab" href="#ot_divTab2">基础订单跟踪记录</a>
+					</li>
+					<li class="">
+						<a data-toggle="tab" href="#ot_divTab3">物流子订单跟踪记录</a>
+					</li>
+					<li class="">
+						<a data-toggle="tab" href="#ot_divTab4">金融子订单跟踪记录</a>
+					</li>
+					<li class="">
+						<a data-toggle="tab" href="#ot_divTab5">单据复核记录</a>
+					</li>
+				</ul>
+				<div class="tab-content">
+					<div id="ot_divTab1" class="tab-pane active">
+						<table class="table table-bordered">
+							<thead class="bordered-themeprimary">
+								<tr>
+									<th>时间</th>
+									<th>操作</th>
+									<th>操作人</th>
+								</tr>
+							</thead>
+							<tbody>
+
+								<tr>
+									<td>2017年08月05日 09:49</td>
+									<td title="主订单进入执行中">主订单进入执行中</td>
+									<td>13714880886</td>
+								</tr>
+
+								<tr>
+									<td>2017年08月05日 09:49</td>
+									<td title="订单提交成功">订单提交成功</td>
+									<td>13714880886</td>
+								</tr>
+
+								<tr>
+									<td>2017年08月05日 09:47</td>
+									<td title="订单草稿创建成功">订单草稿创建成功</td>
+									<td>13714880886</td>
+								</tr>
+
+							</tbody>
+						</table>
+						<div class="clearfix"></div>
+					</div>
+					<div id="ot_divTab2" class="tab-pane">
+						Tab2
+						<div class="clearfix"></div>
+					</div>
+					<div id="ot_divTab3" class="tab-pane">
+						Tab3
+						<div class="clearfix"></div>
+					</div>
+					<div id="ot_divTab4" class="tab-pane">
+						Tab4
+						<div class="clearfix"></div>
+					</div>
+					<div id="ot_divTab5" class="tab-pane">
+						Tab5
+						<div class="clearfix"></div>
+					</div>
+				</div>
+			</div>
+			{% endset %}   
+			{{ tabCode | escape}}
+		</code>
+		<a class="fa fa-file-code-o" href="javascript:;" data-xmp="">展开代码</a>
+	</pre>
+</div>
+
+<!--代码结束-->
+{% endblock %} {% block js %} {% endblock %}

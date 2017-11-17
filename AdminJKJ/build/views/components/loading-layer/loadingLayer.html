@@ -1,0 +1,174 @@
+{% extends "../../shared/layout.html" %} {% block title %} {% endblock %} {% block css %}{% endblock %} {% block content
+%}
+<div class="page-containers">
+	<div class="form-title">
+		pureLayer 纯真遮罩层加载动画
+	</div>
+	<pre>
+		<code class="language-html">{% set layerCode %}
+			<script type="text/javascript">
+				var myLayer;
+				function showLayer(i) {
+					var $defer = $.Deferred();
+
+					$defer.then(function () {
+						var placements = ['self', 'parent', 'top'];
+
+						myLayer = $.jkj.pureLayer.loading('开始加载...', placements[Math.floor(Math.random() * 3)]);
+						myLayer.setContent('动效遮罩层' + i);
+						showLayer(++i);
+					}, function () {
+						myLayer.close();
+						showLayer(++i);
+					});
+					if (i % 2 === 1) {
+						setTimeout(function () { $defer.resolve(); }, 1000);
+					}
+					else {
+						setTimeout(function () { $defer.reject(); }, 1000);
+					}
+				}
+				$(function () {
+					showLayer(1);
+				});
+			</script>
+			{% endset %}   
+			{{ layerCode | escape}}
+		</code>
+		<a class="fa fa-file-code-o" href="javascript:;" data-xmp="">展开代码</a>
+	</pre>
+</div>
+<div class="page-containers">
+	<div class="form-title">
+		遮罩层配置参数
+	</div>
+	<pre>
+		<div>myLayer.close(); 关闭遮罩层</div>
+		<div>$.jkj.pureLayer.loading('开始加载...'); 当前页面创建遮罩层</div>
+		<div>$.jkj.pureLayer.loading('开始加载...','parent'); 父页面创建遮罩层</div>
+		<div>$.jkj.pureLayer.loading('开始加载...','top'); 顶级页面创建遮罩层</div>
+		<div>$.jkj.pureLayer.remove(myLayer.id); 移除指定遮罩层</div>
+		<div>$.jkj.pureLayer.removeAll(); 移除所有遮罩层</div>
+		<code class="language-html">{% set settingCode %}
+			<script>
+				// 默认配置信息
+				defaults: {
+					/**
+					 * 遮罩层类型，['mask' | 'loading' | 'page' | 'zone']
+					 * mask：遮罩层
+					 * loading：全屏动效遮罩层
+					 * page: 数据加载全屏动效遮罩层
+					 * zone：数据加载区域动效遮罩层
+					 */
+					type: 'mask',
+					/**
+					 * 遮罩层放置的页面，['self' | 'parent' | 'top']
+					 * self： 当前页面
+					 * parent：父页面
+					 * top：顶级页面
+					 */
+					page: 'self',
+					// 显示内容
+					content: '加载中...',
+					// 图片class，动效遮罩层有效
+					imgClass: 'layer-loading',
+					// 数据加载结合遮罩层，动效遮罩层有效
+					load: {
+						// 远程url
+						url: null,
+						// 发送的数据
+						data: null,
+						// 加载成功后回调的方法
+						successCallBack: function (data, layer) {
+							layer.close();
+						},
+						// 加载不成功后回调的方法
+						errorCallBack: function (data, layer, status) {
+							layer.setContent('系统异常...');
+							setTimeout(function () {
+								layer.close();
+							}, 5000);
+						}
+					}
+				}	
+			</script>
+			{% endset %}   
+			{{ settingCode | escape}}
+		</code>
+		<a class="fa fa-file-code-o" href="javascript:;" data-xmp="">展开代码</a>
+	</pre>
+</div>
+<div class="page-containers">
+	<div class="form-title">
+		老版本遮罩层
+	</div>
+	<pre>
+		<div>myLayer.close(); 关闭蒙版</div>
+		<div>$.jkj.layer.mask(myLayer.id);	当前页面创建蒙版</div>
+		<div>$.jkj.layer.maskParent(myLayer.id);	父页面创建蒙版</div>
+		<div>$.jkj.layer.maskTop(myLayer.id);	顶级页面创建蒙版</div>
+		<div>$.jkj.layer.remove(myLayer.id);	移除指定层</div>
+		<div>$.jkj.layer.removeAll();	移除所有层(蒙版，加载，加载含内容)</div>
+		<code class="language-html">{% set layerHistoryCode %}
+			<script type="text/javascript">
+				var myLayer;
+				$(function() {
+					myLayer = $.jkj.layer.loading('我的祖国。。。');
+					setTimeout(function(){
+	                	myLayer.setMessage('祖国的花朵多美丽祖国的花朵多美丽祖国的花朵多美丽祖国的花朵多美丽祖国的花朵多美丽');
+		                setTimeout(function(){
+		                	$.jkj.layer.setMessage(myLayer.id,'这样可以吗？');
+			                setTimeout(function(){
+			                	myLayer.close();
+			                	setTimeout(function(){
+				                	myLayer=$.jkj.layer.loading('我是最新加载的。。。');
+				                },1000);
+			                },1000);
+		                },1000);
+	                },1000);
+				});
+				
+				//$.jkj.layer.setMessage(myLayer.id,'这样可以吗？');
+			</script>
+			{% endset %}   
+			{{ layerHistoryCode | escape}}
+		</code>
+		<a class="fa fa-file-code-o" href="javascript:;" data-xmp="">展开代码</a>
+	</pre>
+</div>
+
+{% endblock %} {% block js %}
+
+<script type="text/javascript">
+	var myLayer;
+
+	function showLayer(i) {
+		var $defer = $.Deferred();
+
+		$defer.then(function () {
+			var placements = ['self', 'parent', 'top'];
+
+			myLayer = $.jkj.pureLayer.loading('开始加载...', placements[Math.floor(Math.random() * 3)]);
+			myLayer.setContent('动效遮罩层' + i);
+			showLayer(++i);
+		}, function () {
+			myLayer.close();
+			showLayer(++i);
+		});
+		if (i % 2 === 1) {
+			setTimeout(function () { $defer.resolve(); }, 1000);
+		}
+		else if(i>16){
+			myLayer.close();
+		}
+		else {
+			setTimeout(function () { $defer.reject(); }, 1000);
+		}
+	}
+	$(function () {
+		showLayer(1);
+	});
+
+</script>
+
+{% endblock %}

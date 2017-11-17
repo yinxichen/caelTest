@@ -1,0 +1,405 @@
+{% extends "../../shared/layout.html" %} {% block title %} {% endblock %} {% block css %}
+<!-- daterange picker -->
+<!-- <link rel="stylesheet" href="{{ path.plugins }}daterangepicker/daterangepicker-bs3.css"> -->
+<link rel="stylesheet" href="{{ path.plugins }}bootstrap-daterangepicker/2.1.25/daterangepicker.css"> {% endblock %} {% block content %}
+<div class="page-container">
+	<div class="page-title">
+		日期选择
+	</div>
+	<div class="page-containers">
+		<div class="form-title">双日期(默认在控件下方，向右展开)</div>
+		<div class="row">
+			<div class="col-xs-4">
+				<input type="text" id="date1" class="form-control" />
+			</div>
+			<div class="col-xs-8">
+			</div>
+		</div>
+		<pre>
+			<code class="language-html">{% set date1Code %}
+				<input type="text" id="date1" class="form-control" />
+				
+				<script>
+					var date1 = $('#date1').jkj('superDateRange', {});
+				</script>
+				{% endset %}   
+				{{ date1Code | escape}}
+			</code>
+			<a class="fa fa-file-code-o" href="javascript:;" data-xmp="">展开代码</a>
+		</pre>
+	</div>
+	<div class="page-containers">
+		<div class="form-title">单日期(默认在控件下方，向右展开)</div>
+		<div class="row">
+			<div class="col-xs-4">
+				<input type="text" id="date6" class="form-control" />
+			</div>
+			<div class="col-xs-8">
+			</div>
+		</div>
+		<pre>
+			<code class="language-html">{% set date6Code %}
+				<input type="text" id="date6" class="form-control" />
+
+				<script>
+					date6 = $('#date6').jkj('superDateRange', {
+						singleDatePicker: true
+					});
+				</script>
+				{% endset %}   
+				{{ date6Code | escape}}
+			</code>
+			<a class="fa fa-file-code-o" href="javascript:;" data-xmp="">展开代码</a>
+		</pre>
+	</div>
+	<div class="page-containers">
+		<div class="form-title">双日期(改为在控件下方，向左展开)</div>
+		<div class="row">
+			<div class="col-xs-8">
+			</div>
+			<div class="col-xs-4">
+				<input type="text" id="date2" class="form-control" />
+			</div>
+		</div>
+		<pre>
+			<code class="language-html">{% set date2Code %}
+				<input type="text" id="date2" class="form-control" />
+
+				<script>
+					date2 = $('#date2').jkj('superDateRange', {
+						opens: 'left'
+					});
+				</script>
+				{% endset %}   
+				{{ date2Code | escape}}
+			</code>
+			<a class="fa fa-file-code-o" href="javascript:;" data-xmp="">展开代码</a>
+		</pre>
+	</div>
+	<div class="page-containers">
+		<div class="form-title">双日期(设默认值)</div>
+		<div class="row">
+			<div class="col-xs-12">
+				<input type="text" id="date3" class="form-control" />
+			</div>
+		</div>
+		<pre>
+			<code class="language-html">{% set date3Code %}
+				<input type="text" id="date3" class="form-control" />
+				
+				<script>
+					var startDate = '2017-02-19';
+					var endDate = '2017-02-26';
+					var date3 = $('#date3').jkj('superDateRange', {
+						startDate: startDate,
+						endDate: endDate,
+						enableDefaultValues: true
+					});	
+				</script>
+				{% endset %}   
+				{{ date3Code | escape}}
+			</code>
+			<a class="fa fa-file-code-o" href="javascript:;" data-xmp="">展开代码</a>
+		</pre>
+	</div>
+	<div class="page-containers">
+		<div class="form-title">双日期(辅助范围选择)</div>
+		<div class="row">
+			<div class="col-xs-12">
+				<input type="text" id="date4" class="form-control" />
+			</div>
+		</div>
+		<pre>
+			<code class="language-html">{% set date4Code %}
+				<input type="text" id="date4" class="form-control" />
+
+				<script>
+					var date4 = $('#date4').jkj('superDateRange', {
+						enableDefaultRanges: true
+					});
+				</script>
+				{% endset %}   
+				{{ date4Code | escape}}
+			</code>
+			<a class="fa fa-file-code-o" href="javascript:;" data-xmp="">展开代码</a>
+		</pre>
+	</div>
+	<div class="page-containers">
+		<div class="form-title">双日期(显示时分)</div>
+		<div class="row">
+			<div class="col-xs-12">
+				<input type="text" name="date5" class="form-control" />
+			</div>
+		</div>
+		<pre>
+			<code class="language-html">{% set date5Code %}
+				<input type="text" name="date5" class="form-control" />
+
+				<script>
+					var date5 = $('input[name="date5"]').jkj('superDateRange', {
+						locale: {
+							format: 'YYYY-MM-DD HH:mm:ss'
+						},
+						timePicker: true
+					});
+				</script>
+				{% endset %}   
+				{{ date5Code | escape}}
+			</code>
+			<a class="fa fa-file-code-o" href="javascript:;" data-xmp="">展开代码</a>
+		</pre>
+	</div>
+	<div class="page-containers">
+		<div class="form-title">双日期(显示周)</div>
+		<div class="row">
+			<div class="col-xs-12">
+				<input type="text" id="date7" class="form-control" />
+			</div>
+		</div>
+		<pre>
+			<code class="language-html">{% set date7Code %}
+					<input type="text" id="date7" class="form-control" />
+					
+					<script>
+						var date7 = $('#date7').jkj('superDateRange', {
+							showISOWeekNumbers: true
+						});
+					</script>
+				{% endset %}   
+				{{ date7Code | escape}}
+			</code>
+			<a class="fa fa-file-code-o" href="javascript:;" data-xmp="">展开代码</a>
+		</pre>
+	</div>
+	<div class="page-containers">
+		<div class="form-title">
+			日期选择配置参数
+		</div>
+		<pre>
+			<code class="language-html">{% set settingCode %}
+				<script>
+					// 默认配置信息
+					defaults: {
+						// 本地化
+						locale: {
+							// 文本方向
+							direction: 'ltr',
+							// 格式化。常用格式YYYYYY-MM-DD[T]HH:mm:ss.SSS[Z]
+							format: 'YYYY-MM-DD',
+							// 双日期之间的间隔
+							separator: ' 至 ',
+							// 选择按钮标签
+							applyLabel: '选择',
+							// 清除按钮标签
+							cancelLabel: '清除',
+							// 周标签
+							weekLabel: '周',
+							// 自定义范围标签
+							customRangeLabel: '自定义范围',
+							// 星期本地化
+							daysOfWeek: ["日", "一", "二", "三", "四", "五", "六"],
+							// 月份本地化
+							monthNames: ["一月", "二月", "三月", "四月", "五月", "六月", "七月", "八月", "九月", "十月", "十一月", "十二月"],
+							// 每周是从周几开始
+							firstDay: 1
+						},
+						// 开始日期，默认今天，类型 Date，moment实例，字符串
+						startDate: false,
+						// 结束日期，默认今天，类型 Date，moment实例，字符串
+						endDate: false,
+						// 是否启用默认值
+						enableDefaultValues: false,
+						// 是否启用手动输入功能
+						enableInput: false,
+						// 隐藏控件元素名称。默认双日期选择，用字符串数组；单日期时无效
+						hiddenNames: ['beginDate', 'endDate'],
+						// 最小日期。默认向后50年，类型 Date，moment实例，字符串
+						minDate: false,
+						// 最大日期。默认向前50年，类型 Date，moment实例，字符串
+						maxDate: false,
+						// 选择范围，选择开始日期后可以选择的结束日期间隔天数
+						dateLimit: false,
+						// 年、月选择是否改为下拉列表
+						showDropdowns: true,
+						// 每周前面是否显示周数
+						showWeekNumbers: false,
+						// 每周前面是否显示ISO周数
+						showISOWeekNumbers: false,
+						// 是否显示时、分选择
+						timePicker: false,
+						// 是否启用24小时制
+						timePicker24Hour: true,
+						// 分钟选择增长量
+						timePickerIncrement: 5,
+						// 是否显示秒
+						timePickerSeconds: false,
+						/** 预定义范围选择
+						 * 默认：
+						 * {
+						 *		'今天': [
+						 *			moment().startOf('day'),
+						*			moment().endOf('day')
+						*		],
+						*		'昨天': [
+						*			moment().subtract(1, 'days').startOf('day'),
+						*			moment().endOf('day').subtract(1, 'days')
+						*		],
+						*		'最近7天': [
+						*			moment().subtract(6, 'days').startOf('day'),
+						*			moment().endOf('day')
+						*		],
+						*		'最近30天': [
+						*			moment().subtract(29, 'days').startOf('day'),
+						*			moment().endOf('day')
+						*		],
+						*		'当月': [
+						*			moment().startOf('month'),
+						*			moment().endOf('month')
+						*		],
+						*		'上个月': [
+						*			moment().subtract(1, 'month').startOf('month'),
+						*			moment().subtract(1, 'month').endOf('month')
+						*		]
+						* }
+						*/
+						ranges: false,
+						// 是否启用范围选择
+						enableDefaultRanges: false,
+						// 显示自定义范围标签
+						showCustomRangeLabel: false,
+						// 总是显示日历。如果false，在显示范围选择的时候，后隐藏日历
+						alwaysShowCalendars: true,
+						// 展开方向。['left' | 'right' | 'center']
+						opens: 'right',
+						// 显示方向。['down' | 'up']
+						drops: 'down',
+						// 按钮class
+						buttonClasses: ['btn'],
+						// 选择按钮class
+						applyClass: 'btn-primary',
+						// 取消按钮样式
+						cancelClass: 'btn-cancel',
+						// 是否单日期
+						singleDatePicker: false,
+						// 自动选择
+						autoApply: false,
+						// 日历联动。true的话是显示连续月份，false是自由显示
+						linkedCalendars: false,
+						// 自动更新日期输入框。
+						autoUpdateInput: false,
+						// 日期控件插入的容器
+						parentEl: 'body',
+						callback: function (startDate, endDate, chosenLabel) {
+						},
+						applyHanddle: function (e, picker, context) {
+							var strDates = [picker.startDate.format(context.settings.locale.format), picker.endDate.format(context.settings.locale.format)];
+
+							for (x in context.hiddenIds) {
+								$('#' + context.hiddenIds[x]).val(strDates[x]);
+							}
+							if (context.settings.singleDatePicker) {
+								$(this).val(strDates[0]);
+							}
+							else {
+								$(this).val(strDates.join(' ' + context.settings.locale.separator + ' '));
+							}
+						},
+						cancelHanddle: function (e, picker, context) {
+							$(this).val('');
+							for (x in context.hiddenIds) {
+								$('#' + context.hiddenIds[x]).val('');
+							}
+						},
+						// 模板
+						templates: {
+							hidden: function (id, name) {
+								return '<input type="hidden" id="' + id + '" name="' + name + '" value="">';
+							}
+						}
+					}
+				</script>
+				{% endset %}   
+				{{ settingCode | escape}}
+			</code>
+			<a class="fa fa-file-code-o" href="javascript:;" data-xmp="">展开代码</a>
+		</pre>
+	</div>
+	<div class="page-containers">
+		<div class="form-title">
+			老版本日期选择
+		</div>
+		<pre>
+			<code class="language-html">{% set historyCode %}
+				<div class="search-area">
+					<div class="search-group">
+						<label>出口日期：</label>
+						<input type="text" class="form-control" id="reservation">
+					</div>
+				</div>
+				<script>
+					$(function () {
+						var startDate = '2017-02-19';
+						var endDate = '2017-02-26';
+						$.jkj.daterangepicker('#reservation', {
+							startDate: startDate,
+							endDate: endDate,
+							//timePicker: true,
+							//timePickerIncrement : 5,
+							//timePicker12Hour : false,
+							//format : 'YYYY-MM-DD HH:mm',
+							//startElementName: 'createdAtBegin',
+							//endElementName:'createdAtEnd'
+						});
+						//$('#reservation').clearDate();
+					});
+				</script>
+				{% endset %}   
+				{{ historyCode | escape}}
+			</code>
+			<a class="fa fa-file-code-o" href="javascript:;" data-xmp="">展开代码</a>
+		</pre>
+	</div>
+</div>
+
+{% endblock %} {% block js %}
+<!-- date-range-picker -->{{ path.plugins }}
+<script src="{{ path.plugins }}bootstrap-daterangepicker/2.1.25/moment.js"></script>
+<script src="{{ path.plugins }}bootstrap-daterangepicker/2.1.25/daterangepicker.js"></script>
+<!-- <script src="{{ path.plugins }}daterangepicker/moment.js"></script>
+<script src="{{ path.plugins }}daterangepicker/daterangepicker.js"></script> -->
+
+
+<script type="text/javascript">
+	var date1, date2, date3, date4, date5, date6, date7;
+	$(function () {
+		var startDate = '2017-02-19';
+		var endDate = '2017-02-26';
+
+		date1 = $('#date1').jkj('superDateRange', {});
+		date2 = $('#date2').jkj('superDateRange', {
+			opens: 'left'
+		});
+		date3 = $('#date3').jkj('superDateRange', {
+			startDate: startDate,
+			endDate: endDate,
+			enableDefaultValues: true
+		});
+		date4 = $('#date4').jkj('superDateRange', {
+			enableDefaultRanges: true
+		});
+		date5 = $('input[name="date5"]').jkj('superDateRange', {
+			locale: {
+				format: 'YYYY-MM-DD HH:mm:ss'
+			},
+			timePicker: true
+		});
+		date6 = $('#date6').jkj('superDateRange', {
+			singleDatePicker: true
+		});
+		date7 = $('#date7').jkj('superDateRange', {
+			showISOWeekNumbers: true
+		});
+	});
+
+</script>
+{% endblock %}

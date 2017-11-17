@@ -1,0 +1,184 @@
+{% extends "../../shared/layout.html" %} {% block title %} {% endblock %} {% block css %}
+<style>
+	.table>tbody>tr>th {
+		vertical-align: middle;
+	}
+</style>
+{% endblock %} {% block content%}
+<div class="page-containers">
+	<div class="form-title">
+		辅助输入
+	</div>
+	<div id="beautifyInput">
+		<div class="row margin-top-30">
+			<div class="col-xs-6">
+				<div class="row-void row-form">
+					<div class="col-xs-4 text-right">金额：</div>
+					<div class="col-xs-8">
+						<input type="text" name="amount" data-beautify-models="money" class="form-control beautify-input" />
+					</div>
+				</div>
+			</div>
+			<div class="col-xs-6">
+				<div class="row-void row-form">
+					<div class="col-xs-4 text-right">汇率：</div>
+					<div class="col-xs-8">
+						<input type="text" name="rate" data-beautify-models="rate" class="form-control required beautify-input" />
+					</div>
+				</div>
+			</div>
+			<div class="col-xs-6">
+				<div class="row-void row-form">
+					<div class="col-xs-4 text-right">数值：</div>
+					<div class="col-xs-8">
+						<input type="text" name="number" data-beautify-models="{number:{scale:5, enablePopover: true}}" class="form-control required beautify-input"/>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<pre>
+		<code class="language-html">{% set beautifyInputCode %}
+			<div id="beautifyInput">
+				<div class="row margin-top-30">
+					<div class="col-xs-6">
+						<div class="row-void row-form">
+							<div class="col-xs-4 text-right">金额：</div>
+							<div class="col-xs-8">
+								<input type="text" name="amount" data-beautify-models="money" class="form-control beautify-input" />
+							</div>
+						</div>
+					</div>
+					<div class="col-xs-6">
+						<div class="row-void row-form">
+							<div class="col-xs-4 text-right">汇率：</div>
+							<div class="col-xs-8">
+								<input type="text" name="rate" data-beautify-models="rate" class="form-control required beautify-input" />
+							</div>
+						</div>
+					</div>
+					<div class="col-xs-6">
+						<div class="row-void row-form">
+							<div class="col-xs-4 text-right">数值：</div>
+							<div class="col-xs-8">
+								<input type="text" name="number" data-beautify-models="{number:{scale:5, enablePopover: true}}" class="form-control required beautify-input"
+								/>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<script>
+				$(function () {
+					var beautifyInput;
+					beautifyInput = $('#beautifyInput').jkj('beautifyInput', {
+					});
+				});
+			</script>
+			{% endset %}   
+			{{ beautifyInputCode | escape}}
+		</code>
+		<a class="fa fa-file-code-o" href="javascript:;" data-xmp="">展开代码</a>
+	</pre>
+	<h5>data-beautify-models配置参数</h5>
+	<span class="red">*</span> 1. data-beautify-models='money' 无特殊配置，多个用“,”间隔
+	<span class="red">*</span> 2. data-beautify-models='{money:{hasMinus: true}}' 有特殊配置
+	<table class="table table-bordered">
+		<tr>
+			<th rowspan="19">data-beautify-models</th>
+			<th rowspan="7">number</th>
+			<td>hasMinus: true</td>
+			<td>是否有负号，默认为true</td>
+		</tr>
+		<tr>
+			<td>roundingMode: 'round'</td>
+			<td>round(四舍五入)，floor(下舍入)，ceil(上舍入)，bank(银行家舍入)，默认为'round'</td>
+		</tr>
+		<tr>
+			<td>scale: 2</td>
+			<td>精度</td>
+		</tr>
+		<tr>
+			<td>thousands: ','</td>
+			<td>千分位</td>
+		</tr>
+		<tr>
+			<td>enablePopover: false</td>
+			<td>启用弹出框</td>
+		</tr>
+		<tr>
+			<td>displayModel: ['number']</td>
+			<td>显示模式，可以多个组合显示，按数组顺序自上而下显示，['number','chinese','english']</td>
+		</tr>
+		<tr>
+			<td>popover: {}</td>
+			<td>popover弹出框参数集，同Bootstrap弹出框（Popover）插件</td>
+		</tr>
+		<tr>
+			<th rowspan="7">money</th>
+			<td>hasMinus: true</td>
+			<td>是否有负号，默认为true</td>
+		</tr>
+		<tr>
+			<td>roundingMode: 'round'</td>
+			<td>round(四舍五入)，floor(下舍入)，ceil(上舍入)，bank(银行家舍入)，默认为'round'</td>
+		</tr>
+		<tr>
+			<td>scale: 2</td>
+			<td>精度</td>
+		</tr>
+		<tr>
+			<td>thousands: ','</td>
+			<td>千分位</td>
+		</tr>
+		<tr>
+			<td>enablePopover: true</td>
+			<td>启用弹出框</td>
+		</tr>
+		<tr>
+			<td>displayModel: ['number']</td>
+			<td>显示模式，可以多个组合显示，启用弹出框位true时有效，按数组顺序自上而下显示['number','chinese','english']</td>
+		</tr>
+		<tr>
+			<td>popover: {}</td>
+			<td>ppopover弹出框参数集，启用弹出框位true时有效，同Bootstrap弹出框（Popover）插件</td>
+		</tr>
+		<tr>
+			<th rowspan="5">rate</th>
+			<td>roundingMode: 'round'</td>
+			<td>round(四舍五入)，floor(下舍入)，ceil(上舍入)，bank(银行家舍入)</td>
+		</tr>
+		<tr>
+			<td>scale: 4</td>
+			<td>精度</td>
+		</tr>
+		<tr>
+			<td>enablePopover: false</td>
+			<td>启用弹出框</td>
+		</tr>
+		<tr>
+			<td>displayModel: ['number']</td>
+			<td>显示模式，可以多个组合显示，启用弹出框位true时有效，按数组顺序自上而下显示['number','chinese','english']</td>
+		</tr>
+		<tr>
+			<td>popover: {}</td>
+			<td>popover弹出框参数集，启用弹出框位true时有效，同Bootstrap弹出框（Popover）插件</td>
+		</tr>
+
+	</table>
+</div>
+
+{% endblock %} {% block js %}
+<script src="{{ path.plugins }}jquery-validation/jquery.validate.js"></script>
+<script src="{{ path.plugins }}jquery-validation/additional-methods.js"></script>
+<script src="{{ path.plugins }}jquery-validation/messages_zh.js"></script>
+<!-- page script -->
+<script>
+	$(function () {
+		var beautifyInput;
+		beautifyInput = $('#beautifyInput').jkj('beautifyInput', {
+		});
+	});
+
+</script> {% endblock %}

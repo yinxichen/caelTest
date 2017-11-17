@@ -1,0 +1,523 @@
+{% extends "../shared/layout.html" %} {% block title %}示例展示{% endblock %} {% block css %} {% endblock %} {% block content
+%}
+<!--代码开始-->
+<div class="page-title">详情展示布局</div>
+<div class="page-containers">
+	<div class="form-title">展示内容少时，大屏一行显示4条，小屏显示3条</div>
+	<div class="row">
+		<div class="col-lg-3 col-xs-4 row-void">
+			<div class="col-xs-4 text-right">
+				帐号名：
+			</div>
+			<div class="col-xs-8">
+				abc123465@qq.com
+			</div>
+		</div>
+		<div class="col-lg-3 col-xs-4 row-void">
+			<div class="col-xs-4 text-right">
+				性别：
+			</div>
+			<div class="col-xs-8">
+				男
+			</div>
+		</div>
+		<div class="col-lg-3 col-xs-4 row-void">
+			<div class="col-xs-4 text-right">
+				年龄：
+			</div>
+			<div class="col-xs-8">
+				23
+			</div>
+		</div>
+		<div class="col-lg-3 col-xs-4 row-void">
+			<div class="col-xs-4 text-right">
+				岗位：
+			</div>
+			<div class="col-xs-8">
+				销售顾问
+			</div>
+		</div>
+		<div class="col-lg-3 col-xs-4 row-void">
+			<div class="col-xs-4 text-right">
+				入职时间：
+			</div>
+			<div class="col-xs-8">
+				2016-10-10
+			</div>
+		</div>
+		<div class="col-lg-3 col-xs-4 row-void">
+			<div class="col-xs-4 text-right">
+				个性签名：
+			</div>
+			<div class="col-xs-8">
+				技术只有起点，创新没有终点
+			</div>
+		</div>
+	</div>
+	<pre>
+		<code class="language-html">
+			{% set layout1Code %}
+			<div class="row">
+				<div class="col-lg-3 col-xs-4 row-void">
+					<div class="col-xs-4 text-right">
+						帐号名：
+					</div>
+					<div class="col-xs-8">
+						abc123465@qq.com
+					</div>
+				</div>
+				<div class="col-lg-3 col-xs-4 row-void">
+					<div class="col-xs-4 text-right">
+						性别：
+					</div>
+					<div class="col-xs-8">
+						男
+					</div>
+				</div>
+				<div class="col-lg-3 col-xs-4 row-void">
+					<div class="col-xs-4 text-right">
+						年龄：
+					</div>
+					<div class="col-xs-8">
+						23
+					</div>
+				</div>
+				<div class="col-lg-3 col-xs-4 row-void">
+					<div class="col-xs-4 text-right">
+						岗位：
+					</div>
+					<div class="col-xs-8">
+						销售顾问
+					</div>
+				</div>
+				<div class="col-lg-3 col-xs-4 row-void">
+					<div class="col-xs-4 text-right">
+						入职时间：
+					</div>
+					<div class="col-xs-8">
+						2016-10-10
+					</div>
+				</div>
+				<div class="col-lg-3 col-xs-4 row-void">
+					<div class="col-xs-4 text-right">
+						个性签名：
+					</div>
+					<div class="col-xs-8">
+						技术只有起点，创新没有终点
+					</div>
+				</div>
+			</div>
+			{% endset %}   
+			{{ layout1Code | escape}}
+		</code>
+		<a class="fa fa-file-code-o" href="javascript:;" data-xmp="">展开代码</a>
+	</pre>
+</div>
+<div class="page-containers">
+	<div class="form-title"><span class="red">*</span> 正常情况，大屏一行显示3条，小屏显示2条</div>
+	<div class="row">
+		<div class="col-lg-4 col-xs-6 row-void">
+			<div class="col-xs-4 text-right">
+				物流供应商：
+			</div>
+			<div class="col-xs-8">
+				江苏航威云物流股份有限公司
+			</div>
+		</div>
+		<div class="col-lg-4 col-xs-6 row-void">
+			<div class="col-xs-4 text-right">
+				账单月份：
+			</div>
+			<div class="col-xs-8">
+				2017-10
+			</div>
+		</div>
+		<div class="col-lg-4 col-xs-6 row-void">
+			<div class="col-xs-4 text-right">
+				物流专员：
+			</div>
+			<div class="col-xs-8">
+				卞智伟
+			</div>
+		</div>
+		<div class="col-lg-4 col-xs-6 row-void">
+			<div class="col-xs-4 text-right">
+				总成本：
+			</div>
+			<div class="col-xs-8">
+				0.00 CNY
+			</div>
+		</div>
+		<div class="col-lg-4 col-xs-6 row-void">
+			<div class="col-xs-4 text-right">
+				总报价：
+			</div>
+			<div class="col-xs-8">
+				0.00 CNY
+			</div>
+		</div>
+		<div class="col-lg-4 col-xs-6 row-void">
+			<div class="col-xs-4 text-right">
+				总利润：
+			</div>
+			<div class="col-xs-8">
+				0.00 CNY
+			</div>
+		</div>
+	</div>
+	<pre>
+		<code class="language-html">
+			{% set layout2Code %}
+			<div class="row">
+				<div class="col-lg-4 col-xs-6 row-void">
+					<div class="col-xs-4 text-right">
+						物流供应商：
+					</div>
+					<div class="col-xs-8">
+						江苏航威云物流股份有限公司
+					</div>
+				</div>
+				<div class="col-lg-4 col-xs-6 row-void">
+					<div class="col-xs-4 text-right">
+						账单月份：
+					</div>
+					<div class="col-xs-8">
+						2017-10
+					</div>
+				</div>
+				<div class="col-lg-4 col-xs-6 row-void">
+					<div class="col-xs-4 text-right">
+						物流专员：
+					</div>
+					<div class="col-xs-8">
+						卞智伟
+					</div>
+				</div>
+				<div class="col-lg-4 col-xs-6 row-void">
+					<div class="col-xs-4 text-right">
+						总成本：
+					</div>
+					<div class="col-xs-8">
+						0.00 CNY
+					</div>
+				</div>
+				<div class="col-lg-4 col-xs-6 row-void">
+					<div class="col-xs-4 text-right">
+						总报价：
+					</div>
+					<div class="col-xs-8">
+						0.00 CNY
+					</div>
+				</div>
+				<div class="col-lg-4 col-xs-6 row-void">
+					<div class="col-xs-4 text-right">
+						总利润：
+					</div>
+					<div class="col-xs-8">
+						0.00 CNY
+					</div>
+				</div>
+			</div>
+			{% endset %}   
+			{{ layout2Code | escape}}
+		</code>
+		<a class="fa fa-file-code-o" href="javascript:;" data-xmp="">展开代码</a>
+	</pre>
+</div>
+<div class="page-containers">
+	<div class="form-title">展示内容多时，一行显示2条</div>
+	<div class="row">
+		<div class="col-xs-6 row-void">
+			<div class="col-xs-2 text-right">
+				公司名称：
+			</div>
+			<div class="col-xs-10">
+				江苏跨境电子商务服务有限公司
+			</div>
+		</div>
+		<div class="col-xs-6 row-void">
+			<div class="col-xs-2 text-right">
+				公司地址：
+			</div>
+			<div class="col-xs-10">
+				中国江苏省南京市栖霞区马群大道10号三宝科技园区
+			</div>
+		</div>
+		<div class="col-xs-6 row-void">
+			<div class="col-xs-2 text-right">
+				帐号名：
+			</div>
+			<div class="col-xs-10">
+				abc123465@qq.com
+			</div>
+		</div>
+		<div class="col-xs-6 row-void">
+			<div class="col-xs-2 text-right">
+				个性签名：
+			</div>
+			<div class="col-xs-10">
+				技术只有起点，创新没有终点
+			</div>
+		</div>
+	</div>
+	<pre>
+		<code class="language-html">
+			{% set layout3Code %}
+			<div class="row">
+				<div class="col-xs-6 row-void">
+					<div class="col-xs-2 text-right">
+						公司名称：
+					</div>
+					<div class="col-xs-10">
+						江苏跨境电子商务服务有限公司
+					</div>
+				</div>
+				<div class="col-xs-6 row-void">
+					<div class="col-xs-2 text-right">
+						公司地址：
+					</div>
+					<div class="col-xs-10">
+						中国江苏省南京市栖霞区马群大道10号三宝科技园区
+					</div>
+				</div>
+				<div class="col-xs-6 row-void">
+					<div class="col-xs-2 text-right">
+						帐号名：
+					</div>
+					<div class="col-xs-10">
+						abc123465@qq.com
+					</div>
+				</div>
+				<div class="col-xs-6 row-void">
+					<div class="col-xs-2 text-right">
+						个性签名：
+					</div>
+					<div class="col-xs-10">
+						技术只有起点，创新没有终点
+					</div>
+				</div>
+			</div>
+			{% endset %}   
+			{{ layout3Code | escape}}
+		</code>
+		<a class="fa fa-file-code-o" href="javascript:;" data-xmp="">展开代码</a>
+	</pre>
+</div>
+
+<!--代码结束-->
+
+<!--代码开始-->
+<h4>新增编辑展示布局:</h4>
+<div class="page-containers">
+	<div class="form-title">展示内容少时，大屏一行显示4条，小屏显示3条</div>
+	<div class="row">
+		<div class="col-lg-3 col-xs-4 row-void row-form">
+			<div class="col-xs-4 text-right">
+				帐号名：
+			</div>
+			<div class="col-xs-8">
+				<input type="text" class="form-control" name="" id="" value="abc123465@qq.com" />
+			</div>
+		</div>
+		<div class="col-lg-3 col-xs-4 row-void row-form">
+			<div class="col-xs-4 text-right">
+				性别：
+			</div>
+			<div class="col-xs-8">
+				<label>
+					<input class="minimal" type="radio" name="sex" id="" value="" checked="checked" /> 男</label>
+				<label>
+					<input class="minimal" type="radio" name="sex" id="" value="" /> 女</label>
+			</div>
+		</div>
+		<div class="col-lg-3 col-xs-4 row-void row-form">
+			<div class="col-xs-4 text-right">
+				年龄：
+			</div>
+			<div class="col-xs-8">
+				<input type="text" class="form-control" name="" id="" value="23" />
+			</div>
+		</div>
+		<div class="col-lg-3 col-xs-4 row-void row-form">
+			<div class="col-xs-4 text-right">
+				岗位：
+			</div>
+			<div class="col-xs-8">
+				<select class="form-control">
+					<option selected="selected">销售总监</option>
+					<option>客户经理</option>
+					<option>渠道经理</option>
+					<option>人事主管</option>
+					<option>产品经理</option>
+					<option>java开发工程师</option>
+					<option>财务人员</option>
+				</select>
+			</div>
+		</div>
+		<div class="col-lg-3 col-xs-4 row-void row-form">
+			<div class="col-xs-4 text-right">
+				入职时间：
+			</div>
+			<div class="col-xs-8">
+				<input type="text" class="form-control" id="datepicker">
+			</div>
+		</div>
+		<div class="col-lg-3 col-xs-4 row-void row-form">
+			<div class="col-xs-4 text-right">
+				个性签名：
+			</div>
+			<div class="col-xs-8">
+				<input class="form-control" type="text" name="" id="" value="技术只有起点，创新没有终点" />
+			</div>
+		</div>
+	</div>
+	<pre>
+		<code class="language-html">{% set layout4Code %}
+			<div class="row">
+				<div class="col-lg-3 col-xs-4 row-void row-form">
+					<div class="col-xs-4 text-right">
+						帐号名：
+					</div>
+					<div class="col-xs-8">
+						<input type="text" class="form-control" name="" id="" value="abc123465@qq.com" />
+					</div>
+				</div>
+				<div class="col-lg-3 col-xs-4 row-void row-form">
+					<div class="col-xs-4 text-right">
+						性别：
+					</div>
+					<div class="col-xs-8">
+						<label>
+							<input class="minimal" type="radio" name="sex" id="" value="" checked="checked" /> 男</label>
+						<label>
+							<input class="minimal" type="radio" name="sex" id="" value="" /> 女</label>
+					</div>
+				</div>
+				<div class="col-lg-3 col-xs-4 row-void row-form">
+					<div class="col-xs-4 text-right">
+						年龄：
+					</div>
+					<div class="col-xs-8">
+						<input type="text" class="form-control" name="" id="" value="23" />
+					</div>
+				</div>
+				<div class="col-lg-3 col-xs-4 row-void row-form">
+					<div class="col-xs-4 text-right">
+						岗位：
+					</div>
+					<div class="col-xs-8">
+						<select class="form-control">
+							<option selected="selected">销售总监</option>
+							<option>客户经理</option>
+							<option>渠道经理</option>
+							<option>人事主管</option>
+							<option>产品经理</option>
+							<option>java开发工程师</option>
+							<option>财务人员</option>
+						</select>
+					</div>
+				</div>
+				<div class="col-lg-3 col-xs-4 row-void row-form">
+					<div class="col-xs-4 text-right">
+						入职时间：
+					</div>
+					<div class="col-xs-8">
+						<input type="text" class="form-control" id="datepicker">
+					</div>
+				</div>
+				<div class="col-lg-3 col-xs-4 row-void row-form">
+					<div class="col-xs-4 text-right">
+						个性签名：
+					</div>
+					<div class="col-xs-8">
+						<input class="form-control" type="text" name="" id="" value="技术只有起点，创新没有终点" />
+					</div>
+				</div>
+			</div>
+			{% endset %}   
+			{{ layout4Code | escape}}
+		</code>
+		<a class="fa fa-file-code-o" href="javascript:;" data-xmp="">展开代码</a>
+	</pre>
+</div>
+<div class="page-containers">
+	<div class="form-title">展示内容多时，一行显示2条</div>
+	<div class="row">
+		<div class="col-xs-6 row-void row-form">
+			<div class="col-xs-2 text-right">
+				公司名称：
+			</div>
+			<div class="col-xs-10">
+				<input type="text" class="form-control" name="" id="" value="江苏跨境电子商务服务有限公司" />
+			</div>
+		</div>
+		<div class="col-xs-6 row-void row-form">
+			<div class="col-xs-2 text-right">
+				公司地址：
+			</div>
+			<div class="col-xs-10">
+				<input type="text" class="form-control" name="" id="" value="中国江苏省南京市栖霞区马群大道10号三宝科技园区" />
+			</div>
+		</div>
+		<div class="col-xs-6 row-void row-form">
+			<div class="col-xs-2 text-right">
+				帐号名：
+			</div>
+			<div class="col-xs-10">
+				<input type="text" class="form-control" name="" id="" value="abc123465@qq.com" />
+			</div>
+		</div>
+		<div class="col-xs-6 row-void row-form">
+			<div class="col-xs-2 text-right">
+				个性签名：
+			</div>
+			<div class="col-xs-10">
+				<input type="text" class="form-control" name="" id="" value="技术只有起点，创新没有终点" />
+			</div>
+		</div>
+	</div>
+	<pre>
+		<code class="language-html">{% set layout4Code %}
+			<div class="row">
+				<div class="col-xs-6 row-void row-form">
+					<div class="col-xs-2 text-right">
+						公司名称：
+					</div>
+					<div class="col-xs-10">
+						<input type="text" class="form-control" name="" id="" value="江苏跨境电子商务服务有限公司" />
+					</div>
+				</div>
+				<div class="col-xs-6 row-void row-form">
+					<div class="col-xs-2 text-right">
+						公司地址：
+					</div>
+					<div class="col-xs-10">
+						<input type="text" class="form-control" name="" id="" value="中国江苏省南京市栖霞区马群大道10号三宝科技园区" />
+					</div>
+				</div>
+				<div class="col-xs-6 row-void row-form">
+					<div class="col-xs-2 text-right">
+						帐号名：
+					</div>
+					<div class="col-xs-10">
+						<input type="text" class="form-control" name="" id="" value="abc123465@qq.com" />
+					</div>
+				</div>
+				<div class="col-xs-6 row-void row-form">
+					<div class="col-xs-2 text-right">
+						个性签名：
+					</div>
+					<div class="col-xs-10">
+						<input type="text" class="form-control" name="" id="" value="技术只有起点，创新没有终点" />
+					</div>
+				</div>
+			</div>
+			{% endset %}   
+			{{ layout4Code | escape}}
+		</code>
+		<a class="fa fa-file-code-o" href="javascript:;" data-xmp="">展开代码</a>
+	</pre>
+</div>
+
+<!--代码结束-->
+{% endblock %} {% block js %} {% endblock %}

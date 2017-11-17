@@ -1,0 +1,68 @@
+{% extends "../shared/layout.html" %} {% block title %}示例展示{% endblock %} {% block css %}
+{% endblock %} {% block content %}
+<!--代码开始-->
+<div class="page-title">页面标题</div>
+<div class="page-containers" style="padding: 15px;">
+	<div class="page-title">
+		页面标题
+		<div class="page-state">
+			<a>发送成功(<span class="red">0</span>)</a>
+			<a>发送失败(<span class="red">6</span>)</a>
+		</div>
+		<button type="button" class="btn btn-confirm">
+			创建帐号
+		</button>
+		<button type="button" class="btn btn-confirm">
+			新建订单
+		</button>
+	</div>
+	<pre>
+		<code class="language-html">{% set titleCode %}
+			//页面标题
+			<div class="page-containers">
+				<div class="page-title">
+					帐号管理
+					<div class="page-state">
+						<a>发送成功(<span class="red">0</span>)</a>
+						<a>发送失败(<span class="red">6</span>)</a>
+					</div>
+					<button type="button" class="btn btn-confirm">
+					创建帐号
+				</button>
+				</div>
+			</div>
+			{% endset %}   
+			{{ titleCode | escape}}
+		</code>
+		<a class="fa fa-file-code-o" href="javascript:;" data-xmp="">展开代码</a>
+	</pre>
+</div>
+
+<!--代码结束-->
+
+
+<!--代码开始-->
+<h3>内页分隔标题:</h3>
+<div class="page-containers">
+	<div class="form-title">
+		收汇与报关方式
+		<label class="right">
+	    	<button type="button" class="btn-edit glyphicon glyphicon-edit">编辑</button>
+	    </label>
+	</div>
+	<pre>
+		<code class="language-html">{% set title2Code %}
+			<div class="form-title">
+				收汇与报关方式
+				<label class="right">
+			    	<button type="button" class="btn-edit glyphicon glyphicon-edit">编辑</button>
+			    </label>
+			</div>
+			{% endset %}   
+			{{ title2Code | escape}}
+		</code>
+		<a class="fa fa-file-code-o" href="javascript:;" data-xmp="">展开代码</a>
+	</pre>
+</div>
+
+{% endblock %} {% block js %} {% endblock %}

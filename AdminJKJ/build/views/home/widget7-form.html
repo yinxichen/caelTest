@@ -1,0 +1,86 @@
+<!-- tree -->
+<link rel="stylesheet" href="{{ path.plugins }}jstree/themes/default/style.css">
+<style type="text/css">
+	.tree-menu{
+		padding: 10px;
+		border:1px solid #ccc;
+		height: 300px;
+		overflow: auto;
+	}
+</style>
+
+<div class="row">
+	<div class="col-xs-3">
+		<input type="radio" name="setFunction" id="systemFunction" value="" /> <label for="systemFunction">系统功能 </label>
+	</div>
+	<div class="col-xs-3">
+		<input type="radio" name="setFunction" id="customizeFunction" value="" /> <label for="customizeFunction">自定义功能 </label>		
+	</div>
+</div>
+
+<div class="row">
+	<div class="col-xs-6">
+		<div class="tree-menu">
+			<div id="tree" class="tree-demo"> </div>
+		</div>
+	</div>
+	<div class="col-xs-6" style="display: none;">
+		
+	</div>
+	<div class="col-xs-1">
+		
+	</div>
+	<div class="col-xs-5">
+		<div class="tree-menu">
+			<div id="tree_content">
+				
+			</div>
+		</div>
+	</div>
+</div>
+
+	<!-- tree -->
+	<script src="{{ path.plugins }}jstree/jstree.js"></script>
+	<script type="text/javascript">
+		$(function () {
+	        //tree_4 Ajax tree
+            $.jkj.tree("#tree", {
+                plugins: ["search", "wholerow", "checkbox", "types"],
+                core: {
+                    data: {
+                        url: function (e) {
+                            return "{{ path.src }}data/treeAjaxData.json"
+                        },
+                        data: function (e) {
+                            return {
+                                parent: e.id
+                            }
+                        }
+                    }
+                }
+            });
+        
+	        
+	        $("#tree").on('changed.jstree', function (e, data) {
+			    var i, j, _text = [], _id = [], _txt = '';
+			    for(i = 0, j = data.selected.length; i < j; i++) {
+			      _text.push(data.instance.get_node(data.selected[i]).text);
+			      _id.push(data.instance.get_node(data.selected[i]).id);
+			    }
+			    for(var m = 0; m < _text.length; m++){
+			    	//debugger;
+			    	_txt += '<div id = "tree-' + _id[m] +'" onclick="alt()">' + _text[m] + '</div>';
+			    }
+			    
+			    $('#tree_content').html(_txt);
+			    //$('#tree_content').html('Text: ' + _text.join(', '));
+			    $('#tree_content').append("<div> Id:"  + _id.join(', ') + "</div>");
+			  });
+			  
+			  function alt(){
+		 		alert(11)
+		 		var instance = $('#tree').jstree(true);
+			    instance.select_node('4');
+		 	}
+	 	});
+	</script>

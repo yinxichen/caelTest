@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<!-- Meta, title, CSS, favicons, etc. -->
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=9">
+		<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=0.5, maximum-scale=2, user-scalable=yes">
+		<meta name="keywords" content="HTML，CSS，JS，JavaScript，framework，bootstrap，front-end，web development，江苏跨境">
+		<meta name="description" content="江苏跨境电子商务服务有限公司">
+		<meta name="author" content="潘明星，尹喜晨">
+		<title></title>
+		<!-- Bootstrap 3.3.6 -->
+		<link rel="stylesheet" href="/src/css/bootstrap.css">
+		<!-- Font Awesome -->
+		<link rel="stylesheet" href="/src/css/font-awesome.css">
+		<!-- Ionicons -->
+		<link rel="stylesheet" href="/src/css/ionicons.css">
+		<!-- prism precode -->
+		<link rel="stylesheet" href="/plugins/prism/prism.css">
+		<!-- AdminJKJ style -->
+		<link rel="stylesheet" href="/src/css/adminjkj-1.0.323.css">
+		<link rel="stylesheet" href="/src/css/adminjkj-themes-1.0.0.css">
+		<!--子页面样式-->
+		
+<!-- Select2 -->
+<link rel="stylesheet" href="/plugins/select2/select2.css"> 
+		
+		<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+		<!--[if lt IE 9]>
+		<script src="/src/js/html5shiv.js"></script>
+		<script src="/src/js/respond.js"></script>
+		<![endif]-->   
+	</head>
+	<body class="" style=" overflow-x: auto;">
+  		<!-- Site wrapper -->
+		<div class=" page-body">
+			<!--子页面内容-->
+			
+<div class="page-container">
+	<div class="page-title">
+		级联选择
+	</div>
+	<div class="page-containers">
+		<div class="form-title">多级联动</div>
+		<div class="row">
+			<div class="col-lg-3 col-xs-4 row-void row-form">
+				<div class="col-xs-4 text-right">
+					一级：
+				</div>
+				<div class="col-xs-8">
+					<select id="select11" name="select11" data-wainSelect-hidden='{id:"hidden11",name:"hidden11"}' class="form-control"></select>
+				</div>
+			</div>
+			<div class="col-lg-3 col-xs-4 row-void row-form">
+				<div class="col-xs-4 text-right">
+					二级：
+				</div>
+				<div class="col-xs-8">
+					<select id="select12" name="select12" class="form-control"></select>
+				</div>
+			</div>
+			<div class="col-lg-3 col-xs-4 row-void row-form">
+				<div class="col-xs-4 text-right">
+					三级：
+				</div>
+				<div class="col-xs-8">
+					<select id="select13" name="select13" class="form-control"></select>
+				</div>
+			</div>
+		</div>
+		<pre>
+			<code class="language-html">   
+				
+				&lt;div class=&quot;row&quot;&gt;
+					&lt;div class=&quot;col-lg-3 col-xs-4 row-void row-form&quot;&gt;
+						&lt;div class=&quot;col-xs-4 text-right&quot;&gt;
+							一级：
+						&lt;/div&gt;
+						&lt;div class=&quot;col-xs-8&quot;&gt;
+							&lt;select id=&quot;select11&quot; name=&quot;select11&quot; data-wainSelect-hidden=&#39;{id:&quot;hidden11&quot;,name:&quot;hidden11&quot;}&#39; class=&quot;form-control&quot;&gt;&lt;/select&gt;
+						&lt;/div&gt;
+					&lt;/div&gt;
+					&lt;div class=&quot;col-lg-3 col-xs-4 row-void row-form&quot;&gt;
+						&lt;div class=&quot;col-xs-4 text-right&quot;&gt;
+							二级：
+						&lt;/div&gt;
+						&lt;div class=&quot;col-xs-8&quot;&gt;
+							&lt;select id=&quot;select12&quot; name=&quot;select12&quot; class=&quot;form-control&quot;&gt;&lt;/select&gt;
+						&lt;/div&gt;
+					&lt;/div&gt;
+					&lt;div class=&quot;col-lg-3 col-xs-4 row-void row-form&quot;&gt;
+						&lt;div class=&quot;col-xs-4 text-right&quot;&gt;
+							三级：
+						&lt;/div&gt;
+						&lt;div class=&quot;col-xs-8&quot;&gt;
+							&lt;select id=&quot;select13&quot; name=&quot;select13&quot; class=&quot;form-control&quot;&gt;&lt;/select&gt;
+						&lt;/div&gt;
+					&lt;/div&gt;
+				&lt;/div&gt;
+				&lt;script&gt;
+					$(function () {
+						$(&#39;#select11, #select12, #select13&#39;).jkj(&#39;wainSelect&#39;, {
+							remote: {
+								url: &#39;/src/data/wainselect.json&#39;
+							}
+						});
+					});
+				&lt;/script&gt;
+				
+			</code>
+			<a class="fa fa-file-code-o" href="javascript:;" data-xmp="">展开代码</a>
+		</pre>
+	</div>
+	<div class="page-containers">
+		<div class="form-title">多级联动带扩展选项</div>
+		<div class="row">
+			<div class="col-lg-3 col-xs-4 row-void row-form">
+				<div class="col-xs-4 text-right">
+					一级：
+				</div>
+				<div class="col-xs-8">
+					<select id="select21" name="select21" data-wainSelect-hidden='{id:"hidden21",name:"hidden21"}' class="form-control"></select>
+				</div>
+			</div>
+			<div class="col-lg-3 col-xs-4 row-void row-form">
+				<div class="col-xs-4 text-right">
+					二级：
+				</div>
+				<div class="col-xs-8">
+					<select id="select22" name="select22" class="form-control"></select>
+				</div>
+			</div>
+			<div class="col-lg-3 col-xs-4 row-void row-form">
+				<div class="col-xs-4 text-right">
+					三级：
+				</div>
+				<div class="col-xs-8">
+					<select id="select23" name="select23" class="form-control"></select>
+				</div>
+			</div>
+		</div>
+		<pre>
+			<code class="language-html">   
+				
+				&lt;div class=&quot;row&quot;&gt;
+					&lt;div class=&quot;col-lg-3 col-xs-4 row-void row-form&quot;&gt;
+						&lt;div class=&quot;col-xs-4 text-right&quot;&gt;
+							一级：
+						&lt;/div&gt;
+						&lt;div class=&quot;col-xs-8&quot;&gt;
+							&lt;select id=&quot;select21&quot; name=&quot;select21&quot; data-wainSelect-hidden=&#39;{id:&quot;hidden21&quot;,name:&quot;hidden21&quot;}&#39; class=&quot;form-control&quot;&gt;&lt;/select&gt;
+						&lt;/div&gt;
+					&lt;/div&gt;
+					&lt;div class=&quot;col-lg-3 col-xs-4 row-void row-form&quot;&gt;
+						&lt;div class=&quot;col-xs-4 text-right&quot;&gt;
+							二级：
+						&lt;/div&gt;
+						&lt;div class=&quot;col-xs-8&quot;&gt;
+							&lt;select id=&quot;select22&quot; name=&quot;select22&quot; class=&quot;form-control&quot;&gt;&lt;/select&gt;
+						&lt;/div&gt;
+					&lt;/div&gt;
+					&lt;div class=&quot;col-lg-3 col-xs-4 row-void row-form&quot;&gt;
+						&lt;div class=&quot;col-xs-4 text-right&quot;&gt;
+							三级：
+						&lt;/div&gt;
+						&lt;div class=&quot;col-xs-8&quot;&gt;
+							&lt;select id=&quot;select23&quot; name=&quot;select23&quot; class=&quot;form-control&quot;&gt;&lt;/select&gt;
+						&lt;/div&gt;
+					&lt;/div&gt;
+				&lt;/div&gt;
+				&lt;script&gt;
+					$(function () {
+						$(&#39;#select21, #select22, #select23&#39;).jkj(&#39;wainSelect&#39;, {
+							alwaysData: { id: 0, text: &#39;请选择&#39; },
+							remote: {
+								url: &#39;/src/data/wainselect.json&#39;
+							}
+						});
+					});
+				&lt;/script&gt;
+				
+			</code>
+			<a class="fa fa-file-code-o" href="javascript:;" data-xmp="">展开代码</a>
+		</pre>
+	</div>
+	<div class="page-containers">
+		<div class="form-title">多级联动带初始值</div>
+		<div class="row">
+			<div class="col-lg-3 col-xs-4 row-void row-form">
+				<div class="col-xs-4 text-right">
+					一级：
+				</div>
+				<div class="col-xs-8">
+					<select id="select31" name="select31" data-wainSelect-hidden='{id:"hidden31",name:"hidden31"}' class="form-control"></select>
+				</div>
+			</div>
+			<div class="col-lg-3 col-xs-4 row-void row-form">
+				<div class="col-xs-4 text-right">
+					二级：
+				</div>
+				<div class="col-xs-8">
+					<select id="select32" name="select32" class="form-control"></select>
+				</div>
+			</div>
+			<div class="col-lg-3 col-xs-4 row-void row-form">
+				<div class="col-xs-4 text-right">
+					三级：
+				</div>
+				<div class="col-xs-8">
+					<select id="select33" name="select33" class="form-control"></select>
+				</div>
+			</div>
+			<div class="col-lg-3 col-xs-4 row-void row-form">
+				<div class="col-xs-4 text-right">
+					四级：
+				</div>
+				<div class="col-xs-8">
+					<select id="select34" name="select34" class="form-control"></select>
+				</div>
+			</div>
+		</div>
+		<pre>
+			<code class="language-html">   
+				
+				&lt;div class=&quot;row&quot;&gt;
+					&lt;div class=&quot;col-lg-3 col-xs-4 row-void row-form&quot;&gt;
+						&lt;div class=&quot;col-xs-4 text-right&quot;&gt;
+							一级：
+						&lt;/div&gt;
+						&lt;div class=&quot;col-xs-8&quot;&gt;
+							&lt;select id=&quot;select31&quot; name=&quot;select31&quot; data-wainSelect-hidden=&#39;{id:&quot;hidden31&quot;,name:&quot;hidden31&quot;}&#39; class=&quot;form-control&quot;&gt;&lt;/select&gt;
+						&lt;/div&gt;
+					&lt;/div&gt;
+					&lt;div class=&quot;col-lg-3 col-xs-4 row-void row-form&quot;&gt;
+						&lt;div class=&quot;col-xs-4 text-right&quot;&gt;
+							二级：
+						&lt;/div&gt;
+						&lt;div class=&quot;col-xs-8&quot;&gt;
+							&lt;select id=&quot;select32&quot; name=&quot;select32&quot; class=&quot;form-control&quot;&gt;&lt;/select&gt;
+						&lt;/div&gt;
+					&lt;/div&gt;
+					&lt;div class=&quot;col-lg-3 col-xs-4 row-void row-form&quot;&gt;
+						&lt;div class=&quot;col-xs-4 text-right&quot;&gt;
+							三级：
+						&lt;/div&gt;
+						&lt;div class=&quot;col-xs-8&quot;&gt;
+							&lt;select id=&quot;select33&quot; name=&quot;select33&quot; class=&quot;form-control&quot;&gt;&lt;/select&gt;
+						&lt;/div&gt;
+					&lt;/div&gt;
+					&lt;div class=&quot;col-lg-3 col-xs-4 row-void row-form&quot;&gt;
+						&lt;div class=&quot;col-xs-4 text-right&quot;&gt;
+							四级：
+						&lt;/div&gt;
+						&lt;div class=&quot;col-xs-8&quot;&gt;
+							&lt;select id=&quot;select34&quot; name=&quot;select34&quot; class=&quot;form-control&quot;&gt;&lt;/select&gt;
+						&lt;/div&gt;
+					&lt;/div&gt;
+				&lt;/div&gt;
+				&lt;script&gt;
+					$(&#39;#select31, #select32, #select33, #select34&#39;).jkj(&#39;wainSelect&#39;, {
+						defaultValues: [&quot;1&quot;, &quot;102&quot;, &quot;10202&quot;, &quot;1020203&quot;],
+						remote: {
+							url: &#39;/src/data/wainselect.json&#39;
+						}
+					});
+				&lt;/script&gt;
+				
+			</code>
+			<a class="fa fa-file-code-o" href="javascript:;" data-xmp="">展开代码</a>
+		</pre>
+	</div>
+	<div class="page-containers">
+		<div class="form-title">
+			级联选择配置参数
+		</div>
+		<pre>
+			<code class="language-html">   
+				
+				&lt;script&gt;
+					// 默认配置信息
+					defaults: {
+						/**
+						 * 列表总是包含的额外数据，可以object或者[object,...]
+						 * object：级联控件每个都包含一样的初始数据
+						 * [object,...]：自定义每个控件包含的初始数据
+						 */
+						alwaysData: null,
+						// 本地数据，{level1:[{id,text}...],level2:{pid:[{id, text},...],...},level3:{pid:[{id, text},...]},...}}
+						data: null,
+						/**
+						 * 初始值，字符串、数字或者数组，数组是自定义每一项的值
+						 */
+						defaultValues: null,
+						// 隐藏控件属性信息定义，data-wainSelect-hidden=&quot;{id: &#39;&#39;, name: &#39;&#39;}&quot;，在select元素上定义，会覆盖hiddenInfos定义
+						wainSelectHidden: &#39;data-wainSelect-hidden&#39;,
+						/**
+						 * 隐藏控件对象数组，[{ id: &#39;&#39;, name: &#39;&#39;},...]
+						 * id：未定义会根据name生成
+						 * name：未定义会根据select生成
+						 */
+						hiddenInfos: [],
+						// 远程配置
+						remote: {
+							// 远程url
+							url: null,
+							// 发送的参数
+							data: null
+						},
+						/**
+						 * select2控件配置定义，可以{options}或者[{options},...]
+						 * {options}：级联控件所有配置一样
+						 * [{options},...]：自定义每个控件配置
+						 */
+						select2Config: {}
+					}
+				&lt;/script&gt;
+				
+			</code>
+			<a class="fa fa-file-code-o" href="javascript:;" data-xmp="">展开代码</a>
+		</pre>
+	</div>
+</div>
+
+		</div>
+		
+		<!-- jquery 2.2.3 -->
+		<script src="/plugins/jquery/jquery-2.2.3.min.js"></script>
+		<!-- Bootstrap 3.3.6 -->
+		<script src="/src/js/bootstrap.js"></script>
+		<!-- SlimScroll -->
+		<script src="/plugins/slimScroll/jquery.slimscroll.min.js"></script>
+		<!-- FastClick -->
+		<script src="/plugins/fastclick/fastclick.js"></script>
+		<!-- Notify -->
+		<script src="/plugins/bootstrap-notify/bootstrap-notify.js"></script>
+		<!-- prism precode -->
+		<script src="/plugins/prism/prism.js"></script>
+
+		<script src="/src/js/adminjkj-1.0.323.js" type="text/javascript"></script>
+		<!--子页面脚本-->
+		
+<!-- Select2 -->
+<script src="/plugins/select2/select2.full.js"></script>
+<script src="/plugins/select2/i18n/zh-CN.js"></script>
+
+<script type="text/javascript">
+	// $('#global_location').cxSelect({
+
+	// 	url: '/src/data/globalData.json',
+
+	// 	selects: ['country', 'state', 'city', 'region'],
+
+	// 	nodata: 'none'
+
+	// });
+
+	$(function () {
+		$('#select11, #select12, #select13').jkj('wainSelect', {
+			remote: {
+				url: '/src/data/wainselect.json'
+			}
+		});
+		$('#select21, #select22, #select23').jkj('wainSelect', {
+			alwaysData: { id: 0, text: '请选择' },
+			remote: {
+				url: '/src/data/wainselect.json'
+			}
+		});
+		$('#select31, #select32, #select33, #select34').jkj('wainSelect', {
+			defaultValues: ["1", "102", "10202", "1020203"],
+			remote: {
+				url: '/src/data/wainselect.json'
+			}
+		});
+	});
+
+</script>
+
+	</body>
+</html>

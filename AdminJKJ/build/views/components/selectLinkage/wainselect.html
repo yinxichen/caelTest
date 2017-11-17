@@ -1,0 +1,325 @@
+{% extends "../../shared/layout.html" %} {% block title %}{% endblock %} {% block css %}
+<!-- Select2 -->
+<link rel="stylesheet" href="{{ path.plugins }}select2/select2.css"> {% endblock %} {% block content %}
+<div class="page-container">
+	<div class="page-title">
+		级联选择
+	</div>
+	<div class="page-containers">
+		<div class="form-title">多级联动</div>
+		<div class="row">
+			<div class="col-lg-3 col-xs-4 row-void row-form">
+				<div class="col-xs-4 text-right">
+					一级：
+				</div>
+				<div class="col-xs-8">
+					<select id="select11" name="select11" data-wainSelect-hidden='{id:"hidden11",name:"hidden11"}' class="form-control"></select>
+				</div>
+			</div>
+			<div class="col-lg-3 col-xs-4 row-void row-form">
+				<div class="col-xs-4 text-right">
+					二级：
+				</div>
+				<div class="col-xs-8">
+					<select id="select12" name="select12" class="form-control"></select>
+				</div>
+			</div>
+			<div class="col-lg-3 col-xs-4 row-void row-form">
+				<div class="col-xs-4 text-right">
+					三级：
+				</div>
+				<div class="col-xs-8">
+					<select id="select13" name="select13" class="form-control"></select>
+				</div>
+			</div>
+		</div>
+		<pre>
+			<code class="language-html">{% set select1Code %}
+				<div class="row">
+					<div class="col-lg-3 col-xs-4 row-void row-form">
+						<div class="col-xs-4 text-right">
+							一级：
+						</div>
+						<div class="col-xs-8">
+							<select id="select11" name="select11" data-wainSelect-hidden='{id:"hidden11",name:"hidden11"}' class="form-control"></select>
+						</div>
+					</div>
+					<div class="col-lg-3 col-xs-4 row-void row-form">
+						<div class="col-xs-4 text-right">
+							二级：
+						</div>
+						<div class="col-xs-8">
+							<select id="select12" name="select12" class="form-control"></select>
+						</div>
+					</div>
+					<div class="col-lg-3 col-xs-4 row-void row-form">
+						<div class="col-xs-4 text-right">
+							三级：
+						</div>
+						<div class="col-xs-8">
+							<select id="select13" name="select13" class="form-control"></select>
+						</div>
+					</div>
+				</div>
+				<script>
+					$(function () {
+						$('#select11, #select12, #select13').jkj('wainSelect', {
+							remote: {
+								url: '{{ path.src }}data/wainselect.json'
+							}
+						});
+					});
+				</script>
+				{% endset %}   
+				{{ select1Code | escape}}
+			</code>
+			<a class="fa fa-file-code-o" href="javascript:;" data-xmp="">展开代码</a>
+		</pre>
+	</div>
+	<div class="page-containers">
+		<div class="form-title">多级联动带扩展选项</div>
+		<div class="row">
+			<div class="col-lg-3 col-xs-4 row-void row-form">
+				<div class="col-xs-4 text-right">
+					一级：
+				</div>
+				<div class="col-xs-8">
+					<select id="select21" name="select21" data-wainSelect-hidden='{id:"hidden21",name:"hidden21"}' class="form-control"></select>
+				</div>
+			</div>
+			<div class="col-lg-3 col-xs-4 row-void row-form">
+				<div class="col-xs-4 text-right">
+					二级：
+				</div>
+				<div class="col-xs-8">
+					<select id="select22" name="select22" class="form-control"></select>
+				</div>
+			</div>
+			<div class="col-lg-3 col-xs-4 row-void row-form">
+				<div class="col-xs-4 text-right">
+					三级：
+				</div>
+				<div class="col-xs-8">
+					<select id="select23" name="select23" class="form-control"></select>
+				</div>
+			</div>
+		</div>
+		<pre>
+			<code class="language-html">{% set select2Code %}
+				<div class="row">
+					<div class="col-lg-3 col-xs-4 row-void row-form">
+						<div class="col-xs-4 text-right">
+							一级：
+						</div>
+						<div class="col-xs-8">
+							<select id="select21" name="select21" data-wainSelect-hidden='{id:"hidden21",name:"hidden21"}' class="form-control"></select>
+						</div>
+					</div>
+					<div class="col-lg-3 col-xs-4 row-void row-form">
+						<div class="col-xs-4 text-right">
+							二级：
+						</div>
+						<div class="col-xs-8">
+							<select id="select22" name="select22" class="form-control"></select>
+						</div>
+					</div>
+					<div class="col-lg-3 col-xs-4 row-void row-form">
+						<div class="col-xs-4 text-right">
+							三级：
+						</div>
+						<div class="col-xs-8">
+							<select id="select23" name="select23" class="form-control"></select>
+						</div>
+					</div>
+				</div>
+				<script>
+					$(function () {
+						$('#select21, #select22, #select23').jkj('wainSelect', {
+							alwaysData: { id: 0, text: '请选择' },
+							remote: {
+								url: '{{ path.src }}data/wainselect.json'
+							}
+						});
+					});
+				</script>
+				{% endset %}   
+				{{ select2Code | escape}}
+			</code>
+			<a class="fa fa-file-code-o" href="javascript:;" data-xmp="">展开代码</a>
+		</pre>
+	</div>
+	<div class="page-containers">
+		<div class="form-title">多级联动带初始值</div>
+		<div class="row">
+			<div class="col-lg-3 col-xs-4 row-void row-form">
+				<div class="col-xs-4 text-right">
+					一级：
+				</div>
+				<div class="col-xs-8">
+					<select id="select31" name="select31" data-wainSelect-hidden='{id:"hidden31",name:"hidden31"}' class="form-control"></select>
+				</div>
+			</div>
+			<div class="col-lg-3 col-xs-4 row-void row-form">
+				<div class="col-xs-4 text-right">
+					二级：
+				</div>
+				<div class="col-xs-8">
+					<select id="select32" name="select32" class="form-control"></select>
+				</div>
+			</div>
+			<div class="col-lg-3 col-xs-4 row-void row-form">
+				<div class="col-xs-4 text-right">
+					三级：
+				</div>
+				<div class="col-xs-8">
+					<select id="select33" name="select33" class="form-control"></select>
+				</div>
+			</div>
+			<div class="col-lg-3 col-xs-4 row-void row-form">
+				<div class="col-xs-4 text-right">
+					四级：
+				</div>
+				<div class="col-xs-8">
+					<select id="select34" name="select34" class="form-control"></select>
+				</div>
+			</div>
+		</div>
+		<pre>
+			<code class="language-html">{% set select3Code %}
+				<div class="row">
+					<div class="col-lg-3 col-xs-4 row-void row-form">
+						<div class="col-xs-4 text-right">
+							一级：
+						</div>
+						<div class="col-xs-8">
+							<select id="select31" name="select31" data-wainSelect-hidden='{id:"hidden31",name:"hidden31"}' class="form-control"></select>
+						</div>
+					</div>
+					<div class="col-lg-3 col-xs-4 row-void row-form">
+						<div class="col-xs-4 text-right">
+							二级：
+						</div>
+						<div class="col-xs-8">
+							<select id="select32" name="select32" class="form-control"></select>
+						</div>
+					</div>
+					<div class="col-lg-3 col-xs-4 row-void row-form">
+						<div class="col-xs-4 text-right">
+							三级：
+						</div>
+						<div class="col-xs-8">
+							<select id="select33" name="select33" class="form-control"></select>
+						</div>
+					</div>
+					<div class="col-lg-3 col-xs-4 row-void row-form">
+						<div class="col-xs-4 text-right">
+							四级：
+						</div>
+						<div class="col-xs-8">
+							<select id="select34" name="select34" class="form-control"></select>
+						</div>
+					</div>
+				</div>
+				<script>
+					$('#select31, #select32, #select33, #select34').jkj('wainSelect', {
+						defaultValues: ["1", "102", "10202", "1020203"],
+						remote: {
+							url: '{{ path.src }}data/wainselect.json'
+						}
+					});
+				</script>
+				{% endset %}   
+				{{ select3Code | escape}}
+			</code>
+			<a class="fa fa-file-code-o" href="javascript:;" data-xmp="">展开代码</a>
+		</pre>
+	</div>
+	<div class="page-containers">
+		<div class="form-title">
+			级联选择配置参数
+		</div>
+		<pre>
+			<code class="language-html">{% set select4Code %}
+				<script>
+					// 默认配置信息
+					defaults: {
+						/**
+						 * 列表总是包含的额外数据，可以object或者[object,...]
+						 * object：级联控件每个都包含一样的初始数据
+						 * [object,...]：自定义每个控件包含的初始数据
+						 */
+						alwaysData: null,
+						// 本地数据，{level1:[{id,text}...],level2:{pid:[{id, text},...],...},level3:{pid:[{id, text},...]},...}}
+						data: null,
+						/**
+						 * 初始值，字符串、数字或者数组，数组是自定义每一项的值
+						 */
+						defaultValues: null,
+						// 隐藏控件属性信息定义，data-wainSelect-hidden="{id: '', name: ''}"，在select元素上定义，会覆盖hiddenInfos定义
+						wainSelectHidden: 'data-wainSelect-hidden',
+						/**
+						 * 隐藏控件对象数组，[{ id: '', name: ''},...]
+						 * id：未定义会根据name生成
+						 * name：未定义会根据select生成
+						 */
+						hiddenInfos: [],
+						// 远程配置
+						remote: {
+							// 远程url
+							url: null,
+							// 发送的参数
+							data: null
+						},
+						/**
+						 * select2控件配置定义，可以{options}或者[{options},...]
+						 * {options}：级联控件所有配置一样
+						 * [{options},...]：自定义每个控件配置
+						 */
+						select2Config: {}
+					}
+				</script>
+				{% endset %}   
+				{{ select4Code | escape}}
+			</code>
+			<a class="fa fa-file-code-o" href="javascript:;" data-xmp="">展开代码</a>
+		</pre>
+	</div>
+</div>
+{% endblock %} {% block js %}
+<!-- Select2 -->
+<script src="{{ path.plugins }}select2/select2.full.js"></script>
+<script src="{{ path.plugins }}select2/i18n/zh-CN.js"></script>
+
+<script type="text/javascript">
+	// $('#global_location').cxSelect({
+
+	// 	url: '{{ path.src }}data/globalData.json',
+
+	// 	selects: ['country', 'state', 'city', 'region'],
+
+	// 	nodata: 'none'
+
+	// });
+
+	$(function () {
+		$('#select11, #select12, #select13').jkj('wainSelect', {
+			remote: {
+				url: '{{ path.src }}data/wainselect.json'
+			}
+		});
+		$('#select21, #select22, #select23').jkj('wainSelect', {
+			alwaysData: { id: 0, text: '请选择' },
+			remote: {
+				url: '{{ path.src }}data/wainselect.json'
+			}
+		});
+		$('#select31, #select32, #select33, #select34').jkj('wainSelect', {
+			defaultValues: ["1", "102", "10202", "1020203"],
+			remote: {
+				url: '{{ path.src }}data/wainselect.json'
+			}
+		});
+	});
+
+</script>
+{% endblock %}

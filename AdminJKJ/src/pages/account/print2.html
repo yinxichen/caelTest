@@ -1,0 +1,781 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<!-- Meta, title, CSS, favicons, etc. -->
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=9">
+		<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=0.5, maximum-scale=2, user-scalable=yes">
+		<meta name="keywords" content="HTML，CSS，JS，JavaScript，framework，bootstrap，front-end，web development，江苏跨境">
+		<meta name="description" content="江苏跨境电子商务服务有限公司">
+		<meta name="author" content="潘明星，尹喜晨">
+		<title>采购合同</title>
+		<!-- Bootstrap 3.3.6 -->
+		<link rel="stylesheet" href="/src/css/bootstrap.css">
+		<!-- Font Awesome -->
+		<link rel="stylesheet" href="/src/css/font-awesome.css">
+		<!-- Ionicons -->
+		<link rel="stylesheet" href="/src/css/ionicons.css">
+		<!-- prism precode -->
+		<link rel="stylesheet" href="/plugins/prism/prism.css">
+		<!-- AdminJKJ style -->
+		<link rel="stylesheet" href="/src/css/adminjkj-1.0.323.css">
+		<link rel="stylesheet" href="/src/css/adminjkj-themes-1.0.0.css">
+		<!--子页面样式-->
+		
+<style type="text/css">
+    form.print {
+        border: 1px solid #ccc;
+        margin: auto;
+        padding: 48px;
+        width: 794px;
+        font-size: 14px;
+        color: #383838;
+    }
+
+    h1 {
+        margin-top: 0;
+        border-width: 0px;
+        color: #333;
+        font: 26px/60px 'Microsoft Yahei';
+        padding: 0px;
+        text-align: center;
+    }
+
+    h2 {
+        margin: 10px 0 5px;
+        border-width: 0px;
+        color: #333;
+        font: 15px/24px 'Microsoft Yahei';
+        font-weight: bold;
+        padding: 0px;
+    }
+
+    h3 {
+        font: 16px/36px 'Microsoft Yahei';
+        margin: 0px;
+        padding: 0px;
+        text-align: left;
+    }
+
+    select,
+    input[type=text] {
+        padding: 0;
+        font-size: 14px !important;
+        width: 180px;
+        height: 22px !important;
+        border: 1px solid #d1d1d1 !important;
+        border-radius: 3px !important;
+    }
+
+    textarea {
+        height: 60px;
+        width: 100%;
+        border: 1px solid #d1d1d1;
+    }
+
+    .red {
+        color: #df5138;
+    }
+
+    .text-left {
+        text-align: left !important;
+    }
+
+    .text-right {
+        text-align: right !important;
+    }
+
+    .row {
+        margin: 0;
+        margin-right: -30px;
+    }
+
+    .row:before,
+    .row:after {
+        display: table;
+        content: " ";
+    }
+
+    .row:after {
+        clear: both;
+    }
+
+    .col-6,
+    .col-12 {
+        position: relative;
+        min-height: 1px;
+        padding-right: 30px;
+        float: left;
+        box-sizing: border-box;
+        word-break: break-all;
+        display: table;
+    }
+
+    .col-6 {
+        width: 50%;
+        line-height: 25px;
+    }
+
+    .col-12 {
+        width: 100%;
+        line-height: 25px;
+    }
+
+    .print-name {
+        white-space: nowrap;
+        display: table-cell;
+        vertical-align: top;
+    }
+
+    .print-cont {
+        width: 100%;
+        display: table-cell;
+    }
+
+    .table {
+        margin-bottom: 10px;
+        width: 100%;
+        border-spacing: 0;
+        border-collapse: collapse;
+    }
+
+    .table th,
+    .table td {
+        padding: 8px 5px;
+        border: 1px solid #c9caca;
+    }
+
+    .table th {
+        background: #e5e8ef;
+    }
+
+    .table td {
+        text-align: center;
+    }
+
+    @media print {
+        .head,
+        .navi,
+        .foot,
+        .button,
+        button,
+        pre,
+        #cprint,
+        #mark {
+            display: none;
+        }
+        body,
+		.body,
+		.print,
+		.page-body {
+			border-width: 0px !important;
+			margin: 0px !important;
+			padding: 0px !important;
+			width: 794px !important;
+			min-width: auto;
+		}
+        select,
+        input[type=text],
+        textarea {
+            border: none;
+        }
+        .table thead tr th {
+            background: #e5e8ef;
+        }
+        .col-12{
+            padding-right: 0;
+        }
+    }
+</style>
+
+		
+		<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+		<!--[if lt IE 9]>
+		<script src="/src/js/html5shiv.js"></script>
+		<script src="/src/js/respond.js"></script>
+		<![endif]-->   
+	</head>
+	<body class="" style=" overflow-x: auto;">
+  		<!-- Site wrapper -->
+		<div class=" page-body">
+			<!--子页面内容-->
+			
+<form method="post" class="print">
+
+    <h1>采购合同</h1>
+
+    <div class="row">
+        <div class="col-6">
+            <label class="print-name">选择开票人：</label>
+            <span class="print-cont">
+                <select name="">
+                    <option value="">请选择</option>
+                    <option value="">贸互达</option>
+                </select>
+            </span>
+        </div>
+        <div class="col-6">
+            <label class="print-name">选择联系人：</label>
+            <span class="print-cont">
+                <select name="">
+                    <option value="">请选择</option>
+                    <option value="">贸互达</option>
+                </select>
+            </span>
+        </div>
+        <div class="col-6">
+            <label class="print-name">签订日期：</label>
+            <span class="print-cont">
+                <input type="text" name="" id="" value="" />
+            </span>
+        </div>
+        <div class="col-6">
+            <label class="print-name">合同编号：</label>
+            <span class="print-cont">MHT2017002849E</span>
+        </div>
+        <div class="col-6">
+            <label class="print-name">甲方：</label>
+            <span class="print-cont">余江县清扬纺织有限公司</span>
+        </div>
+        <div class="col-6">
+            <label class="print-name">乙方：</label>
+            <span class="print-cont">南京贸互通电子商务有限公司</span>
+        </div>
+        <div class="col-6">
+            <label class="print-name">地址：</label>
+            <span class="print-cont">江西省 鹰潭市 余江县 余江县工业园区龙岗片 余江县工业园区龙岗片</span>
+        </div>
+        <div class="col-6">
+            <label class="print-name">地址：</label>
+            <span class="print-cont">南京经济技术开发区龙潭街道疏港路1号龙潭物流基地A-88号</span>
+        </div>
+        <div class="col-6">
+            <label class="print-name">电话：</label>
+            <span class="print-cont">17779313405</span>
+        </div>
+        <div class="col-6">
+            <label class="print-name">电话：</label>
+            <span class="print-cont">025-84356543</span>
+        </div>
+        <div class="col-6">
+            <label class="print-name">传真：</label>
+            <span class="print-cont"></span>
+        </div>
+        <div class="col-6">
+            <label class="print-name">传真：</label>
+            <span class="print-cont">025-84356508</span>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12">
+            <label class="print-name">1．产品信息：</label>
+        </div>
+        <div class="col-12">
+            <label class="print-cont">
+                <table class="table">
+                    <tbody>
+                        <tr>
+                            <th>产品名称</th>
+                            <th>品牌/规格型号</th>
+                            <th>计量单位</th>
+                            <th>数量</th>
+                            <th>
+                                <span class="red">*</span>单价(人民币)</th>
+                            <th>
+                                <span class="red">*</span>总金额(人民币)</th>
+                        </tr>
+
+                        <tr>
+                            <td>棉布</td>
+                            <td>
+                                <input type="text" style="width: 70px;" value="" />/
+                                <input type="text" style="width: 70px;" value="" />
+                            </td>
+                            <td>
+                                <select name="" style="width: 80px;">
+                                    <option value=""></option>
+                                </select>
+                            </td>
+                            <td>76632</td>
+                            <td>
+                                <input type="text" style="width: 110px;" value="" />
+                            </td>
+                            <td>
+                                <input type="text" style="width: 110px;" value="" />
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td colspan="3" class="text-left" style="border-right: 0;">
+                                合计人民币(大写): 零
+                            </td>
+                            <td colspan="3" class="text-left" style="border-left: 0;">
+                                合计人民币(小写)：0
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </label>
+        </div>
+        <div class="col-12">
+            <label class="print-name">2．质量标准：</label>
+            <span class="print-cont">按国家标准</span>
+        </div>
+        <div class="col-12">
+            <label class="print-name">3．质量条款：</label>
+            <span class="print-cont">产品质量由甲方自行检验把关负责，质量保证到国外。产品出口后因质量问题遭致国外索赔时，损失应全部由甲方无条件承担。</span>
+        </div>
+        <div class="col-12">
+            <label class="print-name">4．交货条款：</label>
+            <span class="print-cont">本合同的交货期限指最后交货期限。严格按合同交货日期交货，如不能按期交货造成的一切损失（包括但不限于 间接损失）由甲方负责。如逾期交货超过 * 30 天，乙方有权解除本协议，并要求甲方赔偿一切损失（包括但不限于间接损失）。提前交货须经乙方同意。在乙方指定交货地点
+                前的运费和交货地点的装卸费由甲方承担。
+            </span>
+        </div>
+        <div class="col-12">
+            <label class="print-name">5．付款条款：</label>
+        </div>
+        <div class="col-12">
+            <span class="print-cont">
+                <textarea name="" rows="" cols=""></textarea>
+            </span>
+        </div>
+        <div class="col-12">
+            <label class="print-name">6．违约责任：</label>
+            <span class="print-cont">违反本合同条款的，应依法向对方支付违约金和赔偿金</span>
+        </div>
+        <div class="col-12">
+            <label class="print-name">7．纠纷解决方式：</label>
+            <span class="print-cont">如发生纠纷，双方应首先友好协商解决；协商不能解决纠纷的，任何一方有权向合同履行地所在地有管辖权 的 人民法院提起诉讼。</span>
+        </div>
+        <div class="col-12">
+            <label class="print-name">8．本合同经双方签字盖章生效，未尽事宜，可经双方协商修改或补充。</label>
+        </div>
+        <div class="col-12">
+            <label class="print-name">9．甲方负责商检及其相关费用。</label>
+        </div>
+        <div class="col-12">
+            <label class="print-name">备注：</label>
+        </div>
+        <div class="col-12">
+            <span class="print-cont">
+                <textarea name="" rows="" cols=""></textarea>
+            </span>
+        </div>
+        <div class="col-6">
+            <label class="print-name">甲方：</label>
+            <span class="print-cont">余江县清扬纺织有限公司</span>
+        </div>
+        <div class="col-6">
+            <label class="print-name">乙方：</label>
+            <span class="print-cont">南京贸互通电子商务有限公司</span>
+        </div>
+        <div class="col-12">
+            <label class="print-name">联系人：</label>
+            <span class="print-cont">李总</span>
+        </div>
+        <div class="col-12">
+            <label class="print-name">传真号码：</label>
+            <span class="print-cont"></span>
+        </div>
+        <div class="col-6">
+            <label class="print-name">签字：</label>
+            <span class="print-cont"></span>
+        </div>
+        <div class="col-6">
+            <label class="print-name">签字：</label>
+            <span class="print-cont"></span>
+        </div>
+        <div class="col-12" id="mark">
+            <span class="print-cont text-right" style="padding-top: 30px;">
+                <input type="checkbox" value="" /> 添加电子章
+            </span>
+        </div>
+    </div>
+</form>
+<div class="btn-submit">
+    <a onclick="window.print()" class="btn btn-primary" id="cprint">打印</a>
+</div>
+<pre>
+    <h5>注：打印页面需要把下面这段样式表加在页面上，可以不引用后台样式库独立显示。</h5>
+    <code class="language-html">
+        &lt;style type="text/css">
+            form.print {
+                border: 1px solid #ccc;
+                margin: auto;
+                padding: 48px;
+                width: 794px;
+                font-size: 14px;
+                color: #383838;
+            }
+        
+            h1 {
+                margin-top: 0;
+                border-width: 0px;
+                color: #333;
+                font: 26px/60px 'Microsoft Yahei';
+                padding: 0px;
+                text-align: center;
+            }
+        
+            h2 {
+                margin: 10px 0 5px;
+                border-width: 0px;
+                color: #333;
+                font: 15px/24px 'Microsoft Yahei';
+                font-weight: bold;
+                padding: 0px;
+            }
+        
+            h3 {
+                font: 16px/36px 'Microsoft Yahei';
+                margin: 0px;
+                padding: 0px;
+                text-align: left;
+            }
+        
+            select,
+            input[type=text] {
+                padding: 0;
+                font-size: 14px !important;
+                width: 180px;
+                height: 22px !important;
+                border: 1px solid #d1d1d1 !important;
+                border-radius: 3px !important;
+            }
+        
+            textarea {
+                height: 60px;
+                width: 100%;
+                border: 1px solid #d1d1d1;
+            }
+        
+            .red {
+                color: #df5138;
+            }
+        
+            .text-left {
+                text-align: left !important;
+            }
+        
+            .text-right {
+                text-align: right !important;
+            }
+        
+            .row {
+                margin: 0;
+                margin-right: -30px;
+            }
+        
+            .row:before,
+            .row:after {
+                display: table;
+                content: " ";
+            }
+        
+            .row:after {
+                clear: both;
+            }
+        
+            .col-6,
+            .col-12 {
+                position: relative;
+                min-height: 1px;
+                padding-right: 30px;
+                float: left;
+                box-sizing: border-box;
+                word-break: break-all;
+                display: table;
+            }
+        
+            .col-6 {
+                width: 50%;
+                line-height: 25px;
+            }
+        
+            .col-12 {
+                width: 100%;
+                line-height: 25px;
+            }
+        
+            .print-name {
+                white-space: nowrap;
+                display: table-cell;
+                vertical-align: top;
+            }
+        
+            .print-cont {
+                width: 100%;
+                display: table-cell;
+            }
+        
+            .table {
+                margin-bottom: 10px;
+                width: 100%;
+                border-spacing: 0;
+                border-collapse: collapse;
+            }
+        
+            .table th,
+            .table td {
+                padding: 8px 5px;
+                border: 1px solid #c9caca;
+            }
+        
+            .table th {
+                background: #e5e8ef;
+            }
+        
+            .table td {
+                text-align: center;
+            }
+        
+            @media print {
+                .head,
+                .navi,
+                .foot,
+                .button,
+                button,
+                #cprint,
+                #mark {
+                    display: none;
+                }
+                body,
+                .body,
+                .print,
+                .page-body {
+                    border-width: 0px !important;
+                    margin: 0px !important;
+                    padding: 0px !important;
+                    width: 794px !important;
+                    min-width: auto;
+                }
+                select,
+                input[type=text],
+                textarea {
+                    border: none;
+                }
+                .col-12{
+                    padding-right: 0;
+                }
+            }
+        &lt;/style>
+        &lt;form method="post" class="print">
+                
+            &lt;h1>采购合同&lt;/h1>
+        
+            &lt;div class="row">
+                &lt;div class="col-6">
+                    &lt;label class="print-name">选择开票人：&lt;/label>
+                    &lt;span class="print-cont">
+                        &lt;select name="">
+                            &lt;option value="">请选择&lt;/option>
+                            &lt;option value="">贸互达&lt;/option>
+                        &lt;/select>
+                    &lt;/span>
+                &lt;/div>
+                &lt;div class="col-6">
+                    &lt;label class="print-name">选择联系人：&lt;/label>
+                    &lt;span class="print-cont">
+                        &lt;select name="">
+                            &lt;option value="">请选择&lt;/option>
+                            &lt;option value="">贸互达&lt;/option>
+                        &lt;/select>
+                    &lt;/span>
+                &lt;/div>
+                &lt;div class="col-6">
+                    &lt;label class="print-name">签订日期：&lt;/label>
+                    &lt;span class="print-cont">
+                        &lt;input type="text" name="" id="" value="" />
+                    &lt;/span>
+                &lt;/div>
+                &lt;div class="col-6">
+                    &lt;label class="print-name">合同编号：&lt;/label>
+                    &lt;span class="print-cont">MHT2017002849E&lt;/span>
+                &lt;/div>
+                &lt;div class="col-6">
+                    &lt;label class="print-name">甲方：&lt;/label>
+                    &lt;span class="print-cont">余江县清扬纺织有限公司&lt;/span>
+                &lt;/div>
+                &lt;div class="col-6">
+                    &lt;label class="print-name">乙方：&lt;/label>
+                    &lt;span class="print-cont">南京贸互通电子商务有限公司&lt;/span>
+                &lt;/div>
+                &lt;div class="col-6">
+                    &lt;label class="print-name">地址：&lt;/label>
+                    &lt;span class="print-cont">江西省 鹰潭市 余江县 余江县工业园区龙岗片 余江县工业园区龙岗片&lt;/span>
+                &lt;/div>
+                &lt;div class="col-6">
+                    &lt;label class="print-name">地址：&lt;/label>
+                    &lt;span class="print-cont">南京经济技术开发区龙潭街道疏港路1号龙潭物流基地A-88号&lt;/span>
+                &lt;/div>
+                &lt;div class="col-6">
+                    &lt;label class="print-name">电话：&lt;/label>
+                    &lt;span class="print-cont">17779313405&lt;/span>
+                &lt;/div>
+                &lt;div class="col-6">
+                    &lt;label class="print-name">电话：&lt;/label>
+                    &lt;span class="print-cont">025-84356543&lt;/span>
+                &lt;/div>
+                &lt;div class="col-6">
+                    &lt;label class="print-name">传真：&lt;/label>
+                    &lt;span class="print-cont">&lt;/span>
+                &lt;/div>
+                &lt;div class="col-6">
+                    &lt;label class="print-name">传真：&lt;/label>
+                    &lt;span class="print-cont">025-84356508&lt;/span>
+                &lt;/div>
+            &lt;/div>
+        
+            &lt;div class="row">
+                &lt;div class="col-12">
+                    &lt;label class="print-name">1．产品信息：&lt;/label>
+                &lt;/div>
+                &lt;div class="col-12">
+                    &lt;label class="print-cont">
+                        &lt;table class="table">
+                            &lt;tbody>
+                                &lt;tr>
+                                    &lt;th>产品名称&lt;/th>
+                                    &lt;th>品牌/规格型号&lt;/th>
+                                    &lt;th>计量单位&lt;/th>
+                                    &lt;th>数量&lt;/th>
+                                    &lt;th>
+                                        &lt;span class="red">*&lt;/span>单价(人民币)&lt;/th>
+                                    &lt;th>
+                                        &lt;span class="red">*&lt;/span>总金额(人民币)&lt;/th>
+                                &lt;/tr>
+        
+                                &lt;tr>
+                                    &lt;td>棉布&lt;/td>
+                                    &lt;td>
+                                        &lt;input type="text" style="width: 70px;" value="" />/
+                                        &lt;input type="text" style="width: 70px;" value="" />
+                                    &lt;/td>
+                                    &lt;td>
+                                        &lt;select name="" style="width: 80px;">
+                                            &lt;option value="">&lt;/option>
+                                        &lt;/select>
+                                    &lt;/td>
+                                    &lt;td>76632&lt;/td>
+                                    &lt;td>
+                                        &lt;input type="text" style="width: 110px;" value="" />
+                                    &lt;/td>
+                                    &lt;td>
+                                        &lt;input type="text" style="width: 110px;" value="" />
+                                    &lt;/td>
+                                &lt;/tr>
+        
+                                &lt;tr>
+                                    &lt;td colspan="3" class="text-left" style="border-right: 0;">
+                                        合计人民币(大写): 零
+                                    &lt;/td>
+                                    &lt;td colspan="3" class="text-left" style="border-left: 0;">
+                                        合计人民币(小写)：0
+                                    &lt;/td>
+                                &lt;/tr>
+                            &lt;/tbody>
+                        &lt;/table>
+                    &lt;/label>
+                &lt;/div>
+                &lt;div class="col-12">
+                    &lt;label class="print-name">2．质量标准：&lt;/label>
+                    &lt;span class="print-cont">按国家标准&lt;/span>
+                &lt;/div>
+                &lt;div class="col-12">
+                    &lt;label class="print-name">3．质量条款：&lt;/label>
+                    &lt;span class="print-cont">产品质量由甲方自行检验把关负责，质量保证到国外。产品出口后因质量问题遭致国外索赔时，损失应全部由甲方无条件承担。&lt;/span>
+                &lt;/div>
+                &lt;div class="col-12">
+                    &lt;label class="print-name">4．交货条款：&lt;/label>
+                    &lt;span class="print-cont">本合同的交货期限指最后交货期限。严格按合同交货日期交货，如不能按期交货造成的一切损失（包括但不限于 间接损失）由甲方负责。
+                    如逾期交货超过 * 30 天，乙方有权解除本协议，并要求甲方赔偿一切损失（包括但不限于间接损失）。提前交货须经乙方同意。在乙方指定交货地点
+                        前的运费和交货地点的装卸费由甲方承担。
+                    &lt;/span>
+                &lt;/div>
+                &lt;div class="col-12">
+                    &lt;label class="print-name">5．付款条款：&lt;/label>
+                &lt;/div>
+                &lt;div class="col-12">
+                    &lt;span class="print-cont">
+                        &lt;textarea name="" rows="" cols="">&lt;/textarea>
+                    &lt;/span>
+                &lt;/div>
+                &lt;div class="col-12">
+                    &lt;label class="print-name">6．违约责任：&lt;/label>
+                    &lt;span class="print-cont">违反本合同条款的，应依法向对方支付违约金和赔偿金&lt;/span>
+                &lt;/div>
+                &lt;div class="col-12">
+                    &lt;label class="print-name">7．纠纷解决方式：&lt;/label>
+                    &lt;span class="print-cont">如发生纠纷，双方应首先友好协商解决；协商不能解决纠纷的，任何一方有权向合同履行地所在地有管辖权 的 人民法院提起诉讼。&lt;/span>
+                &lt;/div>
+                &lt;div class="col-12">
+                    &lt;label class="print-name">8．本合同经双方签字盖章生效，未尽事宜，可经双方协商修改或补充。&lt;/label>
+                &lt;/div>
+                &lt;div class="col-12">
+                    &lt;label class="print-name">9．甲方负责商检及其相关费用。&lt;/label>
+                &lt;/div>
+                &lt;div class="col-12">
+                    &lt;label class="print-name">备注：&lt;/label>
+                &lt;/div>
+                &lt;div class="col-12">
+                    &lt;span class="print-cont">
+                        &lt;textarea name="" rows="" cols="">&lt;/textarea>
+                    &lt;/span>
+                &lt;/div>
+                &lt;div class="col-6">
+                    &lt;label class="print-name">甲方：&lt;/label>
+                    &lt;span class="print-cont">余江县清扬纺织有限公司&lt;/span>
+                &lt;/div>
+                &lt;div class="col-6">
+                    &lt;label class="print-name">乙方：&lt;/label>
+                    &lt;span class="print-cont">南京贸互通电子商务有限公司&lt;/span>
+                &lt;/div>
+                &lt;div class="col-12">
+                    &lt;label class="print-name">联系人：&lt;/label>
+                    &lt;span class="print-cont">李总&lt;/span>
+                &lt;/div>
+                &lt;div class="col-12">
+                    &lt;label class="print-name">传真号码：&lt;/label>
+                    &lt;span class="print-cont">&lt;/span>
+                &lt;/div>
+                &lt;div class="col-6">
+                    &lt;label class="print-name">签字：&lt;/label>
+                    &lt;span class="print-cont">&lt;/span>
+                &lt;/div>
+                &lt;div class="col-6">
+                    &lt;label class="print-name">签字：&lt;/label>
+                    &lt;span class="print-cont">&lt;/span>
+                &lt;/div>
+                &lt;div class="col-12" id="mark">
+                    &lt;span class="print-cont text-right" style="padding-top: 30px;">
+                        &lt;input type="checkbox" value="" /> 添加电子章
+                    &lt;/span>
+                &lt;/div>
+            &lt;/div>
+        &lt;/form>
+    </code>
+    <a class="fa fa-file-code-o" href="javascript:;" data-xmp="">展开代码</a>
+</pre>
+
+		</div>
+		
+		<!-- jquery 2.2.3 -->
+		<script src="/plugins/jquery/jquery-2.2.3.min.js"></script>
+		<!-- Bootstrap 3.3.6 -->
+		<script src="/src/js/bootstrap.js"></script>
+		<!-- SlimScroll -->
+		<script src="/plugins/slimScroll/jquery.slimscroll.min.js"></script>
+		<!-- FastClick -->
+		<script src="/plugins/fastclick/fastclick.js"></script>
+		<!-- Notify -->
+		<script src="/plugins/bootstrap-notify/bootstrap-notify.js"></script>
+		<!-- prism precode -->
+		<script src="/plugins/prism/prism.js"></script>
+
+		<script src="/src/js/adminjkj-1.0.323.js" type="text/javascript"></script>
+		<!--子页面脚本-->
+		
+	</body>
+</html>

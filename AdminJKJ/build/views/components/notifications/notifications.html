@@ -1,0 +1,314 @@
+{% extends "../../shared/layout.html" %} {% block title %}{% endblock %} {% block css %}{% endblock %} {% block content %}
+
+
+<div class="alert alert-danger alert-dismissible">
+	<button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+	<h4>
+		<i class="icon fa fa-ban"></i> Alert!</h4>
+</div>
+
+<div class="alert alert-info alert-dismissible">
+	<button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+	<h4>
+		<i class="icon fa fa-info"></i> Alert!</h4>
+</div>
+
+<div class="alert alert-warning alert-dismissible">
+	<button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+	<h4>
+		<i class="icon fa fa-warning"></i> Alert!</h4>
+</div>
+
+<div class="alert alert-success alert-dismissible">
+	<button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+	<h4>
+		<i class="icon fa fa-check"></i> Alert!</h4>
+</div>
+
+<div class="row">
+	<div class="col-xs-12">
+		<p>
+			<button class="btn-notify btn btn-default" data-notify-type="error" data-notify-page="self">错误提示</button>
+			<button class="btn-notify btn btn-default" data-notify-type="info" data-notify-page="self">信息提示</button>
+			<button class="btn-notify btn btn-default" data-notify-type="success" data-notify-page="self">成功提示</button>
+			<button class="btn-notify btn btn-default" data-notify-type="warning" data-notify-page="self">警告提示</button>
+		</p>
+	</div>
+	<div class="col-xs-12">
+		<p>
+			<button class="btn-notify btn btn-default" data-notify-type="error" data-notify-page="parent">父窗体错误提示</button>
+			<button class="btn-notify btn btn-default" data-notify-type="info" data-notify-page="parent">父窗体信息提示</button>
+			<button class="btn-notify btn btn-default" data-notify-type="success" data-notify-page="parent">父窗体成功提示</button>
+			<button class="btn-notify btn btn-default" data-notify-type="warning" data-notify-page="parent">父窗体警告提示</button>
+		</p>
+	</div>
+	<div class="col-xs-12">
+		<p>
+			<button class="btn-notify btn btn-default" data-notify-type="error" data-notify-page="top">顶级窗体错误提示</button>
+			<button class="btn-notify btn btn-default" data-notify-type="info" data-notify-page="top">顶级窗体信息提示</button>
+			<button class="btn-notify btn btn-default" data-notify-type="success" data-notify-page="top">顶级窗体成功提示</button>
+			<button class="btn-notify btn btn-default" data-notify-type="warning" data-notify-page="top">顶级窗体警告提示</button>
+		</p>
+	</div>
+</div>
+<!-- <div class="row">
+				<div class="col-xs-12">
+					<p>
+			 			<button class="btn-notify btn btn-default" data-type="error" data-showWindow="self">错误提示</button> 
+			 			<button class="btn-notify btn btn-default" data-type="info" data-showWindow="self">信息提示</button> 
+			 			<button class="btn-notify btn btn-default" data-type="success" data-showWindow="self">成功提示</button> 
+			 			<button class="btn-notify btn btn-default" data-type="warning" data-showWindow="self">警告提示</button> 
+					</p>
+				</div>
+				<div class="col-xs-12">
+					<p>
+			 			<button class="btn-notify btn btn-default" data-type="error" data-showWindow="parent">父窗体错误提示</button> 
+			 			<button class="btn-notify btn btn-default" data-type="info" data-showWindow="parent">父窗体信息提示</button> 
+			 			<button class="btn-notify btn btn-default" data-type="success" data-showWindow="parent">父窗体成功提示</button> 
+			 			<button class="btn-notify btn btn-default" data-type="warning" data-showWindow="parent">父窗体警告提示</button>
+					</p>  
+				</div>
+				<div class="col-xs-12">
+					<p>
+			 			<button class="btn-notify btn btn-default" data-type="error" data-showWindow="top">顶级窗体错误提示</button> 
+			 			<button class="btn-notify btn btn-default" data-type="info" data-showWindow="top">顶级窗体信息提示</button>   
+			 			<button class="btn-notify btn btn-default" data-type="success" data-showWindow="top">顶级窗体成功提示</button> 
+			 			<button class="btn-notify btn btn-default" data-type="warning" data-showWindow="top">顶级窗体警告提示</button>  
+					</p>
+				</div>
+			</div> -->
+<div class="page-containers">
+	<div class="form-title">
+		cleverNotify 灵动消息通知、提示
+	</div>
+	<pre>
+		<code class="language-html">{% set notifyCode %}
+			<p>
+				<button class="btn-notify btn btn-default" data-notify-type="error" data-notify-page="self">错误提示</button>
+				<button class="btn-notify btn btn-default" data-notify-type="info" data-notify-page="self">信息提示</button>
+				<button class="btn-notify btn btn-default" data-notify-type="success" data-notify-page="self">成功提示</button>
+				<button class="btn-notify btn btn-default" data-notify-type="warning" data-notify-page="self">警告提示</button>
+			</p>
+			<p>
+				<button class="btn-notify btn btn-default" data-notify-type="error" data-notify-page="parent">父窗体错误提示</button>
+				<button class="btn-notify btn btn-default" data-notify-type="info" data-notify-page="parent">父窗体信息提示</button>
+				<button class="btn-notify btn btn-default" data-notify-type="success" data-notify-page="parent">父窗体成功提示</button>
+				<button class="btn-notify btn btn-default" data-notify-type="warning" data-notify-page="parent">父窗体警告提示</button>
+			</p>
+			<p>
+				<button class="btn-notify btn btn-default" data-notify-type="error" data-notify-page="top">顶级窗体错误提示</button>
+				<button class="btn-notify btn btn-default" data-notify-type="info" data-notify-page="top">顶级窗体信息提示</button>
+				<button class="btn-notify btn btn-default" data-notify-type="success" data-notify-page="top">顶级窗体成功提示</button>
+				<button class="btn-notify btn btn-default" data-notify-type="warning" data-notify-page="top">顶级窗体警告提示</button>
+			</p>
+			<script>
+				$(function () {
+					$(".btn-notify").each(function () {
+						var type = $(this).attr('data-notify-type');
+						var page = $(this).attr('data-notify-page');
+
+						if (type == 'error') {
+							$(this).click(function () {
+								$.jkj.cleverNotify.error('这是' + page + '错误信息', {
+									z_index: 1099
+								}, page);
+							});
+						} else if (type == 'info') {
+							$(this).click(function () {
+								$.jkj.cleverNotify.info('这是' + page + '一般信息', null, page);
+							});
+						} else if (type == 'success') {
+							$(this).click(function () {
+								$.jkj.cleverNotify.success('这是' + page + '成功信息，用于测试长度效果用于测试长度效果用于测试长度效果用于测试长度效果用于测试长度效果用于测试长度效果' +
+									'用于测试长度效果用于测试长度效果用于测试长度效果', null, page);
+							});
+						} else if (type == 'warning') {
+							$(this).click(function () {
+								$.jkj.cleverNotify.warning('这是' + page + '提示信息', null, page);
+							});
+						}
+					});
+				});
+			</script>
+			{% endset %}   
+			{{ notifyCode | escape}}
+		</code>
+		<a class="fa fa-file-code-o" href="javascript:;" data-xmp="">展开代码</a>
+	</pre>
+</div>
+<div class="page-containers">
+	<div class="form-title">
+		消息通知、提示配置参数
+	</div>
+	<pre>
+		<div>使用方法：$.jkj.cleverNotify.error('这是消息内容',null,'self'); 来调用信息提示</div>
+		<div>其中：.error() 错误信息; .success() 成功信息; .info() 一般信息; .warning() 提示信息;</div>
+		<div>如果提示在遮罩上层，将null改为{z_index:1099}，修改z_index的值来提高它的层级</div>
+		<div>page的参数: self当前页面；parent父页面；top顶级页面；opener打开的页面</div>
+		<div>.remove(id) 移除指定提示信息</div>
+		<div>.removeAll() 移除所有提示信息</div>
+		<code class="language-html">{% set settingCode %}
+			<script>
+				// 默认配置信息
+				defaults: {
+					// 消息类型。['danger' | 'info' | 'success' | 'warning']
+					type: 'info',
+					// 是否显示进度条
+					showProgressbar: false,
+					/**
+					 * 消息放置的页面。['self' | 'parent' | 'top']
+					 * self： 当前页面
+					 * parent：父页面
+					 * top：顶级页面
+					 */
+					page: 'self',
+					/**
+					 * 显示位置
+					 * from：['top' | 'bottom']
+					 * align：['left' | 'center' | 'right']
+					 */
+					placement: {
+						from: 'top',
+						align: 'right'
+					},
+					// 消息靠边缘的间隔，居中显示时x轴无效
+					offset: {
+						x: 15,
+						y: 5
+					},
+					// 消息间上下间隔像素
+					spacing: 2,
+					// Z轴的值
+					z_index: 1031,
+					// 实例化方法被调用时回调该方法
+					onShow: null,
+					// 消息显示到用户界面时回调该方法
+					onShowed: null,
+					// 消息关闭回调该方法
+					onClose: null,
+					// 消息关闭完成后回调该方法
+					onClosed: null,
+					// 消息模板。{0} = type；{1} = title；{2} = message；{3} = url；{4} = target
+					template: '<div data-notify="container" class="col-xs-11 col-sm-3 alert alert-{0} alert-dismissible" role="alert">' +
+					'<button type="button" aria-hidden="true" class="close" data-notify="dismiss">×</button>' +
+					'<span data-notify="icon"></span> ' +
+					'<span data-notify="title">{1}</span> ' +
+					'<span data-notify="message">{2}</span>' +
+					'<div class="progress" data-notify="progressbar">' +
+					'<div class="progress-bar progress-bar-{0}" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%;"></div>' +
+					'</div>' +
+					'<a href="{3}" target="{4}" data-notify="url"></a>' +
+					'</div>',
+
+				}
+			</script>
+			{% endset %}   
+			{{ settingCode | escape}}
+		</code>
+		<a class="fa fa-file-code-o" href="javascript:;" data-xmp="">展开代码</a>
+	</pre>
+</div>
+<div class="page-containers">
+	<div class="form-title">
+		老版本notify 通知
+	</div>
+	<pre>
+		<div>使用方法：$.jkj.notify.showError('message',null,showWindow); 来调用信息提示</div>
+		<div>其中：.showError() 错误信息;	 .showSuccess() 成功信息;	 .showInfo() 一般信息;	.showWarning() 提示信息;</div>
+		<div>如果提示在遮罩上层，将null改为{z_index:1099}，修改z_index的值来提高它的层级</div>
+		<div>showWindow的参数: self当前页面；parent父页面；top顶级页面；opener打开的页面</div>
+		<code class="language-html">{% set notifyHistoryCode %}
+			<div class="row">
+				<div class="col-xs-12">
+					<p>
+							<button class="btn-notify btn btn-default" data-type="error" data-showWindow="self">错误提示</button> 
+							<button class="btn-notify btn btn-default" data-type="info" data-showWindow="self">信息提示</button> 
+							<button class="btn-notify btn btn-default" data-type="success" data-showWindow="self">成功提示</button> 
+							<button class="btn-notify btn btn-default" data-type="warning" data-showWindow="self">警告提示</button> 
+					</p>
+				</div>
+				<div class="col-xs-12">
+					<p>
+							<button class="btn-notify btn btn-default" data-type="error" data-showWindow="parent">父窗体错误提示</button> 
+							<button class="btn-notify btn btn-default" data-type="info" data-showWindow="parent">父窗体信息提示</button> 
+							<button class="btn-notify btn btn-default" data-type="success" data-showWindow="parent">父窗体成功提示</button> 
+							<button class="btn-notify btn btn-default" data-type="warning" data-showWindow="parent">父窗体警告提示</button>
+					</p>  
+				</div>
+				<div class="col-xs-12">
+					<p>
+							<button class="btn-notify btn btn-default" data-type="error" data-showWindow="top">顶级窗体错误提示</button> 
+							<button class="btn-notify btn btn-default" data-type="info" data-showWindow="top">顶级窗体信息提示</button>   
+							<button class="btn-notify btn btn-default" data-type="success" data-showWindow="top">顶级窗体成功提示</button> 
+							<button class="btn-notify btn btn-default" data-type="warning" data-showWindow="top">顶级窗体警告提示</button>  
+					</p>
+				</div>
+			</div>
+			<script>
+				$(function(){
+					$(".btn-notify").each(function(){
+						var type=$(this).attr('data-type');
+						var showWindow=$(this).attr('data-showWindow');
+						
+						if(type=='error'){
+							$(this).click(function(){
+								$.jkj.notify.showError('这是'+showWindow+'错误信息',null,showWindow);
+							});
+						}
+						else if(type=='info'){
+							$(this).click(function(){
+								$.jkj.notify.showInfo('这是'+showWindow+'一般信息',null,showWindow);
+							});
+						}
+						else if(type=='success'){
+							$(this).click(function(){
+								$.jkj.notify.showSuccess('这是'+showWindow+'成功信息，用于测试长度效果用于测试长度效果用于测试长度效果用于测试长度效果用于测试长度效果用于测试长度效果'
+								+'用于测试长度效果用于测试长度效果用于测试长度效果',null,showWindow);
+							});
+						}
+						else if(type=='warning'){
+							$(this).click(function(){
+								$.jkj.notify.showWarning('这是'+showWindow+'提示信息',null,showWindow);
+							});
+						}
+					});
+				});
+			</script>
+			{% endset %}   
+			{{ notifyHistoryCode | escape}}
+		</code>
+		<a class="fa fa-file-code-o" href="javascript:;" data-xmp="">展开代码</a>
+	</pre>
+</div>
+
+{% endblock %} {% block js %}
+<script type="text/javascript">
+	$(function () {
+		$(".btn-notify").each(function () {
+			var type = $(this).attr('data-notify-type');
+			var page = $(this).attr('data-notify-page');
+
+			if (type == 'error') {
+				$(this).click(function () {
+					$.jkj.cleverNotify.error('这是' + page + '错误信息', {
+						z_index: 1099
+					}, page);
+				});
+			} else if (type == 'info') {
+				$(this).click(function () {
+					$.jkj.cleverNotify.info('这是' + page + '一般信息', null, page);
+				});
+			} else if (type == 'success') {
+				$(this).click(function () {
+					$.jkj.cleverNotify.success('这是' + page + '成功信息，用于测试长度效果用于测试长度效果用于测试长度效果用于测试长度效果用于测试长度效果用于测试长度效果' +
+						'用于测试长度效果用于测试长度效果用于测试长度效果', null, page);
+				});
+			} else if (type == 'warning') {
+				$(this).click(function () {
+					$.jkj.cleverNotify.warning('这是' + page + '提示信息', null, page);
+				});
+			}
+		});
+	});
+</script>
+{% endblock %}

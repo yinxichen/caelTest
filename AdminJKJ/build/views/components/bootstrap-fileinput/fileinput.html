@@ -1,0 +1,150 @@
+{% extends "../../shared/layout.html" %} {% block title %}{% endblock %} {% block css %}
+<link rel="stylesheet" href="{{ path.plugins }}bootstrap-fileinput/fileinput.css"> {% endblock %} {% block content %}
+<!-- <div id="testUpload"></div> -->
+<div id="doveUpload"></div>
+<div class="">
+	<i class="fa fa-file-code-o"></i>
+	<a href="javascript:;" data-xmp="">展开代码</a>
+	<xmp>
+		<div id="testUpload"></div>
+
+		<!-- bootstrap-fileinput.js -->
+		<script src="{{ path.plugins }}bootstrap-fileinput/fileinput.js"></script>
+		<script src="{{ path.plugins }}bootstrap-fileinput/fileinput_locale_zh.js"></script>
+		<!-- page script -->
+		<script>
+			function upload() {
+				var ids = [];
+				ids.push(998);
+				ids.push(999);
+				ids.push(1000);
+
+				var titles = [];
+				var item = {};
+				item.name = '疑点';
+				item.fileType = 1;
+				titles.push(item);
+				var item2 = {};
+				item2.name = '授信';
+				item2.fileType = 2;
+				titles.push(item2);
+				var item3 = {};
+				item3.name = '其他';
+				item3.fileType = 3;
+				titles.push(item3);
+				var files;
+				$.ajax({
+					type: "get",
+					url: "{{ path.src }}data/upload.json",
+					success: function (result) {
+						if (result.code == 0) {
+							files = result.files;
+							$("#testUpload").upload({
+								fileServerUrl: 'http://local.maohd.com:8083/files', // you must set a valid URL here else you will get an error
+								files: files,
+								tabs: titles,
+								saveFile: null
+							});
+						}
+					}
+				});
+			}
+			upload();
+		</script>
+	</xmp>
+</div>
+{% endblock %} {% block js %}
+<!-- bootstrap-fileinput.js -->
+<script src="{{ path.plugins }}bootstrap-fileinput/fileinput.js"></script>
+<script src="{{ path.plugins }}bootstrap-fileinput/fileinput_locale_zh.js"></script>
+<!-- page script -->
+<script>
+	$('#doveUpload').jkj('doveUpload', {
+		jkj:{
+			appId: 1,
+			moduleId: 1,
+			title: '附件',
+			fileServerUrl: 'http://dev.mgr.maohd.com/api/fsc',
+			fileTypes: [
+				{ id: 1, name: '疑点', maxCount: 5 },
+				{ id: 2, name: '授信', maxCount: 1 },
+				{ id: 3, name: '其他', maxCount: 2 }
+			],
+			files: [
+				{
+					"id": 997,
+					"name": "测试1",
+					"typeId": 1,
+					"extension": "pdf"
+				},
+				{
+					"id": 998,
+					"name": "测试2",
+					"typeId": 2,
+					"extension": "xlsx",
+					"source": 1
+				},
+				{
+					"id": 999,
+					"name": "测试3",
+					"typeId": 3,
+					"extension": "doc",
+					"source": 2
+				},
+				{
+					"id": 1000,
+					"name": "测试4",
+					"typeId": 1,
+					"extension": "png",
+					"source": 2
+				},
+				{
+					"id": 1001,
+					"name": "测试5",
+					"typeId": 1,
+					"extension": "doc",
+					"source": 1
+				}
+			]
+		}
+	});
+	/* function upload() {
+		var ids = [];
+		ids.push(998);
+		ids.push(999);
+		ids.push(1000);
+
+		var titles = [];
+		var item = {};
+		item.name = '疑点';
+		item.fileType = 1;
+		titles.push(item);
+		var item2 = {};
+		item2.name = '授信';
+		item2.fileType = 2;
+		titles.push(item2);
+		var item3 = {};
+		item3.name = '其他';
+		item3.fileType = 3;
+		titles.push(item3);
+		var files;
+		$.ajax({
+			type: "get",
+			url: "{{ path.src }}data/upload.json",
+			success: function (result) {
+				if (result.code == 0) {
+					files = result.files;
+					$("#testUpload").upload({
+						fileServerUrl: 'http://local.maohd.com:8083/files', // you must set a valid URL here else you will get an error
+						files: files,
+						tabs: titles,
+						saveFile: null
+					});
+				}
+			}
+		});
+	}
+	upload(); */
+
+</script>
+{% endblock %}

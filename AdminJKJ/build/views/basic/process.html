@@ -1,0 +1,82 @@
+{% extends "../shared/layout.html" %} {% block title %}示例展示{% endblock %} {% block css %}
+{% endblock %} {% block content %}
+<!--代码开始-->
+<div class="page-title">进度条</div>
+<div class="page-containers">
+	<div class="divSlide">
+		<div class="orderProcess">
+			<ul>
+				<li class="on"><span>提交</span></li>
+				<li class="on"><span>完善</span></li>
+				<li class="on"><span>审核</span></li>
+				<li class="on"><span>确认委托函</span></li>
+				<li><span>待报关</span></li>
+				<li><span>报关完成</span></li>
+				<li><span>待退税</span></li>
+				<li><span>已退税</span></li>
+				<li><span>订单完成</span></li>
+				<li><span>订单关闭</span></li>
+			</ul>
+			<div class="clearfix"></div>
+		</div>
+	</div>
+	<pre>
+		<code class="language-html">{% set processCode %}
+			<div class="divSlide">
+				<div class="orderProcess">
+					<ul>
+						<li class="on"><span>提交</span></li>
+						<li class="on"><span>完善</span></li>
+						<li class="on"><span>审核</span></li>
+						<li class="on"><span>确认委托函</span></li>
+						<li><span>待报关</span></li>
+						<li><span>报关完成</span></li>
+						<li><span>待退税</span></li>
+						<li><span>已退税</span></li>
+						<li><span>订单完成</span></li>
+						<li><span>订单关闭</span></li>
+					</ul>
+					<div class="clearfix"></div>
+				</div>
+			</div>
+			{% endset %}   
+			{{ processCode | escape}}
+		</code>
+		<a class="fa fa-file-code-o" href="javascript:;" data-xmp="">展开代码</a>
+	</pre>
+</div>
+
+<!--代码结束-->
+
+<!--代码开始-->
+<h3>审批流:</h3>
+<div class="page-containers">
+	<div class="auditProcess">
+		<ul>
+			<li class="on">瞿敏霞</li>
+			<li class="on">王大扣</li>
+			<li>石滨</li>
+			<li>马凤奎</li>
+		</ul>
+		<div class="clearfix"></div>
+	</div>
+	<pre>
+		<code class="language-html">{% set process2Code %}
+			<div class="auditProcess">
+				<ul>
+					<li class="on">瞿敏霞</li>
+					<li class="on">王大扣</li>
+					<li>石滨</li>
+					<li>马凤奎</li>
+				</ul>
+				<div class="clearfix"></div>
+			</div>
+			{% endset %}   
+			{{ process2Code | escape}}
+		</code>
+		<a class="fa fa-file-code-o" href="javascript:;" data-xmp="">展开代码</a>
+	</pre>
+</div>
+
+<!--代码结束-->
+{% endblock %} {% block js %} {% endblock %}

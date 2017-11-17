@@ -1,0 +1,61 @@
+/*
+ * Component: customizable
+ * ----------------
+ */
+.grid-stack {
+    > .grid-stack-item.ui-draggable{
+        padding: 0 15px 0 0;
+        border: none;
+        .workbench-widget{
+            width: 100%;
+            box-shadow: 0px 2px 10px #ccc;
+            height: 100%;
+            overflow: hidden;
+            .workbench-widget-header{
+                border-top-left-radius: 5px;
+                border-top-right-radius: 5px;
+                background: #FFF;
+                .workbench-widget-title{
+                    padding-left: 7px;
+                    color: @light-black;
+                    font-size: 16px;
+                    line-height: 32px;
+                }
+            }
+            .workbench-widget-body{
+                margin-top: -1px;
+                padding: 10px 7px;
+                height: auto;
+                border-bottom-left-radius: 5px;
+                border-bottom-right-radius: 5px;
+                background: #FFF;
+                
+            }
+        }
+    }
+}
+
+.workbench-bottom-widgets{
+    background: #e5e8ef;
+    .workbench-widgets-wrapper{
+        padding: 0 15px 5px;
+        .workbench-widget{
+            border-color: #ddd;
+            box-shadow: 0px 2px 10px #ccc;
+            border-radius: 5px;
+            background: #FFF;
+            .workbench-widget-header{
+                padding: 10px 0;
+                .workbench-widget-title{
+                    text-align: center;
+                    color: @light-black;
+                    font-size: 13px;
+                    line-height: 26px;
+                }
+            }
+            .workbench-widget-body{
+                padding: 10px 7px;
+            }
+        }
+    }
+}

@@ -1,0 +1,317 @@
+{% extends "../../shared/layout.html" %} {% block title %}{% endblock %} {% block css %} {% endblock %} {% block content
+%}
+
+<div class="page-container">
+    <div class="page-title">
+        模态框
+    </div>
+    <div class="page-containers">
+        <div class="form-title">弹出基本消息</div>
+        <div class="row">
+            <div class="col-xs-12">
+                    <button type="button" id="button1" class="btn btn-primary btn-lg"> 弹出基本消息 </button>
+            </div>
+        </div>
+        <pre>
+            <code class="language-html">{% set modalCode %}
+                <button type="button" id="button1" class="btn btn-primary btn-lg"> 弹出基本消息 </button>
+                <script>
+                    $('#button1').on('click', function () {
+                        btn1 = $.jkj.beeModal.show({
+                            title: '弹出基本消息',
+                            content: '消息提示',
+                            enableFooter: false
+                        });
+                    });
+                </script>
+                {% endset %}   
+                {{ modalCode | escape}}
+            </code>
+            <a class="fa fa-file-code-o" href="javascript:;" data-xmp="">展开代码</a>
+        </pre>
+    </div>
+    <div class="page-containers">
+        <div class="form-title">弹出自定义内容</div>
+        <div class="row">
+            <div class="col-xs-12">
+                <button type="button" id="button2" class="btn btn-primary btn-lg"> 弹出自定义内容 </button>
+            </div>
+        </div>
+        <pre>
+            <code class="language-html">{% set modal2Code %}
+                <button type="button" id="button2" class="btn btn-primary btn-lg"> 弹出自定义内容 </button>
+                <script>
+                    $('#button2').on('click', function () {
+                        btn2 = $.jkj.beeModal.show({
+                            enableHeader: false,
+                            content: function () {
+                                var $btn = $('<button class="btn btn-danger">测试按钮</button>');
+                                $btn.click(function () {
+                                    $.jkj.cleverNotify.success('测试按钮');
+                                });
+                                return $btn;
+                            }
+                        });
+                    });
+                </script>
+                {% endset %}   
+                {{ modal2Code | escape}}
+            </code>
+            <a class="fa fa-file-code-o" href="javascript:;" data-xmp="">展开代码</a>
+        </pre>
+    </div>
+    <div class="page-containers">
+        <div class="form-title">弹出远程页面</div>
+        <div class="row">
+            <div class="col-xs-12">
+                 <button type="button" id="button3" class="btn btn-primary btn-lg"> 弹出远程页面 </button>
+            </div>
+        </div>
+        <pre>
+            <code class="language-html">{% set modal3Code %}
+                <button type="button" id="button3" class="btn btn-primary btn-lg"> 弹出远程页面 </button>
+                <script>
+                    $('#button3').on('click', function () {
+                        btn3 = $.jkj.beeModal.show({
+                            title: '远程页面加载',
+                            url: '{{ path.src }}pages/components/modal/form.html'
+                        });
+                    });
+                </script>
+                {% endset %}   
+                {{ modal3Code | escape}}
+            </code>
+            <a class="fa fa-file-code-o" href="javascript:;" data-xmp="">展开代码</a>
+        </pre>
+    </div>
+    <div class="page-containers">
+        <div class="form-title">弹出确认框</div>
+        <div class="row">
+            <div class="col-xs-12">
+                <button type="button" id="button4" class="btn btn-primary btn-lg"> 弹出确认框 </button>
+            </div>
+        </div>
+        <pre>
+            <code class="language-html">{% set modal4Code %}
+                <button type="button" id="button4" class="btn btn-primary btn-lg"> 弹出确认框 </button>
+                <script>
+                    $('#button4').click(function () {
+                        $.jkj.beeModal.confirm("确定删除该对象吗?",
+                            function (e, context) {
+                                $.jkj.cleverNotify.success('确定' + context.id, { z_index: 1099 });
+                            }, function (e, context) {
+                                $.jkj.cleverNotify.warning('取消' + context.id);
+                            }
+                        );
+                    });
+                </script>
+                {% endset %}   
+                {{ modal4Code | escape}}
+            </code>
+            <a class="fa fa-file-code-o" href="javascript:;" data-xmp="">展开代码</a>
+        </pre>
+    </div>
+    <div class="page-containers">
+        <div class="form-title">配置参数</div>
+        <pre>
+            <code class="language-html">{% set settingCode %}
+                <script>
+                    defaults: {
+                        // 模态框id
+                        id: null,
+                        // 模态框自定义class
+                        class: '',
+                        // 模态框内容。可以是,string，function
+                        content: null,
+                        // 启用关闭
+                        enableCloser: true,
+                        // 启用头部
+                        enableHeader: true,
+                        // 启用脚部
+                        enableFooter: true,
+                        // 启用淡入淡出
+                        fade: true,
+                        // 标题。启用header时有效
+                        title: '标题',
+                        // 模态框宽度
+                        width: null,
+                        // 远程。字符串或者function
+                        url: null,
+                        // 是否需要背景遮罩层，boolean值，true，false或'static'，如果值为'static'则遮罩层点击不会关闭
+                        backdrop: 'static',
+                        // 是否需要esc键关闭模态框
+                        keyboard: true,
+                        // 脚部按钮集
+                        buttons: [
+                            {
+                                // 按钮文本
+                                label: '取消',
+                                // 按钮class
+                                class: 'btn-cancel',
+                                // 按钮逻辑类型，取消逻辑(cancel)
+                                hotKey: 'cancel',
+                                // 按钮点击回调
+                                click: function (e, context) {
+
+                                }
+                            },
+                            {
+                                // 按钮文本
+                                label: '确定', //按钮文本
+                                // 按钮class
+                                class: 'btn-primary',
+                                // 按钮点击回调
+                                click: function (e, context) {
+
+                                }
+                            }
+                        ]
+                    }
+                </script>
+                {% endset %}   
+                {{ settingCode | escape}}
+            </code>
+            <a class="fa fa-file-code-o" href="javascript:;" data-xmp="">展开代码</a>
+        </pre>
+    </div>
+    <div class="page-containers">
+        <div class="form-title">历史版本</div>
+        <pre>
+            <code class="language-html">{% set historyCode %}
+                <!-- 弹出基本消息 -->
+                <button type="button" id="button1" class="btn btn-primary btn-lg"> 弹出基本消息 </button>
+                <!-- 弹出自定义内容 -->
+                <button type="button" id="button2" class="btn btn-primary btn-lg"> 弹出自定义内容 </button>
+                <!-- 弹出远程页面 -->
+                <button type="button" id="button3" class="btn btn-primary btn-lg"> 弹出远程页面 </button>
+                <!-- 弹出确认框 -->
+                <button type="button" id="button4" class="btn btn-primary btn-lg"> 弹出确认框 </button>
+                <script>
+                    $(function () {
+
+                        //弹出基本消息
+                        $('#button1').click(function () {
+                            $.jkj.modal.show({
+                                title: '操作提示',
+                                content: '这是一条消息',
+                                footer: false
+                            });
+                        });
+
+                        //弹出自定义内容
+                        $('#button2').click(function () {
+                            $.jkj.modal.show({
+                                header: false,
+                                content: function () {
+                                    var $btn = $('<button class="btn btn-danger">测试按钮</button>');
+                                    $btn.click(function () {
+                                        $.jkj.notify.showError('测试按钮');
+                                    });
+                                    return $btn;
+                                }
+                            });
+                        });
+
+                        //弹出远程页面
+                        $('#button3').click(function () {
+                            $.jkj.modal.show({
+                                title: '新增账户',
+                                beforeSend: function () {
+
+                                },
+                                content: {
+                                    type: 'GET',
+                                    url: '{{ path.src }}pages/components/modal/form.html',
+                                    success: function (modal) {
+                                        $.jkj.validate('#form', {
+                                            submitHandler: function () {
+                                                $.jkj.modal.hide(modal);
+                                                $.jkj.notify.showSuccess('提交表单');
+                                            }
+                                        });
+                                    }
+                                },
+                                buttons: [
+                                    {
+                                        label: '自定义按钮1', //按钮文本
+                                        cssClass: 'btn-info', //按钮额外class
+                                        action: function (modal) { //按钮点击回调
+                                            $('#form').submit();
+                                        }
+                                    }
+                                ]
+                            });
+                        });
+
+                        //弹出确认框
+                        $('#button4').click(function () {
+                            $.jkj.modal.confirm("确定删除该对象吗?",
+                                function () {
+                                    $.jkj.notify.showSuccess('确定');
+                                }, function () {
+                                    $.jkj.notify.showError('取消');
+                                }
+                            );
+                        });
+
+                    });
+                </script>
+                {% endset %}   
+                {{ historyCode | escape}}
+            </code>
+            <a class="fa fa-file-code-o" href="javascript:;" data-xmp="">展开代码</a>
+        </pre>
+    </div>
+</div>
+
+{% endblock %} {% block js %}
+
+<!-- jquery validation -->
+<script src="{{ path.plugins }}jquery-validation/jquery.validate.js"></script>
+<script src="{{ path.plugins }}jquery-validation/additional-methods.js"></script>
+<script src="{{ path.plugins }}jquery-validation/messages_zh.js"></script>
+
+
+<!-- modal -->
+<script>
+    var btn1, btn2, btn3;
+    $(function () {
+        $('#button1').on('click', function () {
+            btn1 = $.jkj.beeModal.show({
+                title: '弹出基本消息',
+                content: '消息提示',
+                enableFooter: false
+            });
+        });
+        $('#button2').on('click', function () {
+            btn2 = $.jkj.beeModal.show({
+                enableHeader: false,
+                content: function () {
+                    var $btn = $('<button class="btn btn-danger">测试按钮</button>');
+                    $btn.click(function () {
+                        $.jkj.cleverNotify.success('测试按钮');
+                    });
+                    return $btn;
+                }
+            });
+        });
+        $('#button3').on('click', function () {
+            btn3 = $.jkj.beeModal.show({
+                title: '远程页面加载',
+                url: '{{ path.src }}pages/components/modal/form.html'
+            });
+        });
+        $('#button4').click(function () {
+            $.jkj.beeModal.confirm("确定删除该对象吗?",
+                function (e, context) {
+                    $.jkj.cleverNotify.success('确定' + context.id, { z_index: 1099 });
+                }, function (e, context) {
+                    $.jkj.cleverNotify.warning('取消' + context.id);
+                }
+            );
+        });
+    });
+
+</script>
+
+{% endblock %}

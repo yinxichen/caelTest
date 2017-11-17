@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<!-- Meta, title, CSS, favicons, etc. -->
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=9">
+		<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=0.5, maximum-scale=2, user-scalable=yes">
+		<meta name="keywords" content="HTML，CSS，JS，JavaScript，framework，bootstrap，front-end，web development，江苏跨境">
+		<meta name="description" content="江苏跨境电子商务服务有限公司">
+		<meta name="author" content="潘明星，尹喜晨">
+		<title></title>
+		<!-- Bootstrap 3.3.6 -->
+		<link rel="stylesheet" href="/src/css/bootstrap.css">
+		<!-- Font Awesome -->
+		<link rel="stylesheet" href="/src/css/font-awesome.css">
+		<!-- Ionicons -->
+		<link rel="stylesheet" href="/src/css/ionicons.css">
+		<!-- prism precode -->
+		<link rel="stylesheet" href="/plugins/prism/prism.css">
+		<!-- AdminJKJ style -->
+		<link rel="stylesheet" href="/src/css/adminjkj-1.0.323.css">
+		<link rel="stylesheet" href="/src/css/adminjkj-themes-1.0.0.css">
+		<!--子页面样式-->
+		
+		
+		<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+		<!--[if lt IE 9]>
+		<script src="/src/js/html5shiv.js"></script>
+		<script src="/src/js/respond.js"></script>
+		<![endif]-->   
+	</head>
+	<body class="" style=" overflow-x: auto;">
+  		<!-- Site wrapper -->
+		<div class=" page-body">
+			<!--子页面内容-->
+			
+
+
+<div class="alert alert-danger alert-dismissible">
+	<button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+	<h4>
+		<i class="icon fa fa-ban"></i> Alert!</h4>
+</div>
+
+<div class="alert alert-info alert-dismissible">
+	<button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+	<h4>
+		<i class="icon fa fa-info"></i> Alert!</h4>
+</div>
+
+<div class="alert alert-warning alert-dismissible">
+	<button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+	<h4>
+		<i class="icon fa fa-warning"></i> Alert!</h4>
+</div>
+
+<div class="alert alert-success alert-dismissible">
+	<button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+	<h4>
+		<i class="icon fa fa-check"></i> Alert!</h4>
+</div>
+
+<div class="row">
+	<div class="col-xs-12">
+		<p>
+			<button class="btn-notify btn btn-default" data-notify-type="error" data-notify-page="self">错误提示</button>
+			<button class="btn-notify btn btn-default" data-notify-type="info" data-notify-page="self">信息提示</button>
+			<button class="btn-notify btn btn-default" data-notify-type="success" data-notify-page="self">成功提示</button>
+			<button class="btn-notify btn btn-default" data-notify-type="warning" data-notify-page="self">警告提示</button>
+		</p>
+	</div>
+	<div class="col-xs-12">
+		<p>
+			<button class="btn-notify btn btn-default" data-notify-type="error" data-notify-page="parent">父窗体错误提示</button>
+			<button class="btn-notify btn btn-default" data-notify-type="info" data-notify-page="parent">父窗体信息提示</button>
+			<button class="btn-notify btn btn-default" data-notify-type="success" data-notify-page="parent">父窗体成功提示</button>
+			<button class="btn-notify btn btn-default" data-notify-type="warning" data-notify-page="parent">父窗体警告提示</button>
+		</p>
+	</div>
+	<div class="col-xs-12">
+		<p>
+			<button class="btn-notify btn btn-default" data-notify-type="error" data-notify-page="top">顶级窗体错误提示</button>
+			<button class="btn-notify btn btn-default" data-notify-type="info" data-notify-page="top">顶级窗体信息提示</button>
+			<button class="btn-notify btn btn-default" data-notify-type="success" data-notify-page="top">顶级窗体成功提示</button>
+			<button class="btn-notify btn btn-default" data-notify-type="warning" data-notify-page="top">顶级窗体警告提示</button>
+		</p>
+	</div>
+</div>
+<!-- <div class="row">
+				<div class="col-xs-12">
+					<p>
+			 			<button class="btn-notify btn btn-default" data-type="error" data-showWindow="self">错误提示</button> 
+			 			<button class="btn-notify btn btn-default" data-type="info" data-showWindow="self">信息提示</button> 
+			 			<button class="btn-notify btn btn-default" data-type="success" data-showWindow="self">成功提示</button> 
+			 			<button class="btn-notify btn btn-default" data-type="warning" data-showWindow="self">警告提示</button> 
+					</p>
+				</div>
+				<div class="col-xs-12">
+					<p>
+			 			<button class="btn-notify btn btn-default" data-type="error" data-showWindow="parent">父窗体错误提示</button> 
+			 			<button class="btn-notify btn btn-default" data-type="info" data-showWindow="parent">父窗体信息提示</button> 
+			 			<button class="btn-notify btn btn-default" data-type="success" data-showWindow="parent">父窗体成功提示</button> 
+			 			<button class="btn-notify btn btn-default" data-type="warning" data-showWindow="parent">父窗体警告提示</button>
+					</p>  
+				</div>
+				<div class="col-xs-12">
+					<p>
+			 			<button class="btn-notify btn btn-default" data-type="error" data-showWindow="top">顶级窗体错误提示</button> 
+			 			<button class="btn-notify btn btn-default" data-type="info" data-showWindow="top">顶级窗体信息提示</button>   
+			 			<button class="btn-notify btn btn-default" data-type="success" data-showWindow="top">顶级窗体成功提示</button> 
+			 			<button class="btn-notify btn btn-default" data-type="warning" data-showWindow="top">顶级窗体警告提示</button>  
+					</p>
+				</div>
+			</div> -->
+<div class="page-containers">
+	<div class="form-title">
+		cleverNotify 灵动消息通知、提示
+	</div>
+	<pre>
+		<code class="language-html">   
+			
+			&lt;p&gt;
+				&lt;button class=&quot;btn-notify btn btn-default&quot; data-notify-type=&quot;error&quot; data-notify-page=&quot;self&quot;&gt;错误提示&lt;/button&gt;
+				&lt;button class=&quot;btn-notify btn btn-default&quot; data-notify-type=&quot;info&quot; data-notify-page=&quot;self&quot;&gt;信息提示&lt;/button&gt;
+				&lt;button class=&quot;btn-notify btn btn-default&quot; data-notify-type=&quot;success&quot; data-notify-page=&quot;self&quot;&gt;成功提示&lt;/button&gt;
+				&lt;button class=&quot;btn-notify btn btn-default&quot; data-notify-type=&quot;warning&quot; data-notify-page=&quot;self&quot;&gt;警告提示&lt;/button&gt;
+			&lt;/p&gt;
+			&lt;p&gt;
+				&lt;button class=&quot;btn-notify btn btn-default&quot; data-notify-type=&quot;error&quot; data-notify-page=&quot;parent&quot;&gt;父窗体错误提示&lt;/button&gt;
+				&lt;button class=&quot;btn-notify btn btn-default&quot; data-notify-type=&quot;info&quot; data-notify-page=&quot;parent&quot;&gt;父窗体信息提示&lt;/button&gt;
+				&lt;button class=&quot;btn-notify btn btn-default&quot; data-notify-type=&quot;success&quot; data-notify-page=&quot;parent&quot;&gt;父窗体成功提示&lt;/button&gt;
+				&lt;button class=&quot;btn-notify btn btn-default&quot; data-notify-type=&quot;warning&quot; data-notify-page=&quot;parent&quot;&gt;父窗体警告提示&lt;/button&gt;
+			&lt;/p&gt;
+			&lt;p&gt;
+				&lt;button class=&quot;btn-notify btn btn-default&quot; data-notify-type=&quot;error&quot; data-notify-page=&quot;top&quot;&gt;顶级窗体错误提示&lt;/button&gt;
+				&lt;button class=&quot;btn-notify btn btn-default&quot; data-notify-type=&quot;info&quot; data-notify-page=&quot;top&quot;&gt;顶级窗体信息提示&lt;/button&gt;
+				&lt;button class=&quot;btn-notify btn btn-default&quot; data-notify-type=&quot;success&quot; data-notify-page=&quot;top&quot;&gt;顶级窗体成功提示&lt;/button&gt;
+				&lt;button class=&quot;btn-notify btn btn-default&quot; data-notify-type=&quot;warning&quot; data-notify-page=&quot;top&quot;&gt;顶级窗体警告提示&lt;/button&gt;
+			&lt;/p&gt;
+			&lt;script&gt;
+				$(function () {
+					$(&quot;.btn-notify&quot;).each(function () {
+						var type = $(this).attr(&#39;data-notify-type&#39;);
+						var page = $(this).attr(&#39;data-notify-page&#39;);
+
+						if (type == &#39;error&#39;) {
+							$(this).click(function () {
+								$.jkj.cleverNotify.error(&#39;这是&#39; + page + &#39;错误信息&#39;, {
+									z_index: 1099
+								}, page);
+							});
+						} else if (type == &#39;info&#39;) {
+							$(this).click(function () {
+								$.jkj.cleverNotify.info(&#39;这是&#39; + page + &#39;一般信息&#39;, null, page);
+							});
+						} else if (type == &#39;success&#39;) {
+							$(this).click(function () {
+								$.jkj.cleverNotify.success(&#39;这是&#39; + page + &#39;成功信息，用于测试长度效果用于测试长度效果用于测试长度效果用于测试长度效果用于测试长度效果用于测试长度效果&#39; +
+									&#39;用于测试长度效果用于测试长度效果用于测试长度效果&#39;, null, page);
+							});
+						} else if (type == &#39;warning&#39;) {
+							$(this).click(function () {
+								$.jkj.cleverNotify.warning(&#39;这是&#39; + page + &#39;提示信息&#39;, null, page);
+							});
+						}
+					});
+				});
+			&lt;/script&gt;
+			
+		</code>
+		<a class="fa fa-file-code-o" href="javascript:;" data-xmp="">展开代码</a>
+	</pre>
+</div>
+<div class="page-containers">
+	<div class="form-title">
+		消息通知、提示配置参数
+	</div>
+	<pre>
+		<div>使用方法：$.jkj.cleverNotify.error('这是消息内容',null,'self'); 来调用信息提示</div>
+		<div>其中：.error() 错误信息; .success() 成功信息; .info() 一般信息; .warning() 提示信息;</div>
+		<div>如果提示在遮罩上层，将null改为{z_index:1099}，修改z_index的值来提高它的层级</div>
+		<div>page的参数: self当前页面；parent父页面；top顶级页面；opener打开的页面</div>
+		<div>.remove(id) 移除指定提示信息</div>
+		<div>.removeAll() 移除所有提示信息</div>
+		<code class="language-html">   
+			
+			&lt;script&gt;
+				// 默认配置信息
+				defaults: {
+					// 消息类型。[&#39;danger&#39; | &#39;info&#39; | &#39;success&#39; | &#39;warning&#39;]
+					type: &#39;info&#39;,
+					// 是否显示进度条
+					showProgressbar: false,
+					/**
+					 * 消息放置的页面。[&#39;self&#39; | &#39;parent&#39; | &#39;top&#39;]
+					 * self： 当前页面
+					 * parent：父页面
+					 * top：顶级页面
+					 */
+					page: &#39;self&#39;,
+					/**
+					 * 显示位置
+					 * from：[&#39;top&#39; | &#39;bottom&#39;]
+					 * align：[&#39;left&#39; | &#39;center&#39; | &#39;right&#39;]
+					 */
+					placement: {
+						from: &#39;top&#39;,
+						align: &#39;right&#39;
+					},
+					// 消息靠边缘的间隔，居中显示时x轴无效
+					offset: {
+						x: 15,
+						y: 5
+					},
+					// 消息间上下间隔像素
+					spacing: 2,
+					// Z轴的值
+					z_index: 1031,
+					// 实例化方法被调用时回调该方法
+					onShow: null,
+					// 消息显示到用户界面时回调该方法
+					onShowed: null,
+					// 消息关闭回调该方法
+					onClose: null,
+					// 消息关闭完成后回调该方法
+					onClosed: null,
+					// 消息模板。{0} = type；{1} = title；{2} = message；{3} = url；{4} = target
+					template: &#39;&lt;div data-notify=&quot;container&quot; class=&quot;col-xs-11 col-sm-3 alert alert-{0} alert-dismissible&quot; role=&quot;alert&quot;&gt;&#39; +
+					&#39;&lt;button type=&quot;button&quot; aria-hidden=&quot;true&quot; class=&quot;close&quot; data-notify=&quot;dismiss&quot;&gt;×&lt;/button&gt;&#39; +
+					&#39;&lt;span data-notify=&quot;icon&quot;&gt;&lt;/span&gt; &#39; +
+					&#39;&lt;span data-notify=&quot;title&quot;&gt;{1}&lt;/span&gt; &#39; +
+					&#39;&lt;span data-notify=&quot;message&quot;&gt;{2}&lt;/span&gt;&#39; +
+					&#39;&lt;div class=&quot;progress&quot; data-notify=&quot;progressbar&quot;&gt;&#39; +
+					&#39;&lt;div class=&quot;progress-bar progress-bar-{0}&quot; role=&quot;progressbar&quot; aria-valuenow=&quot;0&quot; aria-valuemin=&quot;0&quot; aria-valuemax=&quot;100&quot; style=&quot;width: 0%;&quot;&gt;&lt;/div&gt;&#39; +
+					&#39;&lt;/div&gt;&#39; +
+					&#39;&lt;a href=&quot;{3}&quot; target=&quot;{4}&quot; data-notify=&quot;url&quot;&gt;&lt;/a&gt;&#39; +
+					&#39;&lt;/div&gt;&#39;,
+
+				}
+			&lt;/script&gt;
+			
+		</code>
+		<a class="fa fa-file-code-o" href="javascript:;" data-xmp="">展开代码</a>
+	</pre>
+</div>
+<div class="page-containers">
+	<div class="form-title">
+		老版本notify 通知
+	</div>
+	<pre>
+		<div>使用方法：$.jkj.notify.showError('message',null,showWindow); 来调用信息提示</div>
+		<div>其中：.showError() 错误信息;	 .showSuccess() 成功信息;	 .showInfo() 一般信息;	.showWarning() 提示信息;</div>
+		<div>如果提示在遮罩上层，将null改为{z_index:1099}，修改z_index的值来提高它的层级</div>
+		<div>showWindow的参数: self当前页面；parent父页面；top顶级页面；opener打开的页面</div>
+		<code class="language-html">   
+			
+			&lt;div class=&quot;row&quot;&gt;
+				&lt;div class=&quot;col-xs-12&quot;&gt;
+					&lt;p&gt;
+							&lt;button class=&quot;btn-notify btn btn-default&quot; data-type=&quot;error&quot; data-showWindow=&quot;self&quot;&gt;错误提示&lt;/button&gt; 
+							&lt;button class=&quot;btn-notify btn btn-default&quot; data-type=&quot;info&quot; data-showWindow=&quot;self&quot;&gt;信息提示&lt;/button&gt; 
+							&lt;button class=&quot;btn-notify btn btn-default&quot; data-type=&quot;success&quot; data-showWindow=&quot;self&quot;&gt;成功提示&lt;/button&gt; 
+							&lt;button class=&quot;btn-notify btn btn-default&quot; data-type=&quot;warning&quot; data-showWindow=&quot;self&quot;&gt;警告提示&lt;/button&gt; 
+					&lt;/p&gt;
+				&lt;/div&gt;
+				&lt;div class=&quot;col-xs-12&quot;&gt;
+					&lt;p&gt;
+							&lt;button class=&quot;btn-notify btn btn-default&quot; data-type=&quot;error&quot; data-showWindow=&quot;parent&quot;&gt;父窗体错误提示&lt;/button&gt; 
+							&lt;button class=&quot;btn-notify btn btn-default&quot; data-type=&quot;info&quot; data-showWindow=&quot;parent&quot;&gt;父窗体信息提示&lt;/button&gt; 
+							&lt;button class=&quot;btn-notify btn btn-default&quot; data-type=&quot;success&quot; data-showWindow=&quot;parent&quot;&gt;父窗体成功提示&lt;/button&gt; 
+							&lt;button class=&quot;btn-notify btn btn-default&quot; data-type=&quot;warning&quot; data-showWindow=&quot;parent&quot;&gt;父窗体警告提示&lt;/button&gt;
+					&lt;/p&gt;  
+				&lt;/div&gt;
+				&lt;div class=&quot;col-xs-12&quot;&gt;
+					&lt;p&gt;
+							&lt;button class=&quot;btn-notify btn btn-default&quot; data-type=&quot;error&quot; data-showWindow=&quot;top&quot;&gt;顶级窗体错误提示&lt;/button&gt; 
+							&lt;button class=&quot;btn-notify btn btn-default&quot; data-type=&quot;info&quot; data-showWindow=&quot;top&quot;&gt;顶级窗体信息提示&lt;/button&gt;   
+							&lt;button class=&quot;btn-notify btn btn-default&quot; data-type=&quot;success&quot; data-showWindow=&quot;top&quot;&gt;顶级窗体成功提示&lt;/button&gt; 
+							&lt;button class=&quot;btn-notify btn btn-default&quot; data-type=&quot;warning&quot; data-showWindow=&quot;top&quot;&gt;顶级窗体警告提示&lt;/button&gt;  
+					&lt;/p&gt;
+				&lt;/div&gt;
+			&lt;/div&gt;
+			&lt;script&gt;
+				$(function(){
+					$(&quot;.btn-notify&quot;).each(function(){
+						var type=$(this).attr(&#39;data-type&#39;);
+						var showWindow=$(this).attr(&#39;data-showWindow&#39;);
+						
+						if(type==&#39;error&#39;){
+							$(this).click(function(){
+								$.jkj.notify.showError(&#39;这是&#39;+showWindow+&#39;错误信息&#39;,null,showWindow);
+							});
+						}
+						else if(type==&#39;info&#39;){
+							$(this).click(function(){
+								$.jkj.notify.showInfo(&#39;这是&#39;+showWindow+&#39;一般信息&#39;,null,showWindow);
+							});
+						}
+						else if(type==&#39;success&#39;){
+							$(this).click(function(){
+								$.jkj.notify.showSuccess(&#39;这是&#39;+showWindow+&#39;成功信息，用于测试长度效果用于测试长度效果用于测试长度效果用于测试长度效果用于测试长度效果用于测试长度效果&#39;
+								+&#39;用于测试长度效果用于测试长度效果用于测试长度效果&#39;,null,showWindow);
+							});
+						}
+						else if(type==&#39;warning&#39;){
+							$(this).click(function(){
+								$.jkj.notify.showWarning(&#39;这是&#39;+showWindow+&#39;提示信息&#39;,null,showWindow);
+							});
+						}
+					});
+				});
+			&lt;/script&gt;
+			
+		</code>
+		<a class="fa fa-file-code-o" href="javascript:;" data-xmp="">展开代码</a>
+	</pre>
+</div>
+
+
+		</div>
+		
+		<!-- jquery 2.2.3 -->
+		<script src="/plugins/jquery/jquery-2.2.3.min.js"></script>
+		<!-- Bootstrap 3.3.6 -->
+		<script src="/src/js/bootstrap.js"></script>
+		<!-- SlimScroll -->
+		<script src="/plugins/slimScroll/jquery.slimscroll.min.js"></script>
+		<!-- FastClick -->
+		<script src="/plugins/fastclick/fastclick.js"></script>
+		<!-- Notify -->
+		<script src="/plugins/bootstrap-notify/bootstrap-notify.js"></script>
+		<!-- prism precode -->
+		<script src="/plugins/prism/prism.js"></script>
+
+		<script src="/src/js/adminjkj-1.0.323.js" type="text/javascript"></script>
+		<!--子页面脚本-->
+		
+<script type="text/javascript">
+	$(function () {
+		$(".btn-notify").each(function () {
+			var type = $(this).attr('data-notify-type');
+			var page = $(this).attr('data-notify-page');
+
+			if (type == 'error') {
+				$(this).click(function () {
+					$.jkj.cleverNotify.error('这是' + page + '错误信息', {
+						z_index: 1099
+					}, page);
+				});
+			} else if (type == 'info') {
+				$(this).click(function () {
+					$.jkj.cleverNotify.info('这是' + page + '一般信息', null, page);
+				});
+			} else if (type == 'success') {
+				$(this).click(function () {
+					$.jkj.cleverNotify.success('这是' + page + '成功信息，用于测试长度效果用于测试长度效果用于测试长度效果用于测试长度效果用于测试长度效果用于测试长度效果' +
+						'用于测试长度效果用于测试长度效果用于测试长度效果', null, page);
+				});
+			} else if (type == 'warning') {
+				$(this).click(function () {
+					$.jkj.cleverNotify.warning('这是' + page + '提示信息', null, page);
+				});
+			}
+		});
+	});
+</script>
+
+	</body>
+</html>

@@ -1,0 +1,234 @@
+/*
+ * Skin: dark-gray
+ * ------------
+ */
+
+@import "../../bootstrap-less/mixins.less";
+@import "../../bootstrap-less/variables.less";
+@import "../variables.less";
+@import "../mixins.less";
+
+.skin-dark-gray-protect {
+    .page-body{
+        background: @light-yellow;
+        .navbar-fixed-top{
+            background: @light-yellow;
+        }
+        .fixed-anchor{
+            background: @light-yellow;
+        }
+        .modal-content{
+            background: @light-yellow;
+        }
+        .btn-primary, .btn-confirm, .btn-cancel{
+            border-color: @light-yellow;
+        }
+        select, input[type="text"], input[type="password"], input[type="datetime"], input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="email"], input[type="url"], input[type="search"], input[type="tel"]{
+            background-color: lighten(@light-yellow, 2%); 
+            &:focus{
+                border-color: lighten(@dark-gray,5%);
+                -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(192, 204, 84, 0.6);
+                box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(192, 204, 84, 0.6);
+            }
+        }
+        .fixed-menu > ul > li > a{
+            border-color: @light-yellow;
+        }
+        .tabbable .nav-tabs{
+            background: #e4e0cb;
+        }
+        .tabbable .nav-tabs > li.active > a{
+            border-top-color: @dark-gray;
+        }
+        .fixed-anchor{
+            ul{
+                li{
+                    &:hover, &.active{
+                        border-bottom-color: @dark-gray;
+                        color: @dark-gray;
+                    }
+                }
+            }
+        }
+        .floor.active{
+            -webkit-box-shadow: 0 0 15px @dark-gray;
+            -moz-box-shadow: 0 0 15px @dark-gray;
+            box-shadow: 0 0 15px @dark-gray;
+        }
+        .modal-content{
+            
+        }
+        .page-title{
+            border-bottom-color: darken(@dark-gray, 5%);
+        }
+    }
+    .modal{
+        .modal-header{
+            border-bottom-color: @dark-gray;
+        }
+    } 
+    //Navbar
+    .main-header {
+        .navbar {
+            .navbar-variant(@dark-gray;
+            #fff);
+            .sidebar-toggle {
+                color: #fff;
+                &:hover {
+                    background-color: darken(@dark-gray, 5%);
+                }
+            }
+            @media (max-width: @screen-header-collapse) {
+                .dropdown-menu {
+                    li {
+                        &.divider {
+                            background-color: rgba(255, 255, 255, 0.1);
+                        }
+                        a {
+                            color: #fff;
+                            &:hover {
+                                background: darken(@dark-gray, 5%);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        //Logo
+        .logo {
+            .logo-variant(darken(@dark-gray, 5%));
+        }
+        li.user-header {
+            background-color: @dark-gray;
+        }
+    }
+    //Content Header
+    .content-header {
+        background: transparent;
+    }
+    //Create the sidebar skin
+    .skin-light-sidebar(@dark-gray);
+    //sidebar
+    .main-sidebar {
+        background: @dark-gray;
+        //Sidebar Menu. First level links
+        .sidebar-menu>li {
+            //Section Headning
+            &.header {
+                color: lighten(@dark-gray, 20%);
+                background: darken(@dark-gray, 4%);
+            }
+            //links
+            >a {
+                border-left: 3px solid transparent;
+            }
+            //Hover and active states
+            &:hover>a,
+            &.active>a {
+                color: @sidebar-dark-hover-color;
+                background: lighten(@dark-gray, 5%);
+            }
+            //First Level Submenu
+            >.treeview-menu {
+                margin: 0;
+                background: lighten(@dark-gray, 10%);
+                .treeview-menu {
+                    background: lighten(@dark-gray, 15%);
+                    .treeview-menu {
+                        background: lighten(@dark-gray, 20%);
+                    }
+                }
+                .ico-circle-o{
+                    background:none;
+                }
+            }
+        }
+        //All links within the sidebar menu
+        .sidebar a {
+            color: lighten(@dark-gray, 60%);
+            &:hover {
+                text-decoration: none;
+            }
+        }
+        //All submenus
+        .treeview-menu {
+            >li {
+                >a {
+                    color: lighten(lighten(@dark-gray, 10%), 40%);
+                }
+                &.active>a,
+                >a:hover {
+                    color: @sidebar-dark-submenu-hover-color;
+                    background: lighten(@dark-gray, 20%);
+                }
+            }
+        }
+    }
+    
+    //创建富导航标签主题
+  .richNavTabs{
+    .content-header{
+        background-color: #e5e8ef;
+        .nav-control{
+            span{               
+                color: @blue;
+                &:hover{
+                    color: lighten(@blue,10%);
+                cursor:pointer;
+                }
+            }
+        }
+
+        .nav-tabs-wrapper{
+            .nav-tabs{
+                li{
+                    a{
+                        color: @light-black;
+                        span{
+                            
+                        }
+                        .nav-tabs-close:hover{
+                            background: @dark-gray;
+                            color: @white;
+                        }
+                        &:hover, &:active{
+                            background: lighten(@dark-gray,10%);
+                            color: #FFF;
+                        }
+                    }
+                    &.active{
+                        a{
+                            background: lighten(@dark-gray,10%);
+                            color: #FFF;
+                            .nav-tabs-close{
+                                color: lighten(@light-gray,30%);
+                                cursor:pointer
+                                &::pohover{
+                                    color: #FFF;
+                                    background: @dark-gray;
+                                }
+                            }  
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .contextMenu{
+        background-color: rgb(255, 255, 255);
+        border: 1px solid rgb(153, 153, 153);
+    }
+  }
+  //table
+  .table-bordered {
+    > thead{
+        > tr {
+            > th,
+            > td {
+                background-color: #e4e0cb;
+                }
+            }
+        }
+    }
+
+}

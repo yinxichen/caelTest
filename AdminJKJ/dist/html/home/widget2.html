@@ -1,0 +1,83 @@
+
+
+		<style type="text/css">
+			.dataTables_wrapper .dataTables_info{
+				margin-left: 0;
+			}
+			.dataTables_length{
+				display: none;
+			}
+			.col-sm-5{
+				text-align: right;
+			}
+			.col-sm-5, .col-sm-7{
+				width: 100%;
+			}
+			.table{
+				margin-bottom: 0;
+			}
+		</style>
+		<div class="row row row-void row-form">
+			<div class="col-xs-3 text-right">
+				下单日期：
+			</div>
+			<div class="col-xs-5">
+				<select class="form-control" name="">
+					<option value=""></option>
+				</select>
+			</div>
+			<div class="col-xs-2">
+				<button type="button" class="btn btn-primary">查询</button>
+			</div>
+		</div>
+		<table id="example4" class="table table-bordered table-hover" width="100%">
+	        <thead>
+	            <tr>
+	                <th>公司名称</th>
+	                <th>等级</th>
+	                <th>最后联系时间</th>
+	            </tr>
+	        </thead>
+	    </table>
+			
+		
+
+		<script type="text/javascript">
+	    	$(function () {
+				var myTable = $.jkj.dataTable.remote('#example4', {
+						// 支持字符串类型和方法两种方式
+						"formId": null,
+						"ajaxMethod":function(data, callback, settings){
+							$.get('/data/tableWidget.json',data,function(data){
+								/* 名称				    类型	 				描述
+								 * draw				integer		必要。Datatables发送的draw是多少那么服务器就返回多少。
+								 * 								这里注意，作者出于安全的考虑，强烈要求把这个转换为整形，
+								 * 								即数字后再返回，而不是纯粹的接受然后返回，这是 为了防止
+								 * 								跨站脚本（XSS）攻击。
+								 * recordsTotal		integer		必要。即没有过滤的记录数（数据库里总共记录数）
+								 * recordsFiltered	integer		必要。过滤后的记录数（如果有接收到前台的过滤条件，则返回
+								 *  							的是过滤后的记录数）。
+								 * data				arrayType	必要。表中中需要显示的数据。这是一个对象数组，也可以只是
+								 * 								数组，区别在于 纯数组前台就不需要用 columns绑定数据，会自
+								 * 								动按照顺序去显示 ，而对象数组则需要使用 columns绑定数据才
+								 * 								能正常显示。 
+								 * error			string		可选。你可以定义一个错误来描述服务器出了问题后的友好提示。
+								*/
+								callback(data);
+							});
+						}, 
+						//"stripeClasses": [ 'warning','info'],
+				    	"columns": [
+							{ "data": "公司名称" },
+							{ "data": "等级" },
+							{ "data": "最后联系时间", "className": "text-center" }
+			        	]
+				});
+			});
+	    </script>
+		        	        
+
+			
+
+
+			

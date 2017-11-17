@@ -1,0 +1,399 @@
+/*
+ * Skin: dark-gray
+ * ------------
+ */
+
+ @import "../../bootstrap-less/mixins.less";
+ @import "../../bootstrap-less/variables.less";
+ @import "../variables.less";
+ @import "../mixins.less";
+ 
+ .skin-dark-gray-protect2 {
+     .page-body{
+        background: @light-green;
+        .navbar-fixed-top{
+            background: @light-green;
+        }
+        .fixed-anchor{
+            background: @light-green;
+        }
+        .modal-content{
+            background: @light-green;
+        }
+        .modal .modal-header{
+            background: #d7e1d8;
+        }
+        .page-containers{
+            background: lighten(@light-green,2%);
+        }
+        select, textarea, input[type="text"], input[type="password"], input[type="datetime"], input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="email"], input[type="url"], input[type="search"], input[type="tel"]{
+            background-color: lighten(@light-green, 8%);
+            &:focus{
+                border-color: #36944e;
+                -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(80, 199, 128, 0.6);
+                box-shadow: inset 0 1px 1px rgba(0,0,0,.075), 0 0 8px rgba(80, 199, 128, 0.6);
+            } 
+        }
+        .tabbable .tab-content, .tabbable .nav-tabs > li.active > a, .tabbable .nav-tabs > li.active > a:hover, .tabbable .nav-tabs > li.active > a:focus{
+            background-color: @light-green;
+        }
+        .tabbable .nav-tabs > li.active{
+            border-color: @light-green;
+        }
+        .tabbable .nav-tabs > li.active > a{
+            border-top-color: @dark-green;
+        }
+        .tabbable .nav-tabs{
+            background: #d7e1d8;
+        }
+        .fixed-menu > ul > li > a{
+            border-color: @light-green;
+            background-color: lighten(@orange-btn,5%);
+            &:hover, &:active, &.hover, &:focus {
+                background-color: @orange-btn;
+                border-color:darken(@orange-btn,10%) !important;
+                color: #FFF;
+            }
+            &:active:hover,  &:active:focus{
+                background-color: @orange-btn;
+            }
+        }
+        .fixed-menu > ul > li ul li a:hover{
+            background: rgba(254,166,86,.6);
+            color: @white;
+        }
+        .fixed-anchor{
+            ul{
+                li{
+                    &:hover, &.active{
+                        border-bottom-color: @dark-gray;
+                        color: @dark-gray;
+                    }
+                }
+            }
+        }
+        .floor.active{
+            -webkit-box-shadow: 0 0 15px @dark-gray;
+            -moz-box-shadow: 0 0 15px @dark-gray;
+            box-shadow: 0 0 15px @dark-gray;
+        }
+        .modal-content{
+            
+        }
+        .page-title{
+            border-bottom-color: darken(@dark-gray, 5%);
+        }
+     }
+     .modal{
+         .modal-header{
+             border-bottom-color: @dark-gray;
+         }
+     } 
+     //Navbar
+     .main-header {
+         .navbar {
+             .navbar-variant(@dark-gray;
+             #fff);
+             .sidebar-toggle {
+                 color: #fff;
+                 &:hover {
+                     background-color: darken(@dark-gray, 5%);
+                 }
+             }
+             @media (max-width: @screen-header-collapse) {
+                 .dropdown-menu {
+                     li {
+                         &.divider {
+                             background-color: rgba(255, 255, 255, 0.1);
+                         }
+                         a {
+                             color: #fff;
+                             &:hover {
+                                 background: darken(@dark-gray, 5%);
+                             }
+                         }
+                     }
+                 }
+             }
+         }
+         //Logo
+         .logo {
+             .logo-variant(darken(@dark-gray, 5%));
+         }
+         li.user-header {
+             background-color: @dark-gray;
+         }
+     }
+     //Content Header
+     .content-header {
+         background: transparent;
+     }
+     //Create the sidebar skin
+     .skin-light-sidebar(@dark-gray);
+     //sidebar
+     .main-sidebar {
+         background: @dark-gray;
+         //Sidebar Menu. First level links
+         .sidebar-menu>li {
+             //Section Headning
+             &.header {
+                 color: lighten(@dark-gray, 20%);
+                 background: darken(@dark-gray, 4%);
+             }
+             //links
+             >a {
+                 border-left: 3px solid transparent;
+             }
+             //Hover and active states
+             &:hover>a,
+             &.active>a {
+                 color: @sidebar-dark-hover-color;
+                 background: lighten(@dark-gray, 5%);
+             }
+             //First Level Submenu
+             >.treeview-menu {
+                 margin: 0;
+                 background: lighten(@dark-gray, 10%);
+                 .treeview-menu {
+                     background: lighten(@dark-gray, 15%);
+                     .treeview-menu {
+                         background: lighten(@dark-gray, 20%);
+                     }
+                 }
+                 .ico-circle-o{
+                     background:none;
+                 }
+             }
+         }
+         //All links within the sidebar menu
+         .sidebar a {
+             color: lighten(@dark-gray, 60%);
+             &:hover {
+                 text-decoration: none;
+             }
+         }
+         //All submenus
+         .treeview-menu {
+             >li {
+                 >a {
+                     color: lighten(lighten(@dark-gray, 10%), 40%);
+                 }
+                 &.active>a,
+                 >a:hover {
+                     color: @sidebar-dark-submenu-hover-color;
+                     background: lighten(@dark-gray, 20%);
+                 }
+             }
+         }
+     }
+     
+     //创建富导航标签主题
+   .richNavTabs{
+     .content-header{
+         background-color: #e5e8ef;
+         .nav-control{
+             span{               
+                 color: @blue;
+                 &:hover{
+                     color: lighten(@blue,10%);
+                 cursor:pointer;
+                 }
+             }
+         }
+ 
+         .nav-tabs-wrapper{
+             .nav-tabs{
+                 li{
+                     a{
+                         color: @light-black;
+                         span{
+                             
+                         }
+                         .nav-tabs-close:hover{
+                             background: @dark-gray;
+                             color: @white;
+                         }
+                         &:hover, &:active{
+                             background: lighten(@dark-gray,10%);
+                             color: #FFF;
+                         }
+                     }
+                     &.active{
+                         a{
+                             background: lighten(@dark-gray,10%);
+                             color: #FFF;
+                             .nav-tabs-close{
+                                 color: lighten(@light-gray,30%);
+                                 cursor:pointer
+                                 &::pohover{
+                                     color: #FFF;
+                                     background: @dark-gray;
+                                 }
+                             }  
+                         }
+                     }
+                 }
+             }
+         }
+     }
+     .contextMenu{
+         background-color: rgb(255, 255, 255);
+         border: 1px solid rgb(153, 153, 153);
+     }
+   }
+   //table
+   .table-bordered {
+        border: 1px solid @box-border-color;
+        > tbody,
+        > tfoot {
+            > tr {
+                > th,
+                > td {
+                    background: none;
+                }
+            }
+        }
+        > thead{
+            > tr {
+                > th,
+                > td {
+                    background-color: #d7e1d8 
+                }
+            }
+        }
+    }
+    .pagination > li > a{
+        background-color: @light-green;
+    }
+    .table button{
+        color: darken(@dark-green, 6%);
+        &:hover, &:active, &:focus{
+            color: darken(@dark-green, 15%);
+        }
+    }
+    .table-hover > tbody > tr:hover{
+        background-color: lighten(@light-green, 8%);
+    }
+
+    //process
+    .orderProcess ul li{
+        color: #7e9486;
+        background: #7eb391;
+        &:before{
+            background: #a9ccb6;
+        }
+        &.on {
+            background: #de791d;
+            color: #de791d;
+            &:before{
+                background: #de791d;
+            }
+        }
+    }
+
+    /* Links */
+    a {
+        color: darken(@dark-green, 6%);
+    }
+    a:hover,
+    a:active,
+    a:focus {
+        color: darken(@dark-green, 15%);
+    }
+    .btn-confirm{
+        background-color: lighten(@orange-btn,5%);
+        &:hover, &:active, &.hover, &:focus {
+            background-color: @orange-btn;
+            border-color:darken(@orange-btn,10%) !important;
+            color: #FFF;
+        }
+        &:active:hover,  &:active:focus{
+            background-color: @orange-btn;
+        }
+    }
+    .btn-cancel{
+        background: #bad0bc;
+    }
+    .btn-primary, .btn-confirm, .btn-cancel{
+        border-color: @light-green;
+    }
+    .form-title button{
+        color: darken(@dark-green, 6%);
+        background: none;
+        &:hover, &:active, &.hover, &:focus{
+            color: darken(@dark-green, 15%);
+            background: none;
+        }
+        &:active:hover,  &:active:focus{
+            background: none;
+        }
+    }
+    .form-title button{
+        color: darken(@dark-green, 6%);
+        background: none;
+        &:hover, &:active, &.hover, &:focus{
+            color: darken(@dark-green, 15%);
+            background: none;
+        }
+        &:active:hover,  &:active:focus{
+            background: none;
+        }
+    }
+
+    /*workbench*/
+    .grid-stack > .grid-stack-item.ui-draggable .workbench-widget .workbench-widget-body{
+        background: lighten(@light-green, 2%); 
+        border-top: 2px solid #cacaca;
+    }
+    .grid-stack > .grid-stack-item.ui-draggable .workbench-widget .workbench-widget-header{
+        background: lighten(@light-green, 2%); 
+        border-top-color: @dark-gray;
+    }
+    .workbench-bottom-widgets .workbench-widgets-wrapper .workbench-widget{
+        background: lighten(@light-green, 5%); 
+        .workbench-widget-header{
+            border-top-color: @dark-gray;
+        }
+    }
+    table.dataTable tbody tr {
+        background-color: @light-green;
+    }
+
+    /*datepicker*/
+    .datepicker.dropdown-menu{
+        background-color: lighten(@light-green, 8%);
+    }
+    .table-condensed thead tr th{
+        background-color: lighten(@light-green, 8%);
+    }
+    .datepicker-dropdown:after{
+        border-bottom-color: lighten(@light-green, 8%);
+    }
+    .daterangepicker{
+        background-color: lighten(@light-green, 8%);
+        .calendar-date{
+            background-color: lighten(@light-green, 8%);
+        }
+        &.opensright:after{
+            border-bottom-color:  lighten(@light-green, 8%);
+        }
+        select{
+            background-color: lighten(@light-green, 8%);
+        }
+    }
+
+    /*select2*/
+    .select2-container--default .select2-selection--single{
+        background-color: lighten(@light-green, 8%); 
+    }
+    .select2-container--default .select2-selection--multiple{
+        background-color: lighten(@light-green, 8%); 
+    }
+    .select2-dropdown{
+        background-color: lighten(@light-green, 8%);
+        input{
+            background-color: lighten(@light-green, 8%);
+        }
+    }
+    
+ }

@@ -1,0 +1,772 @@
+{% extends "../shared/layout.html" %} {% block title %}出口订单确认函{% endblock %} {% block css %}
+
+<style type="text/css">
+	form.print {
+		border: 1px solid #ccc;
+		margin: auto;
+		padding: 48px;
+		width: 794px;
+		font-size: 14px;
+		color: #383838;
+	}
+
+	h1 {
+		margin-top: 0;
+		border-width: 0px;
+		color: #333;
+		font: 26px/60px 'Microsoft Yahei';
+		padding: 0px;
+		text-align: center;
+	}
+
+	h2 {
+		margin: 10px 0 5px;
+		border-width: 0px;
+		color: #333;
+		font: 15px/24px 'Microsoft Yahei';
+		font-weight: bold;
+		padding: 0px;
+	}
+
+	h3 {
+		font: 16px/36px 'Microsoft Yahei';
+		margin: 0px;
+		padding: 0px;
+		text-align: left;
+	}
+
+	select,
+	input[type=text] {
+		padding: 0;
+		font-size: 14px !important;
+		width: 180px;
+		height: 22px !important;
+		border: 1px solid #d1d1d1 !important;
+		border-radius: 3px !important;
+	}
+
+	textarea {
+		height: 60px;
+		width: 100%;
+		border: 1px solid #d1d1d1;
+	}
+
+	.red {
+		color: #df5138;
+	}
+
+	.text-left {
+		text-align: left !important;
+	}
+
+	.text-right {
+		text-align: right !important;
+	}
+
+	.row {
+		margin: 0;
+		margin-right: -30px;
+	}
+
+	.row:before,
+	.row:after {
+		display: table;
+		content: " ";
+	}
+
+	.row:after {
+		clear: both;
+	}
+
+	.col-6,
+	.col-12 {
+		position: relative;
+		min-height: 1px;
+		padding-right: 30px;
+		float: left;
+		box-sizing: border-box;
+		word-break: break-all;
+		display: table;
+	}
+
+	.col-6 {
+		width: 50%;
+		line-height: 25px;
+	}
+
+	.col-12 {
+		width: 100%;
+		line-height: 25px;
+	}
+
+	.print-name {
+		white-space: nowrap;
+		display: table-cell;
+		vertical-align: top;
+	}
+
+	.print-cont {
+		width: 100%;
+		display: table-cell;
+	}
+
+	.table {
+		margin-bottom: 10px;
+		width: 100%;
+		border-spacing: 0;
+		border-collapse: collapse;
+	}
+
+	.table th,
+	.table td {
+		padding: 8px 5px;
+		border: 1px solid #c9caca;
+	}
+
+	.table th {
+		background: #e5e8ef;
+	}
+
+	.table td {
+		text-align: center;
+	}
+
+	@media print {
+		.head,
+		.navi,
+		.foot,
+		.button,
+		button,
+		pre,
+		#cprint,
+		#mark {
+			display: none;
+		}
+		body,
+		.body,
+		.print,
+		.page-body {
+			border-width: 0px !important;
+			margin: 0px !important;
+			padding: 0px !important;
+			width: 794px !important;
+			min-width: auto;
+		}
+		select,
+		input[type=text],
+		textarea {
+			border: none;
+		}
+		.col-12 {
+			padding-right: 0;
+		}
+	}
+</style>
+
+{% endblock %} {% block content %}
+<form method="post" class="print">
+
+	<h3>南京贸互达科技有限公司</h3>
+
+	<h1>出口订单确认函</h1>
+
+	<div class="row">
+		<div class="col-6">
+			<label class="print-name">委托订单号：</label>
+			<span class="print-cont">MHD2017007505E</span>
+		</div>
+		<div class="col-6">
+			<label class="print-name">委托下单日期：</label>
+			<span class="print-cont">2017年9月30日</span>
+		</div>
+		<div class="col-12">
+			<span class="print-cont">委托方就出口商品事宜，委托受托方基于外贸综合服务协议（协议编号：222121）进行出口外贸综合服务，服务内容如下：</span>
+		</div>
+	</div>
+
+	<h2>一、基本信息</h2>
+	<div class="row">
+		<div class="col-6">
+			<label class="print-name">委托人：</label>
+			<span class="print-cont">余江县清扬纺织有限公司</span>
+		</div>
+		<div class="col-6">
+			<label class="print-name">地址：</label>
+			<span class="print-cont">江西鹰潭市余江县余江县工业园区龙岗片</span>
+		</div>
+		<div class="col-6">
+			<label class="print-name">收货人：</label>
+			<span class="print-cont">HONTE GENERAL TRADING L.L.C</span>
+		</div>
+		<div class="col-6">
+			<label class="print-name">地址：</label>
+			<span class="print-cont"></span>
+		</div>
+		<div class="col-6">
+			<label class="print-name">选择开票人：</label>
+			<span class="print-cont">
+				<select name="">
+					<option value="">请选择</option>
+					<option value="">贸互达</option>
+				</select>
+			</span>
+		</div>
+		<div class="col-6">
+			<label class="print-name">选择联系人：</label>
+			<span class="print-cont">
+				<input type="text" name="" id="" value="" />
+			</span>
+		</div>
+		<div class="col-12">
+			<label class="print-name">联系人/联系方式：</label>
+			<span class="print-cont"></span>
+		</div>
+		<div class="col-6">
+			<label class="print-name">出口目的国或地区：</label>
+			<span class="print-cont">菲律宾</span>
+		</div>
+		<div class="col-6">
+			<label class="print-name">成交方式：</label>
+			<span class="print-cont">FOB</span>
+		</div>
+		<div class="col-6">
+			<label class="print-name">币种：</label>
+			<span class="print-cont">美元</span>
+		</div>
+		<div class="col-6">
+			<label class="print-name">结算方式：</label>
+			<span class="print-cont">电汇TT
+				<br /> 前TT：0.00% 后TT：100.00%(出运后30天)</span>
+		</div>
+	</div>
+
+	<h2>二、产品信息</h2>
+	<table class="table">
+		<tr>
+			<th nowrap="nowrap">项号</th>
+			<th nowrap="nowrap">HSCODE</th>
+			<th nowrap="nowrap">申报品名</th>
+			<th nowrap="nowrap">规格</th>
+			<th nowrap="nowrap">货号</th>
+			<th nowrap="nowrap">总价</th>
+			<th nowrap="nowrap">数量</th>
+			<th nowrap="nowrap">重量(千克)</th>
+			<th nowrap="nowrap">单价</th>
+			<th nowrap="nowrap">开票人</th>
+		</tr>
+		<tr>
+			<td rowspan="2">1</td>
+			<td>8529908100</td>
+			<td>解码板</td>
+			<td></td>
+			<td></td>
+			<td>88400</td>
+
+			<td>13600个
+			</td>
+			<td>476</td>
+			<td>6.5</td>
+			<td>
+				深圳市沃卡科技有限公司
+			</td>
+		</tr>
+		<tr>
+			<td>申报要素</td>
+			<td colspan="9" style="text-align: left;">
+
+				<label>1.品名:</label>
+				<label>解码板;</label>
+
+				<label>2.用途(适用机型):</label>
+				<label>卫星接收机解码板，接收卫星信号 解码;</label>
+
+				<label>3.品牌:</label>
+				<label>无;</label>
+
+				<label>4.型号:</label>
+				<label>TL-6101S;</label>
+
+			</td>
+		</tr>
+	</table>
+	<div class="row">
+		<div class="col-6">
+			<label class="print-name">包装类型：</label>
+			<span class="print-cont">纸箱</span>
+		</div>
+	</div>
+	<h2>三、服务信息</h2>
+	<div class="row">
+		<div class="col-12">
+			<label class="print-name">1. 结汇付款：</label>
+			<span class="print-cont">收到委托方结汇通知并取得增值税发票后3个工作日内支付</span>
+		</div>
+		<div class="col-12">
+			<label class="print-name">2. 结算金额计算：</label>
+			<span class="print-cont">
+				□ 指定含税开票金额：收汇额=发票金额-出口退税+垫税服务费+杂费=[发票额*（1+增值税率-退税率*t）+杂费*（1+增值税率）]/1.17*汇率
+				<br /> ☑ 指定货物报关单价：发票额=收汇金额+出口退税-垫税服务费-杂费=（1+增值税率）*(实际收汇*汇率-杂费)/(1+增值税率-退税率*t)
+				<br /> 注：t=1-退税服务费率
+			</span>
+		</div>
+		<div class="col-12">
+			<label class="print-name">3. 退税服务：</label>
+			<span class="print-cont">
+				□ 资料收齐，外汇款收齐，开正确增值税发票，收到报关单退税联原件（若您自行安排报关），使用垫付退税服务。（3个工作日内即可拿到退税款 ,退税服务费率为退税额的4.0000%）
+				<br /> □ 资料收齐,外汇款收齐，开正确增值税发票，收到报关单退税联原件（若您自行安排报关），正常合规办理退税。（需要约3个月，退税服务费为0）
+			</span>
+		</div>
+		<div class="col-12">
+			<label class="print-name">4. 物流服务：</label>
+			<span class="print-cont">
+				<div class="col-6">
+					<label class="print-name">物流方式：</label>
+					<span class="print-cont">自行安排</span>
+				</div>
+				<div class="col-6">
+					<label class="print-name">运输方式：</label>
+					<span class="print-cont">海运</span>
+				</div>
+				<div class="col-6">
+					<label class="print-name">起运港：</label>
+					<span class="print-cont">南海</span>
+				</div>
+				<div class="col-6">
+					<label class="print-name">目的港：</label>
+					<span class="print-cont">马尼拉</span>
+				</div>
+				<div class="col-6">
+					<label class="print-name">货代名称：</label>
+					<span class="print-cont">112233</span>
+				</div>
+				<div class="col-6">
+					<label class="print-name">联系人：</label>
+					<span class="print-cont">张先生</span>
+				</div>
+				<div class="col-6">
+					<label class="print-name">联系电话：</label>
+					<span class="print-cont">15366586688</span>
+				</div>
+			</span>
+		</div>
+		<div class="col-12">
+			<label class="print-name">5. 金融服务：</label>
+			<span class="print-cont">无</span>
+		</div>
+		<div class="col-12">
+			<label class="print-name">6. 其他要求：</label>
+			<span class="print-cont">无</span>
+		</div>
+		<div class="col-12">
+			<label class="print-name">7. 若客户自行报关未按订单确认函中的数据申报,我司将追究相应经济及行政责任。</label>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-6">
+			<label class="print-name">确认时间：</label>
+			<span class="print-cont">2017-09-30 16:13</span>
+		</div>
+		<div class="col-6">
+			<label class="print-name">确认人：</label>
+			<span class="print-cont">秦玮静</span>
+		</div>
+		<div class="col-6">
+			<label class="print-name">委托方：</label>
+			<span class="print-cont">余江县清扬纺织有限公司</span>
+		</div>
+		<div class="col-6">
+			<label class="print-name">受托方：</label>
+			<span class="print-cont">南京贸互通电子商务有限公司</span>
+		</div>
+	</div>
+
+</form>
+<div class="btn-submit">
+	<a onclick="window.print()" class="btn btn-primary" id="cprint">打印</a>
+</div>
+
+<pre>
+	<h5>注：打印页面需要把下面这段样式表加在页面上，可以不引用后台样式库独立显示。</h5>
+	<code class="language-html">
+		&lt;style type="text/css">
+			form.print {
+				border: 1px solid #ccc;
+				margin: auto;
+				padding: 48px;
+				width: 794px;
+				font-size: 14px;
+				color: #383838;
+			}
+		
+			h1 {
+				margin-top: 0;
+				border-width: 0px;
+				color: #333;
+				font: 26px/60px 'Microsoft Yahei';
+				padding: 0px;
+				text-align: center;
+			}
+		
+			h2 {
+				margin: 10px 0 5px;
+				border-width: 0px;
+				color: #333;
+				font: 15px/24px 'Microsoft Yahei';
+				font-weight: bold;
+				padding: 0px;
+			}
+		
+			h3 {
+				font: 16px/36px 'Microsoft Yahei';
+				margin: 0px;
+				padding: 0px;
+				text-align: left;
+			}
+		
+			select,
+			input[type=text] {
+				padding: 0;
+				font-size: 14px !important;
+				width: 180px;
+				height: 22px !important;
+				border: 1px solid #d1d1d1 !important;
+				border-radius: 3px !important;
+			}
+		
+			textarea {
+				height: 60px;
+				width: 100%;
+				border: 1px solid #d1d1d1;
+			}
+		
+			.red {
+				color: #df5138;
+			}
+		
+			.text-left {
+				text-align: left !important;
+			}
+		
+			.text-right {
+				text-align: right !important;
+			}
+		
+			.row {
+				margin: 0;
+				margin-right: -30px;
+			}
+		
+			.row:before,
+			.row:after {
+				display: table;
+				content: " ";
+			}
+		
+			.row:after {
+				clear: both;
+			}
+		
+			.col-6,
+			.col-12 {
+				position: relative;
+				min-height: 1px;
+				padding-right: 30px;
+				float: left;
+				box-sizing: border-box;
+				word-break: break-all;
+				display: table;
+			}
+		
+			.col-6 {
+				width: 50%;
+				line-height: 25px;
+			}
+		
+			.col-12 {
+				width: 100%;
+				line-height: 25px;
+			}
+		
+			.print-name {
+				white-space: nowrap;
+				display: table-cell;
+				vertical-align: top;
+			}
+		
+			.print-cont {
+				width: 100%;
+				display: table-cell;
+			}
+		
+			.table {
+				margin-bottom: 10px;
+				width: 100%;
+				border-spacing: 0;
+				border-collapse: collapse;
+			}
+		
+			.table th,
+			.table td {
+				padding: 8px 5px;
+				border: 1px solid #c9caca;
+			}
+		
+			.table th {
+				background: #e5e8ef;
+			}
+		
+			.table td {
+				text-align: center;
+			}
+		
+			@media print {
+				.head,
+				.navi,
+				.foot,
+				.button,
+				button,
+				#cprint,
+				#mark {
+					display: none;
+				}
+				body,
+				.body,
+				.print,
+				.page-body {
+					border-width: 0px !important;
+					margin: 0px !important;
+					padding: 0px !important;
+					width: 794px !important;
+					min-width: auto;
+				}
+				select,
+				input[type=text],
+				textarea {
+					border: none;
+				}
+				.col-12{
+					padding-right: 0;
+				}
+			}
+		&lt;/style>
+		&lt;form method="post" class="print">
+				
+			&lt;h3>南京贸互达科技有限公司&lt;/h3>
+		
+			&lt;h1>出口订单确认函&lt;/h1>
+		
+			&lt;div class="row">
+				&lt;div class="col-6">
+					&lt;label class="print-name">委托订单号：&lt;/label>
+					&lt;span class="print-cont">MHD2017007505E&lt;/span>
+				&lt;/div>
+				&lt;div class="col-6">
+					&lt;label class="print-name">委托下单日期：&lt;/label>
+					&lt;span class="print-cont">2017年9月30日&lt;/span>
+				&lt;/div>
+				&lt;div class="col-12">
+					&lt;span class="print-cont">委托方就出口商品事宜，委托受托方基于外贸综合服务协议（协议编号：222121）进行出口外贸综合服务，服务内容如下：&lt;/span>
+				&lt;/div>
+			&lt;/div>
+		
+			&lt;h2>一、基本信息&lt;/h2>
+			&lt;div class="row">
+				&lt;div class="col-6">
+					&lt;label class="print-name">委托人：&lt;/label>
+					&lt;span class="print-cont">余江县清扬纺织有限公司&lt;/span>
+				&lt;/div>
+				&lt;div class="col-6">
+					&lt;label class="print-name">地址：&lt;/label>
+					&lt;span class="print-cont">江西鹰潭市余江县余江县工业园区龙岗片&lt;/span>
+				&lt;/div>
+				&lt;div class="col-6">
+					&lt;label class="print-name">收货人：&lt;/label>
+					&lt;span class="print-cont">HONTE GENERAL TRADING L.L.C&lt;/span>
+				&lt;/div>
+				&lt;div class="col-6">
+					&lt;label class="print-name">地址：&lt;/label>
+					&lt;span class="print-cont">&lt;/span>
+				&lt;/div>
+				&lt;div class="col-6">
+					&lt;label class="print-name">选择开票人：&lt;/label>
+					&lt;span class="print-cont">
+						&lt;select name="">
+							&lt;option value="">请选择&lt;/option>
+							&lt;option value="">贸互达&lt;/option>
+						&lt;/select>
+					&lt;/span>
+				&lt;/div>
+				&lt;div class="col-6">
+					&lt;label class="print-name">选择联系人：&lt;/label>
+					&lt;span class="print-cont">
+						&lt;input type="text" name="" id="" value="" />
+					&lt;/span>
+				&lt;/div>
+				&lt;div class="col-12">
+					&lt;label class="print-name">联系人/联系方式：&lt;/label>
+					&lt;span class="print-cont">&lt;/span>
+				&lt;/div>
+				&lt;div class="col-6">
+					&lt;label class="print-name">出口目的国或地区：&lt;/label>
+					&lt;span class="print-cont">菲律宾&lt;/span>
+				&lt;/div>
+				&lt;div class="col-6">
+					&lt;label class="print-name">成交方式：&lt;/label>
+					&lt;span class="print-cont">FOB&lt;/span>
+				&lt;/div>
+				&lt;div class="col-6">
+					&lt;label class="print-name">币种：&lt;/label>
+					&lt;span class="print-cont">美元&lt;/span>
+				&lt;/div>
+				&lt;div class="col-6">
+					&lt;label class="print-name">结算方式：&lt;/label>
+					&lt;span class="print-cont">电汇TT
+						&lt;br /> 前TT：0.00% 后TT：100.00%(出运后30天)&lt;/span>
+				&lt;/div>
+			&lt;/div>
+		
+			&lt;h2>二、产品信息&lt;/h2>
+			&lt;table class="table">
+				&lt;tr>
+					&lt;th nowrap="nowrap">项号&lt;/th>
+					&lt;th nowrap="nowrap">HSCODE&lt;/th>
+					&lt;th nowrap="nowrap">申报品名&lt;/th>
+					&lt;th nowrap="nowrap">规格&lt;/th>
+					&lt;th nowrap="nowrap">货号&lt;/th>
+					&lt;th nowrap="nowrap">总价&lt;/th>
+					&lt;th nowrap="nowrap">数量&lt;/th>
+					&lt;th nowrap="nowrap">重量(千克)&lt;/th>
+					&lt;th nowrap="nowrap">单价&lt;/th>
+					&lt;th nowrap="nowrap">开票人&lt;/th>
+				&lt;/tr>
+				&lt;tr>
+					&lt;td rowspan="2">1&lt;/td>
+					&lt;td>8529908100&lt;/td>
+					&lt;td>解码板&lt;/td>
+					&lt;td>&lt;/td>
+					&lt;td>&lt;/td>
+					&lt;td>88400&lt;/td>
+		
+					&lt;td>13600个
+					&lt;/td>
+					&lt;td>476&lt;/td>
+					&lt;td>6.5&lt;/td>
+					&lt;td>
+						深圳市沃卡科技有限公司
+					&lt;/td>
+				&lt;/tr>
+				&lt;tr>
+					&lt;td>申报要素&lt;/td>
+					&lt;td colspan="9" style="text-align: left;">
+		
+						&lt;label>1.品名:&lt;/label>
+						&lt;label>解码板;&lt;/label>
+		
+						&lt;label>2.用途(适用机型):&lt;/label>
+						&lt;label>卫星接收机解码板，接收卫星信号 解码;&lt;/label>
+		
+						&lt;label>3.品牌:&lt;/label>
+						&lt;label>无;&lt;/label>
+		
+						&lt;label>4.型号:&lt;/label>
+						&lt;label>TL-6101S;&lt;/label>
+		
+					&lt;/td>
+				&lt;/tr>
+			&lt;/table>
+			&lt;div class="row">
+				&lt;div class="col-6">
+					&lt;label class="print-name">包装类型：&lt;/label>
+					&lt;span class="print-cont">纸箱&lt;/span>
+				&lt;/div>
+			&lt;/div>
+			&lt;h2>三、服务信息&lt;/h2>
+			&lt;div class="row">
+				&lt;div class="col-12">
+					&lt;label class="print-name">1. 结汇付款：&lt;/label>
+					&lt;span class="print-cont">收到委托方结汇通知并取得增值税发票后3个工作日内支付&lt;/span>
+				&lt;/div>
+				&lt;div class="col-12">
+					&lt;label class="print-name">2. 结算金额计算：&lt;/label>
+					&lt;span class="print-cont">
+						□ 指定含税开票金额：收汇额=发票金额-出口退税+垫税服务费+杂费=[发票额*（1+增值税率-退税率*t）+杂费*（1+增值税率）]/1.17*汇率
+						&lt;br /> ☑ 指定货物报关单价：发票额=收汇金额+出口退税-垫税服务费-杂费=（1+增值税率）*(实际收汇*汇率-杂费)/(1+增值税率-退税率*t)
+						&lt;br /> 注：t=1-退税服务费率
+					&lt;/span>
+				&lt;/div>
+				&lt;div class="col-12">
+					&lt;label class="print-name">3. 退税服务：&lt;/label>
+					&lt;span class="print-cont">
+						□ 资料收齐，外汇款收齐，开正确增值税发票，收到报关单退税联原件（若您自行安排报关），使用垫付退税服务。（3个工作日内即可拿到退税款 ,退税服务费率为退税额的4.0000%）
+						&lt;br /> □ 资料收齐,外汇款收齐，开正确增值税发票，收到报关单退税联原件（若您自行安排报关），正常合规办理退税。（需要约3个月，退税服务费为0）
+					&lt;/span>
+				&lt;/div>
+				&lt;div class="col-12">
+					&lt;label class="print-name">4. 物流服务：&lt;/label>
+					&lt;span class="print-cont">
+						&lt;div class="col-6">
+							&lt;label class="print-name">物流方式：&lt;/label>
+							&lt;span class="print-cont">自行安排&lt;/span>
+						&lt;/div>
+						&lt;div class="col-6">
+							&lt;label class="print-name">运输方式：&lt;/label>
+							&lt;span class="print-cont">海运&lt;/span>
+						&lt;/div>
+						&lt;div class="col-6">
+							&lt;label class="print-name">起运港：&lt;/label>
+							&lt;span class="print-cont">南海&lt;/span>
+						&lt;/div>
+						&lt;div class="col-6">
+							&lt;label class="print-name">目的港：&lt;/label>
+							&lt;span class="print-cont">马尼拉&lt;/span>
+						&lt;/div>
+						&lt;div class="col-6">
+							&lt;label class="print-name">货代名称：&lt;/label>
+							&lt;span class="print-cont">112233&lt;/span>
+						&lt;/div>
+						&lt;div class="col-6">
+							&lt;label class="print-name">联系人：&lt;/label>
+							&lt;span class="print-cont">张先生&lt;/span>
+						&lt;/div>
+						&lt;div class="col-6">
+							&lt;label class="print-name">联系电话：&lt;/label>
+							&lt;span class="print-cont">15366586688&lt;/span>
+						&lt;/div>
+					&lt;/span>
+				&lt;/div>
+				&lt;div class="col-12">
+					&lt;label class="print-name">5. 金融服务：&lt;/label>
+					&lt;span class="print-cont">无&lt;/span>
+				&lt;/div>
+				&lt;div class="col-12">
+					&lt;label class="print-name">6. 其他要求：&lt;/label>
+					&lt;span class="print-cont">无&lt;/span>
+				&lt;/div>
+				&lt;div class="col-12">
+					&lt;label class="print-name">7. 若客户自行报关未按订单确认函中的数据申报,我司将追究相应经济及行政责任。&lt;/label>
+				&lt;/div>
+			&lt;/div>
+			&lt;div class="row">
+				&lt;div class="col-6">
+					&lt;label class="print-name">确认时间：&lt;/label>
+					&lt;span class="print-cont">2017-09-30 16:13&lt;/span>
+				&lt;/div>
+				&lt;div class="col-6">
+					&lt;label class="print-name">确认人：&lt;/label>
+					&lt;span class="print-cont">秦玮静&lt;/span>
+				&lt;/div>
+				&lt;div class="col-6">
+					&lt;label class="print-name">委托方：&lt;/label>
+					&lt;span class="print-cont">余江县清扬纺织有限公司&lt;/span>
+				&lt;/div>
+				&lt;div class="col-6">
+					&lt;label class="print-name">受托方：&lt;/label>
+					&lt;span class="print-cont">南京贸互通电子商务有限公司&lt;/span>
+				&lt;/div>
+			&lt;/div>
+		
+		&lt;/form>
+	</code>
+	<a class="fa fa-file-code-o" href="javascript:;" data-xmp="">展开代码</a>
+</pre>
+{% endblock %} {% block js %} {% endblock %}

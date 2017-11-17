@@ -1,0 +1,874 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<!-- Meta, title, CSS, favicons, etc. -->
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=9">
+		<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=0.5, maximum-scale=2, user-scalable=yes">
+		<meta name="keywords" content="HTML，CSS，JS，JavaScript，framework，bootstrap，front-end，web development，江苏跨境">
+		<meta name="description" content="江苏跨境电子商务服务有限公司">
+		<meta name="author" content="潘明星，尹喜晨">
+		<title></title>
+		<!-- Bootstrap 3.3.6 -->
+		<link rel="stylesheet" href="/src/css/bootstrap.css">
+		<!-- Font Awesome -->
+		<link rel="stylesheet" href="/src/css/font-awesome.css">
+		<!-- Ionicons -->
+		<link rel="stylesheet" href="/src/css/ionicons.css">
+		<!-- prism precode -->
+		<link rel="stylesheet" href="/plugins/prism/prism.css">
+		<!-- AdminJKJ style -->
+		<link rel="stylesheet" href="/src/css/adminjkj-1.0.323.css">
+		<link rel="stylesheet" href="/src/css/adminjkj-themes-1.0.0.css">
+		<!--子页面样式-->
+		
+<!-- Select2 -->
+<link rel="stylesheet" href="/plugins/select2/select2.css"> 
+		
+		<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+		<!--[if lt IE 9]>
+		<script src="/src/js/html5shiv.js"></script>
+		<script src="/src/js/respond.js"></script>
+		<![endif]-->   
+	</head>
+	<body class="" style=" overflow-x: auto;">
+  		<!-- Site wrapper -->
+		<div class=" page-body">
+			<!--子页面内容-->
+			
+<div class="page-container">
+    <div class="page-title">
+        自动完成
+    </div>
+    <div class="page-containers">
+        <div class="form-title">单选本地数据
+            <label class="right"><a id="select1-load" class="btn-edit glyphicon glyphicon-edit btn-editer" href="javascript:void(0)">加载新数据</a></label>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 row-void row-form">
+                <div class="col-xs-12">
+                    <select id="select1" class="form-control"></select>
+                </div>
+            </div>
+        </div>
+        <pre class="language-html">
+            <code>
+                &lt;a id="select1-load" class="btn-edit glyphicon glyphicon-edit btn-editer" href="javascript:void(0)">加载新数据&lt;/a>
+                &lt;select id="select1" class="form-control">&lt;/select>
+
+                &lt;script>
+                    $(function () {
+                        var data = [{ id: 1, text: "南京" }, { id: 2, text: "北京" }, { id: 3, text: "西安" },
+                        { id: 4, text: "重庆" }, { id: 5, text: "广州" }];
+                        // 单选本地数据
+                        var select1 = $("#select1").jkj("easySelect", {
+                            data: data
+                        });
+                        $('#select1-load').on('click', function(e){
+                            e.preventDefault();
+                            var newData=[];
+                            $(data).each(function(index, obj){
+                                var item = {};
+                                item.id = obj.id;
+                                item.text = $.jkj.util.random.getLongDateString();
+                                newData.push(item);
+                            });
+                            select1.loadData(newData, true, null);
+                        });
+                    })
+                &lt;/script>
+            </code>
+            <a class="fa fa-file-code-o" href="javascript:;" data-xmp="">展开代码</a>
+        </pre>
+    </div>
+    <div class="page-containers">
+        <div class="form-title">单选远程一次加载
+            <label class="right"><a id="select2-load" class="btn-edit glyphicon glyphicon-edit btn-editer" href="javascript:void(0)">加载新数据</a></label>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 row-void row-form">
+                <div class="col-xs-12">
+                    <select id="select2" class="form-control"></select>
+                </div>
+            </div>
+        </div>
+        <pre class="language-html">
+            <code>
+                &lt;a id="select2-load" class="btn-edit glyphicon glyphicon-edit btn-editer" href="javascript:void(0)">加载新数据&lt;/a>
+                &lt;select id="select2" class="form-control">&lt;/select>
+                &lt;script>
+                    $(function(){
+                        var select2 = $("#select2").jkj("easySelect", {
+                            type: 'remote',
+                            remote: {
+                                url: "/src/data/select2.json",
+                                data: { name: "test" },
+                                success: null
+                            }
+                        });
+                        $('#select2-load').on('click', function(e){
+                            e.preventDefault();
+                            var newData=[];
+                            $(data).each(function(index, obj){
+                                var item = {};
+                                item.id = obj.id;
+                                item.text = $.jkj.util.random.getLongDateString();
+                                newData.push(item);
+                            });
+                            select2.loadData(newData, true, 2);
+                        });
+                    })
+                &lt;/script>
+            </code>
+            <a class="fa fa-file-code-o" href="javascript:;" data-xmp="">展开代码</a>
+        </pre>
+    </div>
+    <div class="page-containers">
+        <div class="form-title">可选可输</div>
+        <div class="row">
+            <div class="col-xs-12 row-void row-form">
+                <div class="col-xs-12">
+                    <select id="select7" class="form-control"></select>
+                </div>
+            </div>
+        </div>
+        <pre class="language-html">
+            <code>   
+                
+                &lt;select id=&quot;select7&quot; class=&quot;form-control&quot;&gt;&lt;/select&gt;
+                &lt;script&gt;
+                    var data = [{ id: 1, text: &quot;南京&quot; }, { id: 2, text: &quot;北京&quot; }, { id: 3, text: &quot;西安&quot; },
+                        { id: 4, text: &quot;重庆&quot; }, { id: 5, text: &quot;广州&quot; }];
+                    // 可选可输，tags类型可以为boolan或对象数组
+                    var select7 = $(&quot;#select7&quot;).jkj(&quot;easySelect&quot;, { data: data, tags: [{ id: 8, text: &quot;三沙&quot; }, { id: 9, text: &quot;长沙&quot; }] });    
+                &lt;/script&gt;
+                
+            </code>
+            <a class="fa fa-file-code-o" href="javascript:;" data-xmp="">展开代码</a>
+        </pre>
+    </div>
+    <div class="page-containers">
+        <div class="form-title">多选本地数据
+            <label class="right"><a id="select3-load" class="btn-edit glyphicon glyphicon-edit btn-editer" href="javascript:void(0)">加载新数据</a></label>
+        </div>
+        <div class="row">
+            <div class="col-xs-12 row-void row-form">
+                <div class="col-xs-12">
+                    <select id="select3" class="form-control"></select>
+                </div>
+                <div class="col-xs-12">
+                    <ul class="js-event-log"></ul>
+                </div>
+            </div>
+        </div>
+        <pre class="language-html">
+            <code>   
+                
+                &lt;a id=&quot;select3-load&quot; class=&quot;btn-edit glyphicon glyphicon-edit btn-editer&quot; href=&quot;javascript:void(0)&quot;&gt;加载新数据&lt;/a&gt;
+                &lt;select id=&quot;select3&quot; class=&quot;form-control&quot;&gt;&lt;/select&gt;
+                &lt;script&gt;
+                    $(function(){
+                        var data = [{ id: 1, text: &quot;南京&quot; }, { id: 2, text: &quot;北京&quot; }, { id: 3, text: &quot;西安&quot; },
+                        { id: 4, text: &quot;重庆&quot; }, { id: 5, text: &quot;广州&quot; }];
+                        // 多选本地数据
+                        select3 = $(&quot;#select3&quot;).jkj(&quot;easySelect&quot;, { data: data, defaultValues: [1, 2], multiple: true });
+                        $(&#39;#select3-load&#39;).on(&#39;click&#39;, function(e){
+                            e.preventDefault();
+                            var newData=[];
+                            $(data).each(function(index, obj){
+                                var item = {};
+                                item.id = obj.id;
+                                item.text = $.jkj.util.random.getLongDateString();
+                                newData.push(item);
+                            });
+                            select3.loadData(newData, true, [2,3,4]);
+                        });
+                    })
+                &lt;/script&gt;
+                
+            </code>
+            <a class="fa fa-file-code-o" href="javascript:;" data-xmp="">展开代码</a>
+        </pre>
+    </div>
+    <div class="page-containers">
+        <div class="form-title">禁选</div>
+        <div class="row">
+            <div class="col-xs-12 row-void row-form">
+                <div class="col-xs-12">
+                    <select id="select4" class="form-control">
+                        <option>Alabama</option>
+                        <option>Alaska</option>
+                        <option>California</option>
+                        <option>Delaware</option>
+                        <option>Tennessee</option>
+                        <option>Texas</option>
+                        <option>Washington</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <pre>
+            <code class="language-html">   
+                
+                &lt;select id=&quot;select4&quot; class=&quot;form-control&quot;&gt;
+                &lt;script&gt;
+                    // 禁选
+                    var select4 = $(&quot;#select4&quot;).jkj(&quot;easySelect&quot;, { data: data, disabled: true });
+                &lt;/script&gt;
+                
+            </code>
+            <a class="fa fa-file-code-o" href="javascript:;" data-xmp="">展开代码</a>
+        </pre>
+    </div>
+    <div class="page-containers">
+        <div class="form-title">部分禁选</div>
+        <div class="row">
+            <div class="col-xs-12 row-void row-form">
+                <div class="col-xs-12">
+                    <select id="select5" class="form-control">
+                        <option selected="selected">Alabama</option>
+                        <option>Alaska</option>
+                        <option disabled="disabled">California (disabled)</option>
+                        <option>Delaware</option>
+                        <option>Tennessee</option>
+                        <option>Texas</option>
+                        <option>Washington</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+        <pre>
+            <code class="language-html">   
+                
+                &lt;select id=&quot;select5&quot; class=&quot;form-control&quot;&gt;
+                    &lt;option selected=&quot;selected&quot;&gt;Alabama&lt;/option&gt;
+                    &lt;option&gt;Alaska&lt;/option&gt;
+                    &lt;option disabled=&quot;disabled&quot;&gt;California (disabled)&lt;/option&gt;
+                    &lt;option&gt;Delaware&lt;/option&gt;
+                    &lt;option&gt;Tennessee&lt;/option&gt;
+                    &lt;option&gt;Texas&lt;/option&gt;
+                    &lt;option&gt;Washington&lt;/option&gt;
+                &lt;/select&gt;
+                &lt;script&gt;
+                    // 部分禁选
+                    var select5 = $(&quot;#select5&quot;).jkj(&quot;easySelect&quot;);
+                &lt;/script&gt;
+                
+            </code>
+            <a class="fa fa-file-code-o" href="javascript:;" data-xmp="">展开代码</a>
+        </pre>
+    </div>
+    <div class="page-containers">
+        <div class="form-title">多选远程动态加载，赋初始值</div>
+        <div class="row">
+            <div class="col-xs-12 row-void row-form">
+                <div class="col-xs-12">
+                    <select id="select6" class="form-control"></select>
+                </div>
+            </div>
+        </div>
+        <pre>
+            <code class="language-html">   
+                
+                &lt;select id=&quot;select6&quot; class=&quot;form-control&quot;&gt;&lt;/select&gt;
+                &lt;script&gt;
+                    // 多选远程动态加载，赋初始值
+                    var extraData = [
+                        { id: 10, text: &#39;习大大&#39;, realName: &#39;习大大&#39;, companyName: &#39;贸互加&#39; },
+                        { id: 11, text: &#39;习大大2&#39;, realName: &#39;习大大2&#39;, companyName: &#39;贸互加&#39; }
+                    ];
+                    select6 = $(&quot;#select6&quot;).jkj(&quot;easySelect&quot;, {
+                        type: &#39;suggest&#39;,
+                        extraData: extraData,
+                        defaultValues: 10,
+                        multiple: true,
+                        placeholder: &#39;请输入&#39;,
+                        suggest: {
+                            paramName: &#39;name&#39;,
+                            url: &quot;/src/data/select6.json&quot;,
+                        },
+                        templateResult: function (repo) {
+                            if (repo.loading) {
+                                return &quot;正在加载...&quot;;
+                            }
+
+                            return &quot;&lt;span&gt;&lt;font style=\&quot;font-family:Microsoft YaHei;\&quot;&gt;&quot; + repo.realName + &quot;&lt;/font&gt;&lt;br/&gt;&lt;b&gt;&lt;i&gt;&quot; + repo.companyName + &quot;&lt;/i&gt;&lt;/b&gt;&lt;/span&gt;&quot;;
+                        },
+                        templateSelection: function (repo) {
+                            return &quot;&lt;b&gt;&quot; + repo.realName + &quot;&lt;/b&gt;&lt;i&gt;&quot; + repo.companyName + &quot;&lt;/i&gt;&quot;;
+                        }
+                    });
+                &lt;/script&gt;
+                
+            </code>
+            <a class="fa fa-file-code-o" href="javascript:;" data-xmp="">展开代码</a>
+        </pre>
+    </div>
+    <div class="page-containers">
+        <div class="form-title">单选远程一次加载，赋初始值，搜索多字段匹配</div>
+        <div class="row">
+            <div class="col-xs-12 row-void row-form">
+                <div class="col-xs-12">
+                    <select id="select8" class="form-control"></select>
+                </div>
+            </div>
+        </div>
+        <pre>
+            <code class="language-html">   
+                
+                &lt;select id=&quot;select8&quot; class=&quot;form-control&quot;&gt;&lt;/select&gt;
+                &lt;script&gt;
+                    // 单选远程一次加载，赋初始值，多字段（人名及其首字母、全拼、简拼，公司名称）匹配                
+                    var select8 = $(&quot;#select8&quot;).jkj(&quot;easySelect&quot;, {
+                        type: &#39;remote&#39;,
+                        extraData: [{ id: 10, text: &#39;习大大&#39;, realName: &#39;习大大&#39;, companyName: &#39;贸互加&#39;, py: &#39;xdd&#39;, pinyin: &#39;xidada&#39;, letter: &#39;x&#39; }],
+                        defaultValues: 10,
+                        searchKeys: [&#39;realName&#39;, &#39;companyName&#39;, &#39;py&#39;, &#39;pinyin&#39;, &#39;letter&#39;],
+                        remote: {
+                            url: &quot;/src/data/select6.json&quot;,
+                            data: { name: &quot;test&quot; },
+                            success: function (data) {
+
+                            },
+                            completed: function () {
+
+                            }
+                        },
+                        templateResult: function (repo) {
+                            if (repo.loading) {
+                                return &quot;正在加载...&quot;;
+                            }
+
+                            return &quot;&lt;span&gt;&lt;font style=\&quot;font-family:Microsoft YaHei;\&quot;&gt;&quot; + repo.realName + &quot;&lt;/font&gt;&lt;br/&gt;&lt;b&gt;&lt;i&gt;&quot; + repo.companyName + &quot;&lt;/i&gt;&lt;/b&gt;&lt;/span&gt;&quot;
+                        },
+                        templateSelection: function (repo) {
+                            if (repo.id) {
+                                return &quot;&lt;b&gt;&quot; + repo.realName + &quot;&lt;/b&gt;&quot;;
+                            } else {
+                                return repo.text;
+                            }
+                        }
+                    });
+                &lt;/script&gt;
+                
+            </code>
+            <a class="fa fa-file-code-o" href="javascript:;" data-xmp="">展开代码</a>
+        </pre>
+    </div>
+    <div class="page-containers">
+        <div class="form-title">
+            自动完成配置参数
+        </div>
+        <pre>
+            <div>调用方法: $.fn.jkj('easySelect',options)</div>
+            <div>.clear() 清除选中的值</div>
+            <div>.clearAll() 清除选中的值和下拉选项等</div>
+            <div>.loadData(data, clear, defaultValue) 加载新的数据<br />
+                data：加载的数据<br />
+                clear：boolean类型，是否清除老数据<br />
+                defaultValue：默认值。undefined保持原来不变，null清空值，其他为字符串、数值、数组（多选）
+            </div>
+            <code class="language-html">   
+                
+                &lt;script&gt;
+                    /**
+                    * 默认配置信息
+                    */
+                    defaults: {
+                        /**
+                        * 初始化select2类型，[&#39;local&#39; | &#39;remote&#39; | &#39;suggest&#39;]
+                        * local：数据本地一次性加载
+                        * remote：数据通过url一次性加载
+                        * suggest：数据通过url动态加载
+                        */
+                        type: &#39;local&#39;,
+                        // 默认是否选中第一项
+                        defaultSelected: false,
+                        // 扩展数据，用于加载初始可选选项
+                        extraData: [],
+                        // 扩展数据是否总是在下拉列表显示
+                        alwaysDisplayExtraData: false,
+                        // 设置默认值，在defaultSelected后面初始化。类型可以为数值、字符串、数组（多选），默认为null。type为suggest时，只需要extraData赋值就可以
+                        defaultValues: null,
+                        // 本地搜索的字段集，多个用“,”间隔
+                        searchKeys: [&#39;text&#39;],
+                        // 数据通过url一次性加载，type为“remote”时有效
+                        remote: {
+                            // 请求url
+                            url: null,
+                            // 请求数据
+                            data: null,
+                            // 请求成功回调方法，this是当前easySelect对象
+                            success: function (data) {
+                
+                            },
+                            // 初始化完成回调方法，this是当前easySelect对象
+                            completed: function () {
+                
+                            }
+                        },
+                        // 数据通过url动态加载数据，type为“suggest”时有效
+                        suggest: {
+                            // 请求url，字符串或者方法函数
+                            url: &#39;&#39;,
+                            // 预期返回数据类型
+                            dataType: &#39;json&#39;,
+                            // 发送请求前等待用户停止输入内容时间，单位毫秒
+                            delay: 300,
+                            // 自定义请求参数名
+                            paramName: &#39;search&#39;,
+                            // 是否分页
+                            pageable: false,
+                            // 每页记录数
+                            pageSize: 20,
+                            // 发送数据处理，默认实现详见私有方法__suggest内部代码
+                            data: null,
+                            // 返回结果处理，默认实现详见私有方法__suggest内部代码
+                            processResults: null,
+                            cache: false
+                        },
+                        // 显示清除值按钮
+                        allowClear: true,
+                        // 选择值之后收缩下拉列表
+                        closeOnSelect: true,
+                        /**
+                        * 初始化加载数据，对象数组
+                        * 1、没有子集的，[{id: id, text: text,...}...]
+                        * id：必须；text：必须；disabled：可选；selected：可选；title：可选
+                        * 2、有子集的，[{text: text, children: [], tile: title,...}...]
+                        *  text：必须；children：数组，必须，嵌套包含没有子集或有子集的对象；title：可选
+                        */
+                        data: null,
+                        // 启用调试信息在浏览器console里面显示
+                        debug: false,
+                        // 是否禁用选择
+                        disabled: false,
+                        // 下拉列表自动长度
+                        dropdownAutoWidth: false,
+                        // 下拉列表依附的元素，值为jquery选择器或者dom元素
+                        //dropdownParent: $(document.body),
+                        // 自动转义由自定义模板渲染的内容，默认实现详见__escapeMarkup方法
+                        escapeMarkup: null,
+                        // 国际化语言
+                        language: &#39;zh-CN&#39;,
+                        // 用于返回匹配查询值的结果集，默认实现详见__matcher方法
+                        matcher: null,
+                        // 最大输入长度，0为不限制
+                        maximumInputLength: 0,
+                        // 最大选择长度
+                        maximumSelectionLength: 50,
+                        // 最小输入长度触发请求
+                        minimumInputLength: 0,
+                        // 最少结果集用于搜索，设为Infinity则只能下拉选不含搜索框
+                        minimumResultsForSearch: 0,
+                        // 启用多选
+                        multiple: false,
+                        // 默认显示的内容
+                        placeholder: &#39;请选择&#39;,
+                        // 下拉列表收缩后是否自动选择
+                        selectOnClose: false,
+                        // 查询结果集排序，默认实现详见__sorter方法
+                        sorter: null,
+                        // 启用自由输入内容，boolean / array of objects
+                        tags: false,
+                        // 自定义渲染查询结果集，默认实现详见__templateResult方法
+                        templateResult: null,
+                        // 自定义渲染选中项文本内容，默认实现详见__templateSelection方法
+                        templateSelection: null,
+                        tokenSeparators: [&#39;,&#39;],
+                        // 自定义容器宽度
+                        width: &#39;resolve&#39;
+                    }
+                &lt;/script&gt;
+                
+            </code>
+            <a class="fa fa-file-code-o" href="javascript:;" data-xmp="">展开代码</a>
+        </pre>
+    </div>
+    <div class="page-containers">
+        <div class="form-title">
+            老版本代码
+        </div>
+        <pre>
+            <code class="language-html">   
+                
+                &lt;form&gt;
+                    &lt;div class=&quot;search-area&quot;&gt;
+                        &lt;div class=&quot;search-group&quot;&gt;
+                            &lt;label&gt;单选 local data：&lt;/label&gt;
+                            &lt;select id=&quot;select1&quot; class=&quot;form-control&quot;&gt;&lt;/select&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;search-group&quot;&gt;
+                            &lt;label&gt;单选 ajax load once：&lt;/label&gt;
+                            &lt;select id=&quot;select2&quot; class=&quot;form-control&quot;&gt;&lt;/select&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;search-group&quot;&gt;
+                            &lt;label&gt;选择输入：&lt;/label&gt;
+                            &lt;select id=&quot;select7&quot; class=&quot;form-control&quot;&gt;&lt;/select&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;search-group&quot;&gt;
+                            &lt;label&gt;多选&lt;/label&gt;
+                            &lt;select id=&quot;select3&quot; class=&quot;form-control&quot; multiple=&quot;multiple&quot;&gt;&lt;/select&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;search-group&quot;&gt;
+                            &lt;label&gt;禁选&lt;/label&gt;
+                            &lt;select id=&quot;select4&quot; class=&quot;form-control&quot;&gt;
+                        &lt;option&gt;Alabama&lt;/option&gt;
+                        &lt;option&gt;Alaska&lt;/option&gt;
+                        &lt;option&gt;California&lt;/option&gt;
+                        &lt;option&gt;Delaware&lt;/option&gt;
+                        &lt;option&gt;Tennessee&lt;/option&gt;
+                        &lt;option&gt;Texas&lt;/option&gt;
+                        &lt;option&gt;Washington&lt;/option&gt;
+                        &lt;/select&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;search-group&quot;&gt;
+                            &lt;label&gt;部分禁选&lt;/label&gt;
+                            &lt;select id=&quot;select5&quot; class=&quot;form-control&quot;&gt;
+                        &lt;option selected=&quot;selected&quot;&gt;Alabama&lt;/option&gt;
+                        &lt;option&gt;Alaska&lt;/option&gt;
+                        &lt;option disabled=&quot;disabled&quot;&gt;California (disabled)&lt;/option&gt;
+                        &lt;option&gt;Delaware&lt;/option&gt;
+                        &lt;option&gt;Tennessee&lt;/option&gt;
+                        &lt;option&gt;Texas&lt;/option&gt;
+                        &lt;option&gt;Washington&lt;/option&gt;
+                        &lt;/select&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;search-group&quot;&gt;
+                            &lt;label&gt;autocomplete&lt;/label&gt;
+                            &lt;select id=&quot;select6&quot; class=&quot;form-control&quot;&gt;&lt;/select&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;search-group&quot;&gt;
+                            &lt;label&gt;autocomplete&lt;/label&gt;
+                            &lt;select id=&quot;select8&quot; class=&quot;form-control&quot;&gt;&lt;/select&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                &lt;/form&gt;
+
+                &lt;!-- Select2 --&gt;
+                &lt;script src=&quot;/plugins/select2/select2.full.js&quot;&gt;&lt;/script&gt;
+                &lt;script src=&quot;/plugins/select2/i18n/zh-CN.js&quot;&gt;&lt;/script&gt;
+                &lt;!--
+                        IE浏览器，IFrame子页面document.activeElement报“未指明的错误。”，以下是解决方法
+                    --&gt;
+                &lt;!--[if (gte IE 8)&amp;(lte IE 9)]&gt;
+                    &lt;script&gt;document.documentElement.focus();&lt;/script&gt;
+                    &lt;![endif]--&gt;
+                &lt;script type=&quot;text/javascript&quot;&gt;
+                    $(function () {
+
+                        var data = [{ id: 1, text: &quot;南京&quot; }, { id: 2, text: &quot;北京&quot; }, { id: 3, text: &quot;西安&quot; },
+                        { id: 4, text: &quot;重庆&quot; }, { id: 5, text: &quot;广州&quot; }];
+
+                        // 单选 local data
+                        // tags启用，输入的内容可以动态添加到下拉列表中
+                        var select1 = $.jkj.select2.local(&quot;#select1&quot;, {
+                            data: data,
+                            tags: true
+                        });
+
+                        // 单选 ajax load once
+                        var select2 = $.jkj.select2.remote(&quot;#select2&quot;, {
+                            ajax: {
+                                url: &quot;/src/data/select2.json&quot;,
+                                extra: { name: &quot;test&quot; },
+                                success: null
+                            }
+                        });
+
+                        // 多选 local data
+                        var select3 = $.jkj.select2.local(&quot;#select3&quot;, { data: data });
+
+                        var select4 = $.jkj.select2.local(&quot;#select4&quot;, { data: data, disabled: true });
+
+                        var select6 = $.jkj.select2.autocomplete(&quot;#select6&quot;, {
+                            paramName: &#39;name&#39;,
+                            initSelection: function (element, callback) {         // 初始化时设置默认值
+                                callback({ id: 1, realName: &#39;123&#39;, companyName: &#39;adfa&#39; });
+                            },
+                            ajax: {
+                                url: &quot;/src/data/select6.json&quot;,
+                            },
+                            formatResult: &quot;&lt;span&gt;&lt;font style=\&quot;font-family:Microsoft YaHei;\&quot;&gt;{realName}&lt;/font&gt;&lt;br/&gt;&lt;b&gt;&lt;i&gt;{companyName}&lt;/i&gt;&lt;/b&gt;&lt;/span&gt;&quot;,
+                            formatSelection: function () {
+                                return &quot;&lt;b&gt;{realName}&lt;b&gt;&quot;;
+                            }
+                        });
+                        //移除事件
+                        $(&#39;#select6&#39;).on(&#39;select2:unselect&#39;, function () {
+                            alert(&#39;select2:unselect&#39;)
+                        });
+
+                        // 单选 ajax load once                   
+                        var select8 = $.jkj.select2.autocomplete(&quot;#select8&quot;, {
+                            ajax: {
+                                url: &quot;/AdminJKJ/src/data/select2.json&quot;,
+                                extra: { name: &quot;test&quot; },
+                                success: null
+                            },
+
+                        });
+                        $(&#39;#select8&#39;).append(new Option(&#39;123456&#39;, 12, true, true)).trigger(&#39;change&#39;);
+                    });
+                &lt;/script&gt;
+                
+            </code>
+            <a class="fa fa-file-code-o" href="javascript:;" data-xmp="">展开代码</a>
+        </pre>
+    </div>
+</div>
+
+
+		</div>
+		
+		<!-- jquery 2.2.3 -->
+		<script src="/plugins/jquery/jquery-2.2.3.min.js"></script>
+		<!-- Bootstrap 3.3.6 -->
+		<script src="/src/js/bootstrap.js"></script>
+		<!-- SlimScroll -->
+		<script src="/plugins/slimScroll/jquery.slimscroll.min.js"></script>
+		<!-- FastClick -->
+		<script src="/plugins/fastclick/fastclick.js"></script>
+		<!-- Notify -->
+		<script src="/plugins/bootstrap-notify/bootstrap-notify.js"></script>
+		<!-- prism precode -->
+		<script src="/plugins/prism/prism.js"></script>
+
+		<script src="/src/js/adminjkj-1.0.323.js" type="text/javascript"></script>
+		<!--子页面脚本-->
+		
+<!-- Select2 -->
+<script src="/plugins/select2/select2.full.js"></script>
+<script src="/plugins/select2/i18n/zh-CN.js"></script>
+<!--
+            	IE浏览器，IFrame子页面document.activeElement报“未指明的错误。”，以下是解决方法
+            -->
+<!--[if (gte IE 8)&(lte IE 9)]>
+			<script>document.documentElement.focus();</script>
+			<![endif]-->
+<script type="text/javascript">
+    var select1, select2, select3, select4, select5, select6, select7, select8, select9;
+    $(function () {
+        var data = [{ id: 1, text: "南京" }, { id: 2, text: "北京" }, { id: 3, text: "西安" },
+        { id: 4, text: "重庆" }, { id: 5, text: "广州" }];
+        // 单选本地数据
+        select1 = $("#select1").jkj("easySelect", {
+            data: data
+        });
+        $('#select1-load').on('click', function(e){
+            e.preventDefault();
+            var newData=[];
+            $(data).each(function(index, obj){
+                var item = {};
+                item.id = obj.id;
+                item.text = $.jkj.util.random.getLongDateString();
+                newData.push(item);
+            });
+            select1.loadData(newData, true, null);
+        });
+
+        // 单选远程一次加载
+        select2 = $("#select2").jkj("easySelect", {
+            type: 'remote',
+            remote: {
+                url: "/src/data/select2.json",
+                data: { name: "test" },
+                success: null
+            }
+        });
+        $('#select2-load').on('click', function(e){
+            e.preventDefault();
+            var newData=[];
+            $(data).each(function(index, obj){
+                var item = {};
+                item.id = obj.id;
+                item.text = $.jkj.util.random.getLongDateString();
+                newData.push(item);
+            });
+            select2.loadData(newData, true, 2);
+        });
+
+        // 多选本地数据
+        select3 = $("#select3").jkj("easySelect", { data: data, defaultValues: [1, 2], multiple: true });
+        $('#select3-load').on('click', function(e){
+            e.preventDefault();
+            var newData=[];
+            $(data).each(function(index, obj){
+                var item = {};
+                item.id = obj.id;
+                item.text = $.jkj.util.random.getLongDateString();
+                newData.push(item);
+            });
+            select3.loadData(newData, true, [2,3,4]);
+        });
+
+        // 触发事件在下拉列表打开之前
+        $("#select3").on("select2:opening", function (e) { log("select2:opening", e); });
+        // 触发事件在下拉列表打开之后，opening可以阻止该事件
+        $("#select3").on("select2:open", function (e) { log("select2:open", e); });
+        // 触发事件在下拉列表收缩之前
+        $("#select3").on("select2:closing", function (e) { log("select2:closing", e); });
+        // 触发事件在下拉列表收缩之后，closing可以阻止该事件
+        $("#select3").on("select2:close", function (e) { log("select2:close", e); });
+        // 触发事件在选中某项时触发
+        $("#select3").on("select2:selecting", function (e) { log("select2:selecting", e); });
+        // 触发事件在close之后触发，selecting可以阻止该事件
+        $("#select3").on("select2:select", function (e) { log("select2:select", e); });
+        // 触发事件在取消选择时触发
+        $("#select3").on("select2:unselecting", function (e) { log("select2:unselecting", e); });
+        // 触发事件在close之后触发，unselecting可以阻止该事件
+        $("#select3").on("select2:unselect", function (e) { log("select2:unselect", e); });
+        // 触发事件在selecting或者unselecting之后触发
+        $("#select3").on("change", function (e) { log("change"); });
+
+        // 可选可输，tags类型可以为boolan或对象数组
+        select7 = $("#select7").jkj("easySelect", { data: data, tags: [{ id: 8, text: "三沙" }, { id: 9, text: "长沙" }] });
+
+        // 禁选
+        select4 = $("#select4").jkj("easySelect", { data: data, disabled: true });
+
+        // 部分禁选
+        select5 = $("#select5").jkj("easySelect");
+
+        // 多选远程动态加载，赋初始值
+        var extraData = [
+            { id: 10, text: '习大大', realName: '习大大', companyName: '贸互加' },
+            { id: 11, text: '习大大2', realName: '习大大2', companyName: '贸互加' }
+        ];
+        select6 = $("#select6").jkj("easySelect", {
+            type: 'suggest',
+            extraData: extraData,
+            defaultValues: 10,
+            multiple: true,
+            placeholder: '请输入',
+            suggest: {
+                paramName: 'name',
+                url: "/src/data/select6.json",
+            },
+            templateResult: function (repo) {
+                if (repo.loading) {
+                    return "正在加载...";
+                }
+
+                return "<span><font style=\"font-family:Microsoft YaHei;\">" + repo.realName + "</font><br/><b><i>" + repo.companyName + "</i></b></span>";
+            },
+            templateSelection: function (repo) {
+                return "<b>" + repo.realName + "</b><i>" + repo.companyName + "</i>";
+            }
+        });
+
+        // 单选远程一次加载，赋初始值，多字段（人名及其首字母、全拼、简拼，公司名称）匹配                
+        select8 = $("#select8").jkj("easySelect", {
+            type: 'remote',
+            extraData: [{ id: 10, text: '习大大', realName: '习大大', companyName: '贸互加', py: 'xdd', pinyin: 'xidada', letter: 'x' }],
+            defaultValues: 10,
+            searchKeys: ['realName', 'companyName', 'py', 'pinyin', 'letter'],
+            remote: {
+                url: "/src/data/select6.json",
+                data: { name: "test" },
+                success: function (data) {
+
+                },
+                completed: function () {
+
+                }
+            },
+            templateResult: function (repo) {
+                if (repo.loading) {
+                    return "正在加载...";
+                }
+
+                return "<span><font style=\"font-family:Microsoft YaHei;\">" + repo.realName + "</font><br/><b><i>" + repo.companyName + "</i></b></span>"
+            },
+            templateSelection: function (repo) {
+                if (repo.id) {
+                    return "<b>" + repo.realName + "</b>";
+                } else {
+                    return repo.text;
+                }
+            }
+        });
+        function log(name, evt) {
+            if (!evt) {
+                var args = "{}";
+            } else {
+                var args = JSON.stringify(evt.params, function (key, value) {
+                    if (value && value.nodeName) return "[DOM node]";
+                    if (value instanceof $.Event) return "[$.Event]";
+                    return value;
+                });
+            }
+            var $e = $("<li>" + name + " -> " + args + "</li>");
+            $('.js-event-log').append($e);
+            $e.animate({ opacity: 1 }, 10000, 'linear', function () {
+                $e.animate({ opacity: 0 }, 5000, 'linear', function () {
+                    $e.remove();
+                });
+            });
+        }
+    });
+    /* $(function() {
+
+        var data = [{ id: 1, text: "南京" }, { id: 2, text: "北京" },{ id: 3, text: "西安" }, 
+                    { id: 4, text: "重庆" }, { id: 5, text: "广州" }];
+    
+        // 单选 local data
+        // tags启用，输入的内容可以动态添加到下拉列表中
+        var select1 = $.jkj.select2.local("#select1", {
+            data: data,
+            tags: true
+        });
+
+        // 单选 ajax load once
+        var select2 = $.jkj.select2.remote("#select2", {
+                ajax: { 
+                    url: "/src/data/select2.json",
+                    extra: {name: "test"},
+                    success: null
+                }
+            });
+        
+        // 多选 local data
+        var select3 = $.jkj.select2.local("#select3", {data: data});
+        
+        // 
+        var select7 = $.jkj.select2.local("#select7", {data: data, tags:[]});
+        
+        var select4 = $.jkj.select2.local("#select4", {data: data, disabled: true});
+        
+        $('#select6').append('<option value="1" selected="selected">123</option>');
+        var select6 = $.jkj.select2.autocomplete("#select6", {
+            paramName: 'name',
+            initSelection: function (element, callback) {         // 初始化时设置默认值
+                callback({id: 1,realName:'123',companyName:'adfa'});
+            },
+            ajax: {
+                url: "/src/data/select6.json",
+            },
+            formatResult: "<span><font style=\"font-family:Microsoft YaHei;\">{realName}</font><br/><b><i>{companyName}</i></b></span>",
+            formatSelection: function(){
+                return "<b>{realName}<b>";
+            }
+        });
+        //移除事件
+        $('#select6').on('select2:unselect',function(){
+            alert('select2:unselect')
+        });
+        
+        // 单选 ajax load once                   
+        var select8 = $.jkj.select2.autocomplete("#select8", {
+            ajax: { 
+                url: "/AdminJKJ/src/data/select2.json",
+                extra: {name: "test"},
+                success: null
+            },
+            
+        });
+        $('#select8').append(new Option('123456', 12,true,true)).trigger('change');
+    }); */
+
+</script>
+
+	</body>
+</html>

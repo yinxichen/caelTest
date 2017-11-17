@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+	<head>
+		<!-- Meta, title, CSS, favicons, etc. -->
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=9">
+		<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=0.5, maximum-scale=2, user-scalable=yes">
+		<meta name="keywords" content="HTML，CSS，JS，JavaScript，framework，bootstrap，front-end，web development，江苏跨境">
+		<meta name="description" content="江苏跨境电子商务服务有限公司">
+		<meta name="author" content="潘明星，尹喜晨">
+		<title>示例展示</title>
+		<!-- Bootstrap 3.3.6 -->
+		<link rel="stylesheet" href="/css/bootstrap.min.css">
+		<!-- Font Awesome -->
+		<link rel="stylesheet" href="/css/font-awesome.min.css">
+		<!-- Ionicons -->
+		<link rel="stylesheet" href="/css/ionicons.min.css">
+		<!-- AdminJKJ style -->
+		<link rel="stylesheet" href="/css/adminjkj-1.0.323.min.css">
+		<link rel="stylesheet" href="/css/adminjkj-themes-1.0.0.min.css">
+		<!--子页面样式-->
+		
+
+		
+		<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+		<!--[if lt IE 9]>
+		<script src="/js/html5shiv.min.js"></script>
+		<script src="/js/respond.min.js"></script>
+		<![endif]-->   
+	</head>
+	<body class="" style=" overflow-x: auto;">
+  		<!-- Site wrapper -->
+		<div class=" page-body">
+			<!--子页面内容-->
+			
+<!--代码开始-->
+<div class="page-title">查询条件</div>
+
+<div class="page-containers page-body ">
+	<form>
+		<div class="search-area">
+			<div class="search-group">
+				<label>帐号：</label>
+				<input class="form-control" name="Code" type="text" maxlength="30">
+			</div>
+
+			<div class="search-group">
+				<label>性别：</label>
+				<select class="form-control">
+					<option selected="selected">请选择</option>
+					<option>男</option>
+					<option>女</option>
+				</select>
+			</div>
+			<div class="search-group">
+				<button class="btn btn-primary" type="button" onclick="refreshDatas()">查询</button>
+			</div>
+		</div>
+		
+	</form>
+	<div class="clearfix"></div>
+	<div class="">
+		<i class="fa fa-file-code-o"></i>
+		<a href="javascript:;" data-xmp="">展开代码</a>
+		<xmp>
+			<form>
+				<div class="search-area">
+					<div class="search-group">
+						<label>帐号：</label>
+						<input class="form-control" name="Code" type="text" maxlength="30">
+					</div>
+
+					<div class="search-group">
+						<label>性别：</label>
+						<select class="form-control">
+							<option selected="selected">请选择</option>
+							<option>男</option>
+							<option>女</option>
+						</select>
+					</div>
+					<div class="search-group">
+						<button class="btn btn-primary" type="button" onclick="refreshDatas()">查询</button>
+					</div>
+				</div>
+			</form>
+		</xmp>
+	</div>
+</div>
+
+<!--代码结束-->
+
+<div class="page-containers page-body ">
+	<form>
+		<div class="search-area">
+			<div class="search-group">
+				<label>帐号：</label>
+				<input class="form-control" name="Code" type="text" maxlength="30">
+			</div>
+
+			<div class="search-group">
+				<label>性别：</label>
+				<select class="form-control">
+					<option selected="selected">请选择</option>
+					<option>男</option>
+					<option>女</option>
+				</select>
+			</div>
+
+			<div class="search-group">
+				<label>职位：</label>
+				<select class="form-control">
+					<option selected="selected">销售总监</option>
+					<option>客户经理</option>
+					<option>渠道经理</option>
+					<option>人事主管</option>
+					<option>产品经理</option>
+					<option>java开发工程师</option>
+					<option>财务人员</option>
+				</select>
+			</div>
+		</div>
+		<div class="search-group">
+			<button class="btn btn-primary" type="button" onclick="refreshDatas()">查询</button>
+		</div>
+	</form>
+	<div class="">
+		<i class="fa fa-file-code-o"></i>
+		<a href="javascript:;" data-xmp="">展开代码</a>
+		<xmp>
+			<form>
+				<div class="search-area">
+					<div class="search-group">
+						<label>帐号：</label>
+						<input class="form-control" name="Code" type="text" maxlength="30">
+					</div>
+
+					<div class="search-group">
+						<label>性别：</label>
+						<select class="form-control">
+							<option selected="selected">请选择</option>
+							<option>男</option>
+							<option>女</option>
+						</select>
+					</div>
+
+					<div class="search-group">
+						<label>职位：</label>
+						<select class="form-control">
+							<option selected="selected">销售总监</option>
+							<option>客户经理</option>
+							<option>渠道经理</option>
+							<option>人事主管</option>
+							<option>产品经理</option>
+							<option>java开发工程师</option>
+							<option>财务人员</option>
+						</select>
+					</div>
+				</div>
+				<div class="search-group">
+					<button class="btn btn-primary" type="button" onclick="refreshDatas()">查询</button>
+				</div>
+			</form>
+		</xmp>
+	</div>
+</div>
+
+<!--代码结束-->
+
+<!--代码开始-->
+<h3>带更多的查询条件:</h3>
+<div class="page-containers page-body ">
+	<form id="formLessSearch">
+		<div class="search-area">
+			<div class="search-group">
+				<label>帐号：</label>
+				<input class="form-control" name="Code" type="text" maxlength="30">
+			</div>
+
+			<div class="search-group">
+				<label>性别：</label>
+				<select class="form-control">
+					<option selected="selected">请选择</option>
+					<option>男</option>
+					<option>女</option>
+				</select>
+			</div>
+
+			<div class="search-group">
+				<label>职位：</label>
+				<select class="form-control">
+					<option selected="selected">销售总监</option>
+					<option>客户经理</option>
+					<option>渠道经理</option>
+					<option>人事主管</option>
+					<option>产品经理</option>
+					<option>java开发工程师</option>
+					<option>财务人员</option>
+				</select>
+			</div>
+		</div>
+		<div class="search-group">
+			<button class="btn btn-primary" type="button" onclick="refreshDatas()">查询</button>
+			<a class="more-criteria" href="javascript:moreConditions()">更多条件∨</a>
+		</div>
+	</form>
+	<form id="formMoreSearch" class="form-horizontal">
+		<div class="search-area">
+			<div class="search-group">
+				<label>帐号：</label>
+				<input class="form-control" name="Code" type="text" maxlength="30">
+			</div>
+			<div class="search-group">
+				<label>性别：</label>
+				<select class="form-control">
+					<option selected="selected">请选择</option>
+					<option>男</option>
+					<option>女</option>
+				</select>
+			</div>
+			<div class="search-group">
+				<label>职位：</label>
+				<select class="form-control">
+					<option selected="selected">销售总监</option>
+					<option>客户经理</option>
+					<option>渠道经理</option>
+					<option>人事主管</option>
+					<option>产品经理</option>
+					<option>java开发工程师</option>
+					<option>财务人员</option>
+				</select>
+			</div>
+			<div class="search-group">
+				<label>入职时间：</label>
+				<input type="text" class="form-control" id="datepicker">
+			</div>
+			<div class="search-group">
+				<label>年龄：</label>
+				<input type="text" class="form-control" value="">
+			</div>
+		</div>
+		<div class="search-group">
+			<button class="btn btn-primary" type="button" onclick="refreshDatas()">查询</button>
+			<a id="linkLess" class="close-criteria" href="javascript:lessConditions()">收起条件∧</a>
+		</div>
+	</form>
+	<script type="text/javascript">
+		//较少的条件
+		function lessConditions() {
+			$("#formMoreSearch").animate({
+				height: "50px"
+			}, function() {
+				$(this).css("height", "0");
+				$("#formLessSearch").show();
+			});
+		}
+
+		//较多的条件 
+		function moreConditions() {
+			var formMoreSearchH = $("#formMoreSearch .search-area").height();
+			$("#formLessSearch").hide();
+			$("#formMoreSearch").show().css("height", "50px").animate({
+				height: formMoreSearchH
+			});
+		}
+	</script>
+	<div class="">
+		<i class="fa fa-file-code-o"></i>
+		<a href="javascript:;" data-xmp="">展开代码</a>
+		<xmp>
+			<form id="formLessSearch">
+				<div class="search-area">
+					<div class="search-group">
+						<label>帐号：</label>
+						<input class="form-control" name="Code" type="text" maxlength="30">
+					</div>
+
+					<div class="search-group">
+						<label>性别：</label>
+						<select class="form-control">
+							<option selected="selected">请选择</option>
+							<option>男</option>
+							<option>女</option>
+						</select>
+					</div>
+
+					<div class="search-group">
+						<label>职位：</label>
+						<select class="form-control">
+							<option selected="selected">销售总监</option>
+							<option>客户经理</option>
+							<option>渠道经理</option>
+							<option>人事主管</option>
+							<option>产品经理</option>
+							<option>java开发工程师</option>
+							<option>财务人员</option>
+						</select>
+					</div>
+				</div>
+				<div class="search-group">
+					<button class="btn btn-primary" type="button" onclick="refreshDatas()">查询</button>
+					<a class="more-criteria" href="javascript:moreConditions()">更多条件∨</a>
+				</div>
+			</form>
+			<form id="formMoreSearch" class="form-horizontal">
+				<div class="search-area">
+					<div class="search-group">
+						<label>帐号：</label>
+						<input class="form-control" name="Code" type="text" maxlength="30">
+					</div>
+					<div class="search-group">
+						<label>性别：</label>
+						<select class="form-control">
+							<option selected="selected">请选择</option>
+							<option>男</option>
+							<option>女</option>
+						</select>
+					</div>
+					<div class="search-group">
+						<label>职位：</label>
+						<select class="form-control">
+							<option selected="selected">销售总监</option>
+							<option>客户经理</option>
+							<option>渠道经理</option>
+							<option>人事主管</option>
+							<option>产品经理</option>
+							<option>java开发工程师</option>
+							<option>财务人员</option>
+						</select>
+					</div>
+					<div class="search-group">
+						<label>入职时间：</label>
+						<input type="text" class="form-control" id="datepicker">
+					</div>
+					<div class="search-group">
+						<label>年龄：</label>
+						<input type="text" class="form-control" value="">
+					</div>
+				</div>
+				<div class="search-group">
+					<button class="btn btn-primary" type="button" onclick="refreshDatas()">查询</button>
+					<a id="linkLess" class="close-criteria" href="javascript:lessConditions()">收起条件∧</a>
+				</div>
+			</form>
+			<script type="text/javascript">
+				//较少的条件
+				function lessConditions() {
+					$("#formMoreSearch").animate({
+						height: "50px"
+					}, function() {
+						$(this).css("height", "0");
+						$("#formLessSearch").show();
+					});
+				}
+
+				//较多的条件 
+				function moreConditions() {
+					var formMoreSearchH = $("#formMoreSearch .search-area").height();
+					$("#formLessSearch").hide();
+					$("#formMoreSearch").show().css("height", "50px").animate({
+						height: formMoreSearchH
+					});
+				}
+			</script>
+		</xmp>
+	</div>
+</div>
+<!--代码结束-->
+
+<!--代码开始-->
+<h3>弹框查询条件：</h3>
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">打开弹窗</button>
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+	<div class="modal-dialog" role="document" style="width: 900px;">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<h4 class="modal-title" id="myModalLabel">弹框查询条件</h4>
+			</div>
+			<form id="modalForm" class="tooltip-validate">
+				<div class="modal-body">
+					<div class="row">
+						<div class="col-xs-11 row-void">
+							<div class="col-xs-4 row-form">
+								<div class="">
+									<div class="col-xs-4 text-right">
+										帐号名：
+									</div>
+									<div class="col-xs-8">
+										<input type="text" class="form-control required" name="username" id="" value="" />
+									</div>
+								</div>
+							</div>
+							<div class="col-xs-4 row-form">
+								<div class="">
+									<div class="col-xs-4 text-right">
+										年龄：
+									</div>
+									<div class="col-xs-8">
+										<input type="text" class="form-control required" name="age" id="" value="" />
+									</div>
+								</div>
+							</div>
+							<div class="col-xs-4 row-form">
+								<div class="">
+									<div class="col-xs-4 text-right">
+										岗位：
+									</div>
+									<div class="col-xs-8">
+										<select class="form-control required">
+											<option selected="selected">销售总监</option>
+											<option>客户经理</option>
+											<option>渠道经理</option>
+											<option>人事主管</option>
+											<option>产品经理</option>
+											<option>java开发工程师</option>
+											<option>财务人员</option>
+										</select>
+									</div>
+								</div>
+							</div>
+							<div class="col-xs-4 row-form">
+								<div class="">
+									<div class="col-xs-4 text-right">
+										入职时间：
+									</div>
+									<div class="col-xs-8">
+										<input type="text" class="form-control required" name="dateTime" id="datepicker">
+									</div>
+								</div>
+							</div>
+							<div class="col-xs-4 row-form">
+								<div class="">
+									<div class="col-xs-4 text-right">
+										个性签名：
+									</div>
+									<div class="col-xs-8">
+										<input class="form-control required" type="text" name="profile" id="" value="" />
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-xs-1 row-void row-form">
+							<div class="col-xs-12">
+								<button class="btn btn-primary" type="button">查询</button>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-cancel" data-dismiss="modal">关闭</button>
+					<button type="submit" class="btn btn-primary">保存</button>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+
+<!--代码结束-->
+
+
+
+		</div>
+		
+		<!-- jquery 2.2.3 -->
+		<script src="/plugins/jquery/jquery-2.2.3.min.js"></script>
+		<!-- Bootstrap 3.3.6 -->
+		<script src="/js/bootstrap.min.js"></script>
+		<!-- SlimScroll -->
+		<script src="/plugins/slimScroll/jquery.slimscroll.min.js"></script>
+		<!-- FastClick -->
+		<script src="/plugins/fastclick/fastclick.js"></script>
+		<!-- Notify -->
+		<script src="/plugins/bootstrap-notify/bootstrap-notify.js"></script>
+
+		<script src="/js/adminjkj-1.0.323.min.js" type="text/javascript"></script>
+		<!--子页面脚本-->
+		 
+	</body>
+</html>

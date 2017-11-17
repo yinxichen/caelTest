@@ -1,0 +1,410 @@
+{% extends "../../shared/layout.html" %} {% block title %} {% endblock %} {% block css %}{% endblock %} {% block content%}
+<div class="page-container">
+	<div class="page-title">
+		省市区三级联动
+	</div>
+</div>
+<div class="page-containers">
+	<div class="form-title">
+		默认省市区三级联动
+	</div>
+	<div class="row">
+		<div class="col-xs-3">
+			<input type="text" id="linkageInput" class="form-control" readonly="readonly">
+		</div>
+	</div>
+	<div class="btn-submit">
+		<button type="button" class="btn btn-primary" onclick="getProvince()">获取省</button>
+		<button type="button" class="btn btn-primary" onclick="getCity()">获取市</button>
+		<button type="button" class="btn btn-primary" onclick="getDistrict()">获取区</button>
+	</div>
+	<pre>
+		<code class="language-html">{% set linkageInput1Code %}
+			<input type="text" id="linkageInput" class="form-control" readonly="readonly">
+			<script>
+				var linkageInput1 = $('#linkageInput').jkj('linkageInput',{
+					//json路径
+					urlcity: "{{ path.src }}data/linkageInput.json",
+					/*
+						自定义级联内容
+					*/
+					linkage: ['省份','城市','区县']
+				});
+			</script>
+			{% endset %}   
+			{{ linkageInput1Code | escape}}
+		</code>
+		<a class="fa fa-file-code-o" href="javascript:;" data-xmp="">展开代码</a>
+	</pre>
+</div>
+
+<div class="page-containers">
+	<div class="form-title">
+		自定义隐藏值ID,Name
+	</div>
+	<div class="row">
+		<div class="col-xs-3">
+			<input type="text" id="linkageInput2" class="form-control" readonly="readonly">
+		</div>
+	</div>
+	<pre>
+		<code class="language-html">{% set linkageInput2Code %}
+			<input type="text" id="linkageInput2" class="form-control" readonly="readonly">
+			<script>
+				var linkageInput2 = $('#linkageInput2').jkj('linkageInput',{
+					urlcity: "{{ path.src }}data/linkageInput.json",
+					/*
+						给省、市、区赋name值
+						默认 names : ["provinceName","cityName","districtName"]
+					*/
+					names: ["aaa","bbb","ccc"],
+					/*
+						给省、市、区赋id值
+						默认 id : ["provinceId","cityId","districtId"]
+					*/
+					id: ["ddd","fff",'eee'],
+					/*
+						自定义级联内容
+					*/
+					linkage: ['省份','城市','区县']
+				});
+			</script>
+			{% endset %}   
+			{{ linkageInput2Code | escape}}
+		</code>
+		<a class="fa fa-file-code-o" href="javascript:;" data-xmp="">展开代码</a>
+	</pre>
+</div>
+
+<div class="page-containers">
+	<div class="form-title">
+		定义分隔符，去除清除按钮
+	</div>
+	<div class="row">
+		<div class="col-xs-3">
+			<input type="text" id="linkageInput3" class="form-control" readonly="readonly">
+		</div>
+	</div>
+	<pre>
+		<code class="language-html">{% set linkageInput3Code %}
+			<input type="text" id="linkageInput3" class="form-control" readonly="readonly">
+			<script>
+				var linkageInput3 = $('#linkageInput3').jkj('linkageInput',{
+					urlcity: "{{ path.src }}data/linkageInput.json",
+					/*
+						给省、市、区赋name值
+						默认 names : ["provinceName","cityName","districtName"]
+					*/
+					names: ["name1","name2","name3"],
+					/*
+						给省、市、区赋id值
+						默认 id : ["provinceId","cityId","districtId"]
+					*/
+					id: ["id1","id2",'id3'],
+					/**
+					 * 分隔符,默认'-'
+					 */
+					part: "->",
+					/**
+					 * 启用清除功能
+					 */
+					enableClear: false,
+					/*
+						自定义级联内容
+					*/
+					linkage: ['省份','城市','区县']
+				});
+			</script>
+			{% endset %}   
+			{{ linkageInput3Code | escape}}
+		</code>
+		<a class="fa fa-file-code-o" href="javascript:;" data-xmp="">展开代码</a>
+	</pre>
+</div>
+
+<div class="page-containers">
+	<div class="form-title">
+		自定义省市区
+	</div>
+	<div class="row">
+		<div class="col-xs-3">
+			<input type="text" id="linkageInput4" class="form-control" readonly="readonly">
+		</div>
+	</div>
+	<div class="btn-submit">
+		<button type="button" class="btn btn-primary" onclick="getval()">获取value值</button>
+	</div>
+	<pre>
+		<code class="language-html">{% set linkageInput4Code %}
+			<input type="text" id="linkageInput4" class="form-control" readonly="readonly">
+			<script>
+				var linkageInput4 = $('#linkageInput4').jkj('linkageInput',{
+					urlcity: "{{ path.src }}data/linkageInput.json",
+					/*
+						设置城市
+					*/
+					defaultCity: ['甘肃','白银市','平川区'],
+					/*
+						自定义级联内容
+					*/
+					linkage: ['省份','城市','区县']
+				});
+			</script>
+			{% endset %}   
+			{{ linkageInput4Code | escape}}
+		</code>
+		<a class="fa fa-file-code-o" href="javascript:;" data-xmp="">展开代码</a>
+	</pre>
+</div>
+
+<div class="page-containers">
+	<div class="form-title">
+		自定义级联
+	</div>
+	<div class="row">
+		<div class="col-xs-3">
+			<input type="text" id="linkageInput5" class="form-control" readonly="readonly">
+		</div>
+	</div>
+	<pre>
+		<code class="language-html">{% set linkageInput5Code %}
+			<input type="text" id="linkageInput5" class="form-control" readonly="readonly">
+			<script>
+				var linkageInput5 = $('#linkageInput5').jkj('linkageInput', {
+					urlcity: "{{ path.src }}data/linkageInput.json",
+					/*
+						设置城市
+					*/
+					defaultCity: ['甘肃', '白银市', '平川区'],
+					/*
+						给省、市、区赋name值
+						默认 names : ["provinceName","cityName","districtName"]
+					*/
+					names: ["namess1", "namess2", null],
+					/*
+						给省、市、区赋id值
+						默认 id : ["provinceId","cityId","districtId"]
+					*/
+					id: ["idss1", "idss2", null],
+					/*
+							自定义级联内容
+					*/
+					linkage: ['海岸','港口']
+				});
+			</script>
+			{% endset %}   
+			{{ linkageInput5Code | escape}}
+		</code>
+		<a class="fa fa-file-code-o" href="javascript:;" data-xmp="">展开代码</a>
+	</pre>
+</div>
+
+<div class="page-containers">
+	<div class="form-title">
+		默认省市区三级联动
+	</div>
+	<div class="row">
+		<div class="col-xs-3">
+			<input type="text" id="linkageInput6" class="form-control" readonly="readonly">
+		</div>
+	</div>
+	<pre>
+		<code class="language-html">{% set linkageInput6Code %}
+			<input type="text" id="linkageInput6" class="form-control" readonly="readonly">
+			<script>
+				var linkageInput6 = $('#linkageInput').jkj('linkageInput',{
+					//json路径
+					urlcity: "{{ path.src }}data/linkageInput.json",
+					/*
+						自定义级联内容
+					*/
+					linkage: ['省份','城市','区县']
+				});
+			</script>
+			{% endset %}   
+			{{ linkageInput6Code | escape}}
+		</code>
+		<a class="fa fa-file-code-o" href="javascript:;" data-xmp="">展开代码</a>
+	</pre>
+</div>
+
+<div class="page-containers">
+	<div class="form-title">
+		省市区三级联动配置参数
+	</div>
+	<pre>
+		<code class="language-html">{% set settingCode %}
+			<script>
+				defaults: {
+					//json路径
+					urlcity: "",
+					/*
+						给省、市、区赋name值
+						默认 names : ["provinceName","cityName","districtName"]
+					*/
+					names: ['provinceName','cityName','districtName'],
+					/*
+						给省、市、区赋id值
+						默认 id : ["provinceId","cityId","districtId"]
+					*/
+					id: ['provinceId','cityId','districtId'],
+					/*
+						初始化城市
+					*/
+					defaultCity: [],
+					/**
+					 * 分隔符,默认'-'
+					 */
+					part: "-",
+					/**
+					 * 启用清除功能
+					 */
+					enableClear: true,
+					/**
+					 * 自定义级联内容
+					 * linkage: ['省份','城市','区县']
+					 */
+					linkage: []
+				}	
+			</script>	
+			{% endset %}   
+			{{ settingCode | escape}}
+		</code>
+		<a class="fa fa-file-code-o" href="javascript:;" data-xmp="">展开代码</a>
+	</pre>
+</div>
+
+
+{% endblock %} {% block js %}
+
+<!-- page script -->
+<script src="{{ path.plugins }}linkageInput/Popt.js"></script>
+<!-- <script src="{{ path.plugins }}linkageInput/citySet.js"></script> -->
+<script>
+	$(function () {
+		var linkageInput, linkageInput2, linkageInput3, linkageInput4, linkageInput5, linkageInput6;
+		linkageInput1 = $('#linkageInput').jkj('linkageInput', {
+			//json路径
+			urlcity: "{{ path.src }}data/linkageInput.json",
+			/*
+				 自定义级联内容
+			*/
+			linkage: ['省份','城市','区县']
+		});
+
+		linkageInput2 = $('#linkageInput2').jkj('linkageInput', {
+			urlcity: "{{ path.src }}data/linkageInput.json",
+			/*
+				给省、市、区赋name值
+				默认 names : ["provinceName","cityName","districtName"]
+			*/
+			names: ["aaa", "bbb", "ccc"],
+			/*
+				给省、市、区赋id值
+				默认 id : ["provinceId","cityId","districtId"]
+			*/
+			id: ["ddd", "fff", 'eee'],
+			/*
+				 自定义级联内容
+			*/
+			linkage: ['省份','城市','区县']
+		});
+
+		linkageInput3 = $('#linkageInput3').jkj('linkageInput', {
+			urlcity: "{{ path.src }}data/linkageInput.json",
+			/*
+				给省、市、区赋name值
+				默认 names : ["provinceName","cityName","districtName"]
+			*/
+			names: ["name1", "name2", "name3"],
+			/*
+				给省、市、区赋id值
+				默认 id : ["provinceId","cityId","districtId"]
+			*/
+			id: ["id1", "id2", 'id3'],
+			/**
+			 * 分隔符,默认'-'
+			 */
+			part: "->",
+			/**
+			 * 启用清除功能
+			 */
+			enableClear: false,
+			/*
+				 自定义级联内容
+			*/
+			linkage: ['省份','城市','区县']
+		});
+
+		linkageInput4 = $('#linkageInput4').jkj('linkageInput', {
+			urlcity: "{{ path.src }}data/linkageInput.json",
+			/*
+				设置城市
+			*/
+			defaultCity: ['甘肃', '白银市', '平川区'],
+			/*
+				给省、市、区赋name值
+				默认 names : ["provinceName","cityName","districtName"]
+			*/
+			names: ["names1", "names2", "names3"],
+			/*
+				给省、市、区赋id值
+				默认 id : ["provinceId","cityId","districtId"]
+			*/
+			id: ["ids1", "ids2", 'ids3'],
+			/*
+				 自定义级联内容
+			*/
+			linkage: ['省份','城市','区县']
+		});
+
+		linkageInput5 = $('#linkageInput5').jkj('linkageInput', {
+			urlcity: "{{ path.src }}data/linkageInput2.json",
+			/*
+				给省、市、区赋name值
+				默认 names : ["provinceName","cityName","districtName"]
+			*/
+			names: ["namess1", "namess2", null],
+			/*
+				给省、市、区赋id值
+				默认 id : ["provinceId","cityId","districtId"]
+			*/
+			id: ["idss1", "idss2", null],
+			/*
+				 自定义级联内容
+			*/
+			linkage: ['海岸','港口']
+		});
+
+		linkageInput6 = $('#linkageInput6').jkj('linkageInput', {
+			//json路径
+			urlcity: "{{ path.src }}data/regions.json",
+			/*
+				 自定义级联内容
+			*/
+			linkage: ['省份','城市','区县'],
+			id: ["linkageInputs", "linkageInputc", "linkageInputa"]
+		});
+
+	});
+
+	function getProvince() {
+		var province = $("#provinceId").val();
+		alert(province);
+	}
+
+	function getCity() {
+		var city = $("#cityId").val();
+		alert(city);
+	}
+
+	function getDistrict() {
+		var district = $("#districtId").val();
+		alert(district);
+	}
+
+	function getval() {
+		var aa = $("#linkageInput4").val();
+		alert(aa);
+	}
+</script> {% endblock %}
